@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 id: 'cinepulse',
                 name: 'Cinepulse',
-                logo: 'Cinepulse.webp',
+                logo: 'logoSites/Cinepulse.webp',
                 headerBg: 'linear-gradient(135deg, #6A11CB 0%, #2575FC 100%)',
                 description: 'cinepulse.fr',
                 tags: ['Update : 08/05/2025'],
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 id: 'ivdid',
                 name: 'IVDID',
-                logo: 'Ivdid.webp',
+                logo: 'logoSites/Ivdid.webp',
                 headerBg: 'linear-gradient(135deg, #E21143 0%, #FFB03A 100%)',
                 description: 'ivdid.com',
                 tags: ['Update : 08/05/2025'],
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 id: 'topstream',
                 name: 'Topstream',
-                logo: 'TopStream.webp',
+                logo: 'logoSites/TopStream.webp',
                 headerBg: 'linear-gradient(135deg, #834D9B 0%, #D04ED6 100%)',
                 description: 'top-stream.io',
                 tags: ['Update : 08/05/2025'],
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 id: 'vfstream',
                 name: 'VFStream',
-                logo: 'VfStream.webp',
+                logo: 'logoSites/VfStream.webp',
                 headerBg: 'linear-gradient(135deg, #C31432 0%, #240B36 100%)',
                 description: 'films.vfstream.eu',
                 tags: ['Update : 08/05/2025'],
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 id: '1jour1film',
                 name: '1jour1film',
-                logo: '1jour1film.webp',
+                logo: 'logoSites/1jour1film.webp',
                 headerBg: 'linear-gradient(135deg, #3A1C71 0%, #D76D77 50%, #FFAF7B 100%)',
                 description: '1jour1film11.online',
                 tags: ['Update : 08/05/2025'],
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 id: 'cultissime',
                 name: '<s>Cultissime</s>',
-                logo: '16.webp',
+                logo: 'logoSites/16.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: '<s>cultissime.lol</s>',
                 tags: ['Update : 10/05/2025'],
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 id: 'senpaistream',
                 name: 'Senpai-Stream',
-                logo: 'senpai-stream.svg',
+                logo: 'logoSites/senpai-stream.svg',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'senpai-stream.stream',
                 tags: ['Update : 08/05/2025'],
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 id: 'wowfilms',
                 name: 'WOW-FILMS',
-                logo: 'WowFilms.webp',
+                logo: 'logoSites/WowFilms.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'wowfilms1.mom',
                 tags: ['Update : 08/05/2025'],
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 id: 'nightflix',
                 name: 'NightFlix',
-                logo: 'NightFlix.webp',
+                logo: 'logoSites/NightFlix.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'nightflix.store',
                 tags: ['Update : 08/05/2025'],
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 id: 'wiflix',
                 name: 'WiFlix',
-                logo: 'WiFlix.webp',
+                logo: 'logoSites/WiFlix.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'flemmix.ws',
                 tags: ['Update : 08/05/2025'],
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 id: 'papadustream',
                 name: 'PapaDuStream',
-                logo: 'PapaDuStream.webp',
+                logo: 'logoSites/PapaDuStream.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'papadustream.boo',
                 tags: ['Update : 08/05/2025'],
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 id: 'monstream',
                 name: 'MonStream',
-                logo: 'MonStream.webp',
+                logo: 'logoSites/MonStream.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'monstream.cafe',
                 tags: ['Update : 08/05/2025'],
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 id: 'frenchstream',
                 name: 'French-Stream',
-                logo: 'FrechStream.webp',
+                logo: 'logoSites/FrechStream.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'fsmirror57.lol<br><s>fsmirror41.lol</s>',
                 tags: ['Update : 11/05/2025'],
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 id: 'coflix',
                 name: 'Coflix',
-                logo: 'coflix.webp',
+                logo: 'logoSites/coflix.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'coflix.mov',
                 tags: ['Update : 10/05/2025'],
@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 id: 'movix',
                 name: 'Movix',
-                logo: 'Movix.webp',
+                logo: 'logoSites/Movix.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'movix.site',
                 tags: ['Update : 10/05/2025'],
@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 id: 'netmirror',
                 name: 'NetMirror',
-                logo: 'netmirror.png',
+                logo: 'logoSites/netmirror.png',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'netfree2.cc',
                 tags: ['Update : 10/05/2025'],
@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 id: 'sadisflix',
                 name: 'Sadisflix',
-                logo: 'SadisFlix.webp',
+                logo: 'logoSites/SadisFlix.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'sadisflix.hair',
                 tags: ['Update : 10/05/2025'],
@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 id: 'yopflix',
                 name: 'YopFlix',
-                logo: 'YopFlix.webp',
+                logo: 'logoSites/YopFlix.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'yopflix.quest',
                 tags: ['Update : 10/05/2025'],
@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 id: 'hdstream',
                 name: 'Hdstream',
-                logo: '10.webp',
+                logo: 'logoSites/10.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'hdstream.top',
                 tags: ['Update : 10/05/2025'],
@@ -216,7 +216,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 id: 'dulourd',
                 name: 'Dulourd',
-                logo: 'dulourd.webp',
+                logo: 'logoSites/dulourd.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'dulourd.day',
                 tags: ['Update : 10/05/2025'],
@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 id: 'animekai',
                 name: 'AnimeKai',
-                logo: 'AnimeKai.webp',
+                logo: 'logoSites/AnimeKai.webp',
                 headerBg: 'linear-gradient(135deg, #FF416C 0%, #FF4B2B 100%)',
                 description: 'animekai.to',
                 tags: ['Update : 08/05/2025'],
@@ -240,7 +240,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 id: 'animesama',
                 name: 'AnimeSama',
-                logo: 'AnimeSama.webp',
+                logo: 'logoSites/AnimeSama.webp',
                 headerBg: 'linear-gradient(135deg, #000046 0%, #1CB5E0 100%)',
                 description: 'anime-sama.fr',
                 tags: ['Update : 08/05/2025'],
@@ -251,7 +251,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 id: 'frenchanime',
                 name: 'FrenchAnime',
-                logo: 'FrenchAnime.webp',
+                logo: 'logoSites/FrenchAnime.webp',
                 headerBg: 'linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%)',
                 description: 'french-anime.com',
                 tags: ['Update : 08/05/2025'],
@@ -264,7 +264,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 id: 'kisskh',
                 name: 'KissKh',
-                logo: '512x512bb-removebg-preview.png',
+                logo: 'logoSites/512x512bb-removebg-preview.png',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'kisskh.co',
                 tags: ['Update : 08/05/2025'],
@@ -275,7 +275,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 id: 'voirdrama',
                 name: 'VoirDrama',
-                logo: 'VoirDrama.webp',
+                logo: 'logoSites/VoirDrama.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'voirdrama.org',
                 tags: ['Update : 08/05/2025'],
@@ -286,7 +286,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 id: 'dramacool',
                 name: 'DramaCool',
-                logo: 'dramacool.png',
+                logo: 'logoSites/dramacool.png',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'dramacool.com.de',
                 tags: ['Update : 08/05/2025'],
@@ -297,7 +297,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 id: 'myasiantv',
                 name: 'MyAsianTv',
-                logo: 'myasiantv.png',
+                logo: 'logoSites/myasiantv.png',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'myasiantv.rest',
                 tags: ['Update : 08/05/2025'],
@@ -308,7 +308,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 id: 'sojuoppa',
                 name: 'Sojuoppa',
-                logo: 'sojuoppa.png',
+                logo: 'logoSites/sojuoppa.png',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'sojuoppa.site',
                 tags: ['Update : 08/05/2025'],
@@ -319,7 +319,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 id: 'kissasian',
                 name: 'KissAsian',
-                logo: 'kissasian.webp',
+                logo: 'logoSites/kissasian.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'kissasian.nl',
                 tags: ['Update : 08/05/2025'],
@@ -330,7 +330,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 id: 'dramacountdown',
                 name: 'DramaCountDown',
-                logo: 'dramacountdown.png',
+                logo: 'logoSites/dramacountdown.png',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'dramacountdown.com',
                 tags: ['Update : 08/05/2025'],
