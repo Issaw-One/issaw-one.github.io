@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 id: 'cinepulse',
                 name: 'Cinepulse',
-                logo: 'logoSites/Cinepulse.webp',
+                logo: 'Cinepulse.webp',
                 headerBg: 'linear-gradient(135deg, #6A11CB 0%, #2575FC 100%)',
                 description: 'cinepulse.fr',
                 tags: ['Update : 08/05/2025'],
