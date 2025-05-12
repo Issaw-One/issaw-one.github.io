@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 logo: 'logoSites/Cinepulse.webp',
                 headerBg: 'linear-gradient(135deg, #6A11CB 0%, #2575FC 100%)',
                 description: 'cinepulse.fr',
-                tags: ['Update : 08/05/2025'],
+                tags: ['Update : 13/05/2025'],
                 url: 'https://cinepulse.fr/',
                 featured: true,
                 category: 'films'
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 logo: 'logoSites/Ivdid.webp',
                 headerBg: 'linear-gradient(135deg, #E21143 0%, #FFB03A 100%)',
                 description: 'ivdid.com',
-                tags: ['Update : 08/05/2025'],
+                tags: ['Update : 13/05/2025'],
                 url: 'https://ivdid.com',
                 featured: true,
                 category: 'films'
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 logo: 'logoSites/TopStream.webp',
                 headerBg: 'linear-gradient(135deg, #834D9B 0%, #D04ED6 100%)',
                 description: 'top-stream.io',
-                tags: ['Update : 08/05/2025'],
+                tags: ['Update : 13/05/2025'],
                 url: 'https://top-stream.io',
                 featured: false,
                 category: 'films'
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 logo: 'logoSites/VfStream.webp',
                 headerBg: 'linear-gradient(135deg, #C31432 0%, #240B36 100%)',
                 description: 'films.vfstream.eu',
-                tags: ['Update : 08/05/2025'],
+                tags: ['Update : 13/05/2025'],
                 url: 'https://films.vfstream.eu/',
                 featured: false,
                 category: 'films'
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 logo: 'logoSites/1jour1film.webp',
                 headerBg: 'linear-gradient(135deg, #3A1C71 0%, #D76D77 50%, #FFAF7B 100%)',
                 description: '1jour1film11.online',
-                tags: ['Update : 08/05/2025'],
+                tags: ['Update : 13/05/2025'],
                 url: 'https://1jour1film11.online/',
                 featured: false,
                 category: 'series'
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 logo: 'logoSites/16.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'cultissime.lol',
-                tags: ['Update : 12/05/2025'],
+                tags: ['Update : 13/05/2025'],
                 url: 'https://cultissime.lol/',
                 featured: false,
                 category: 'series'
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 logo: 'logoSites/senpai-stream.svg',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'senpai-stream.stream',
-                tags: ['Update : 08/05/2025'],
+                tags: ['Update : 13/05/2025'],
                 url: 'https://senpai-stream.stream/',
                 featured: true,
                 category: 'series'
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 logo: 'logoSites/WowFilms.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'wowfilms1.mom',
-                tags: ['Update : 08/05/2025'],
+                tags: ['Update : 13/05/2025'],
                 url: 'https://wowfilms1.mom/',
                 featured: true,
                 category: 'series'
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 logo: 'logoSites/NightFlix.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'nightflix.store',
-                tags: ['Update : 08/05/2025'],
+                tags: ['Update : 13/05/2025'],
                 url: 'https://nightflix.store',
                 featured: true,
                 category: 'series'
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 logo: 'logoSites/WiFlix.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'flemmix.ws',
-                tags: ['Update : 08/05/2025'],
+                tags: ['Update : 13/05/2025'],
                 url: 'https://flemmix.ws/',
                 featured: true,
                 category: 'series'
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 logo: 'logoSites/PapaDuStream.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'papadustream.boo',
-                tags: ['Update : 08/05/2025'],
+                tags: ['Update : 13/05/2025'],
                 url: 'https://papadustream.boo',
                 featured: true,
                 category: 'series'
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 logo: 'logoSites/MonStream.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'monstream.cafe',
-                tags: ['Update : 08/05/2025'],
+                tags: ['Update : 13/05/2025'],
                 url: 'https://vww.monstream.cafe',
                 featured: true,
                 category: 'series'
@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 logo: 'logoSites/FrechStream.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'fsmirror57.lol<br><s>fsmirror41.lol</s>',
-                tags: ['Update : 11/05/2025'],
+                tags: ['Update : 13/05/2025'],
                 url: 'https://fsmirror57.lol/',
                 featured: true,
                 category: 'series'
@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 logo: 'logoSites/coflix.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'coflix.mov',
-                tags: ['Update : 10/05/2025'],
+                tags: ['Update : 13/05/2025'],
                 url: 'https://coflix.mov/',
                 featured: true,
                 category: 'series'
@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 logo: 'logoSites/Movix.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'movix.site',
-                tags: ['Update : 10/05/2025'],
+                tags: ['Update : 13/05/2025'],
                 url: 'https://www.movix.site/',
                 featured: true,
                 category: 'series'
@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 logo: 'logoSites/netmirror.png',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'netfree2.cc',
-                tags: ['Update : 10/05/2025'],
+                tags: ['Update : 13/05/2025'],
                 url: 'https://netfree2.cc/home',
                 featured: true,
                 category: 'series'
@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 logo: 'logoSites/SadisFlix.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'sadisflix.hair',
-                tags: ['Update : 10/05/2025'],
+                tags: ['Update : 13/05/2025'],
                 url: 'https://sadisflix.hair/',
                 featured: true,
                 category: 'series'
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 logo: 'logoSites/YopFlix.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'yopflix.quest',
-                tags: ['Update : 10/05/2025'],
+                tags: ['Update : 13/05/2025'],
                 url: 'https://yopflix.quest/',
                 featured: true,
                 category: 'series'
@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 logo: 'logoSites/10.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'hdstream.top',
-                tags: ['Update : 10/05/2025'],
+                tags: ['Update : 13/05/2025'],
                 url: 'https://www.hdstream.top/',
                 featured: true,
                 category: 'series'
@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 logo: 'logoSites/dulourd.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'dulourd.day',
-                tags: ['Update : 10/05/2025'],
+                tags: ['Update : 13/05/2025'],
                 url: 'https://www.dulourd.day/',
                 featured: true,
                 category: 'series'
@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 logo: 'logoSites/AnimeKai.webp',
                 headerBg: 'linear-gradient(135deg, #FF416C 0%, #FF4B2B 100%)',
                 description: 'animekai.to',
-                tags: ['Update : 08/05/2025'],
+                tags: ['Update : 13/05/2025'],
                 url: 'https://animekai.to/',
                 featured: true,
                 category: 'animes'
@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 logo: 'logoSites/AnimeSama.webp',
                 headerBg: 'linear-gradient(135deg, #000046 0%, #1CB5E0 100%)',
                 description: 'anime-sama.fr',
-                tags: ['Update : 08/05/2025'],
+                tags: ['Update : 13/05/2025'],
                 url: 'https://anime-sama.fr/',
                 featured: false,
                 category: 'animes'
@@ -253,7 +253,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 logo: 'logoSites/FrenchAnime.webp',
                 headerBg: 'linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%)',
                 description: 'french-anime.com',
-                tags: ['Update : 08/05/2025'],
+                tags: ['Update : 13/05/2025'],
                 url: 'https://french-anime.com/',
                 featured: false,
                 category: 'animes'
@@ -266,7 +266,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 logo: 'logoSites/512x512bb-removebg-preview.png',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'kisskh.co',
-                tags: ['Update : 08/05/2025'],
+                tags: ['Update : 13/05/2025'],
                 url: 'https://kisskh.co/',
                 featured: true,
                 category: 'drama'
@@ -277,7 +277,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 logo: 'logoSites/VoirDrama.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'voirdrama.org',
-                tags: ['Update : 08/05/2025'],
+                tags: ['Update : 13/05/2025'],
                 url: 'https://voirdrama.org/',
                 featured: false,
                 category: 'drama'
@@ -288,7 +288,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 logo: 'logoSites/dramacool.png',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'dramacool.com.de',
-                tags: ['Update : 08/05/2025'],
+                tags: ['Update : 13/05/2025'],
                 url: 'https://ww5.dramacool.com.de/',
                 featured: false,
                 category: 'drama'
@@ -299,7 +299,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 logo: 'logoSites/myasiantv.png',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'myasiantv.rest',
-                tags: ['Update : 08/05/2025'],
+                tags: ['Update : 13/05/2025'],
                 url: 'https://www.myasiantv.rest/',
                 featured: false,
                 category: 'drama'
@@ -310,7 +310,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 logo: 'logoSites/sojuoppa.png',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'sojuoppa.site',
-                tags: ['Update : 08/05/2025'],
+                tags: ['Update : 13/05/2025'],
                 url: 'https://sojuoppa.site/',
                 featured: false,
                 category: 'drama'
@@ -321,7 +321,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 logo: 'logoSites/kissasian.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'kissasian.nl',
-                tags: ['Update : 08/05/2025'],
+                tags: ['Update : 13/05/2025'],
                 url: 'https://kissasian.nl/',
                 featured: false,
                 category: 'drama'
@@ -332,7 +332,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 logo: 'logoSites/dramacountdown.png',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'dramacountdown.com',
-                tags: ['Update : 08/05/2025'],
+                tags: ['Update : 13/05/2025'],
                 url: 'https://dramacountdown.com/',
                 featured: false,
                 category: 'drama'
