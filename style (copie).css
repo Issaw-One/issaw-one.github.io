@@ -493,22 +493,3 @@ footer {
 .site-card .visit-btn:hover {
     background-color: var(--secondary-color);
 }
-.category-search-box {
-    max-width: 500px;
-    margin: 20px auto 40px;
-    display: flex;
-    background-color: var(--card-bg);
-    border-radius: var(--button-radius);
-    overflow: hidden;
-    box-shadow: var(--shadow);
-}
-
-.category-search-box input {
-    flex: 1;
-    padding: 12px 18px;
-    font-size: 16px;
-    border: none;
-    outline: none;
-    color: var(--text-color);
-    background: none;
-}

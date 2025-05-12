@@ -441,24 +441,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    
-    function setupCategorySearch() {
-        const searchInputs = document.querySelectorAll('.category-search');
-        searchInputs.forEach(input => {
-            input.addEventListener('input', function () {
-                const category = this.dataset.category;
-                const query = this.value.toLowerCase().trim();
-                const cards = document.querySelectorAll(`.${category}-grid .site-card`);
-                cards.forEach(card => {
-                    const name = card.querySelector('.site-title').textContent.toLowerCase();
-                    const desc = card.querySelector('.site-desc').textContent.toLowerCase();
-                    const match = name.includes(query) || desc.includes(query);
-                    card.style.display = match ? 'block' : 'none';
-                });
-            });
-        });
-    }
-
     // Fonction pour configurer les filtres
     function setupFilters() {
         const filterButtons = document.querySelectorAll('.filter-btn');
@@ -662,7 +644,6 @@ document.addEventListener('DOMContentLoaded', function () {
         // Appeler les fonctions principales
         populateSiteGrids(); // Cette fonction est cruciale pour afficher les sites
         setupSearch();
-        setupCategorySearch();
         setupFilters();
         setupThemeToggle();
         setupScrollAnimations();
