@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Données des sites (exemple - à remplacer par vos données réelles)
     const sitesData = {
         films: [
             {
@@ -655,5 +654,5 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Démarrer l'application
-    initApp(); // Cette ligne est vitale - elle lance toute l'application
+    initApp();
 });
