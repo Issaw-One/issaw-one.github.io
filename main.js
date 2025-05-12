@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 logo: 'logoSites/16.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'cultissime.lol',
-                tags: ['Update : 10/05/2025'],
+                tags: ['Update : 12/05/2025'],
                 url: 'https://cultissime.lol/',
                 featured: false,
                 category: 'series'
