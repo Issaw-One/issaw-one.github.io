@@ -512,3 +512,33 @@ footer {
     color: var(--text-color);
     background: none;
 }
+
+.site-search-form {
+    display: flex;
+    margin-top: 15px;
+    border-radius: var(--button-radius);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.site-search-form input {
+    flex: 1;
+    padding: 10px 12px;
+    font-size: 14px;
+    background: var(--background-color);
+    border: none;
+    color: var(--text-color);
+}
+
+.site-search-form button {
+    background: var(--accent-color);
+    border: none;
+    padding: 0 15px;
+    color: white;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.site-search-form button:hover {
+    background: var(--secondary-color);
+}

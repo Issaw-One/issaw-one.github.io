@@ -350,6 +350,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Créer des tags à partir des tags du site
         const tagsHTML = site.tags.map(tag => `<span class="site-tag">${tag}</span>`).join('');
 
+        
         card.innerHTML = `
             <div class="site-header" style="background: ${site.headerBg}">
                 <div class="logo-container">
@@ -362,11 +363,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 <div class="site-tags">
                     ${tagsHTML}
                 </div>
+                <form class="site-search-form" action="${site.url}" method="get" target="_blank">
+                    <input type="text" name="s" placeholder="Rechercher sur ${site.name}...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
             </div>
             <div class="site-footer">
                 <a href="${site.url}" class="visit-btn" target="_blank">Visiter</a>
             </div>
         `;
+
 
         return card;
     }
