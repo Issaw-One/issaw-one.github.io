@@ -59,10 +59,10 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             {
                 id: 'cultissime',
-                name: '<s>Cultissime</s>',
+                name: 'Cultissime',
                 logo: 'logoSites/16.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
-                description: '<s>cultissime.lol</s>',
+                description: 'cultissime.lol',
                 tags: ['Update : 10/05/2025'],
                 url: 'https://cultissime.lol/',
                 featured: false,
