@@ -310,23 +310,23 @@
                         <option value="ivdid">IVDID</option>
                         <option value="topstream">Topstream</option>
                         <option value="vfstream">VFStream</option>
-                        <option value="vfstream">1jour1film</option>
-                        <option value="vfstream">Cultissime</option>
-                        <option value="vfstream">Senpai-Stream</option>
-                        <option value="vfstream">WOW-FILMS</option>
+                        <option value="1jour1film">1jour1film</option>
+                        <option value="cultissime">Cultissime</option>
+                        <option value="senpaistream">Senpai-Stream</option>
+                        <option value="wowfilms">WOW-FILMS</option>
                         <option value="">-- Films / Séries --</option>
-                        <option value="vfstream">NightFlix</option>
-                        <option value="vfstream">WiFlix</option>
-                        <option value="vfstream">PapaDuStream</option>
-                        <option value="vfstream">MonStream</option>
-                        <option value="vfstream">French-Stream</option>
-                        <option value="vfstream">Coflix</option>
-                        <option value="vfstream">Movix</option>
-                        <option value="vfstream">NetMirror</option>
-                        <option value="vfstream">Sadisflix</option>
-                        <option value="vfstream">YopFlix</option>
-                        <option value="vfstream">Hdstream</option>
-                        <option value="vfstream">Dulourd</option>
+                        <option value="nightflix">NightFlix</option>
+                        <option value="wifliw">WiFlix</option>
+                        <option value="papadustream">PapaDuStream</option>
+                        <option value="monstream">MonStream</option>
+                        <option value="frenchstream">French-Stream</option>
+                        <option value="coflix">Coflix</option>
+                        <option value="movix">Movix</option>
+                        <option value="netmirror">NetMirror</option>
+                        <option value="sadisflix">Sadisflix</option>
+                        <option value="yopflix">YopFlix</option>
+                        <option value="hdstream">Hdstream</option>
+                        <option value="dulourd">Dulourd</option>
                         <option value="autre">Autre (préciser)</option>
                     </select>
                 </div>
@@ -382,12 +382,12 @@
                 statusText: 'Résolu',
                 description: 'Impossible d\'accéder au site depuis hier soir, message "Service indisponible".'
             }
-            //status: 'pending',
-            //statusText: 'En attente',
-            //status: 'in-progress',
-            //statusText: 'En cours',
-            //status: 'resolved',
-            //statusText: 'Résolu',
+            // status: 'pending',
+            // statusText: 'En attente',
+            // status: 'in-progress',
+            // statusText: 'En cours',
+            // status: 'resolved',
+            // statusText: 'Résolu',
         ];
 
         // Fonction pour charger les signalements depuis localStorage ou utiliser les données initiales
@@ -513,6 +513,15 @@
                     case 'cinepulse': siteName = 'Cinepulse'; break;
                     case 'ivdid': siteName = 'IVDID'; break;
                     case 'topstream': siteName = 'Topstream'; break;
+                    case 'vfstream': siteName = 'VFStream'; break;
+                    case '1jour1film': siteName = '1jour1film'; break;
+                    case 'cultissime': siteName = 'Cultissime'; break;
+                    case 'senpaistream': siteName = 'Senpai-Stream'; break;
+                    case 'wowfilms': siteName = 'WOW-FILMS'; break;
+                    case 'nightflix': siteName = 'NightFlix'; break;
+                    case 'wiflix': siteName = 'Wiflix'; break;
+                    case 'papadustream': siteName = 'VFStream'; break;
+                    case 'vfstream': siteName = 'VFStream'; break;
                     case 'vfstream': siteName = 'VFStream'; break;
                     default: siteName = selectedSite;
                 }
