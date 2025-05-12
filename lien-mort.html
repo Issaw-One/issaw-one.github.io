@@ -185,6 +185,8 @@
         .tabs {
             display: flex;
             margin-bottom: 20px;
+            border-radius: 4px;
+            overflow: hidden;
         }
         
         .tab-btn {
@@ -200,14 +202,6 @@
         
         .tab-btn.active {
             background-color: var(--primary-color);
-        }
-        
-        .tab-btn:first-child {
-            border-radius: 4px 0 0 4px;
-        }
-        
-        .tab-btn:last-child {
-            border-radius: 0 4px 4px 0;
         }
         
         .signalement-list {
@@ -249,6 +243,21 @@
         .status.in-progress {
             background-color: #2196F3;
         }
+        
+        @media (max-width: 600px) {
+            header {
+                padding: 15px;
+            }
+            
+            .site-title {
+                font-size: 1.6rem;
+            }
+            
+            .signalement-header {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -285,9 +294,10 @@
         <h1>Signaler un lien mort</h1>
         
         <div class="tabs">
-            <button class="tab-btn active" data-tab="form">Nouveau signalement</button>
-            <button class="tab-btn" data-tab="history">Historique des signalements</button>
+            <button class="tab-btn active" data-tab="form" id="formTabBtn">Nouveau signalement</button>
+            <button class="tab-btn" data-tab="history" id="historyTabBtn">Historique des signalements</button>
         </div>
+        
         <div class="form-container" id="formTab">
             <form id="deadLinkForm">
                 <div class="form-group">
@@ -307,7 +317,6 @@
                     <input type="text" id="autreSite" placeholder="Entrez le nom du site">
                 </div>
                 
-                
                 <div class="form-group">
                     <label for="description">Description du problème</label>
                     <textarea id="description" placeholder="Décrivez le problème rencontré (erreur 404, site inaccessible, contenu manquant...)" required></textarea>
@@ -322,53 +331,51 @@
             </form>
         </div>
         
-        <div id="historyTab" class="tab-content" style="display: none;">
-            <div class="form-container">
-                <h2>Signalements récents</h2>
+        <div id="historyTab" class="form-container" style="display: none;">
+            <h2>Signalements récents</h2>
+            
+            <div class="signalement-list">
+                <div class="signalement-item">
+                    <div class="signalement-header">
+                        <span class="site-name">Cinepulse</span>
+                        <span class="date">10/05/2025</span>
+                        <span class="status resolved">Résolu</span>
+                    </div>
+                    <div class="signalement-desc">
+                        Le lecteur vidéo ne fonctionne plus sur la page des films d'action.
+                    </div>
+                </div>
                 
-                <div class="signalement-list">
-                    <div class="signalement-item">
-                        <div class="signalement-header">
-                            <span class="site-name">Cinepulse</span>
-                            <span class="date">10/05/2025</span>
-                            <span class="status resolved">Résolu</span>
-                        </div>
-                        <div class="signalement-desc">
-                            Le lecteur vidéo ne fonctionne plus sur la page des films d'action.
-                        </div>
+                <div class="signalement-item">
+                    <div class="signalement-header">
+                        <span class="site-name">IVDID</span>
+                        <span class="date">09/05/2025</span>
+                        <span class="status pending">En attente</span>
                     </div>
-                    
-                    <div class="signalement-item">
-                        <div class="signalement-header">
-                            <span class="site-name">IVDID</span>
-                            <span class="date">09/05/2025</span>
-                            <span class="status pending">En attente</span>
-                        </div>
-                        <div class="signalement-desc">
-                            La section séries TV affiche une erreur 404.
-                        </div>
+                    <div class="signalement-desc">
+                        La section séries TV affiche une erreur 404.
                     </div>
-                    
-                    <div class="signalement-item">
-                        <div class="signalement-header">
-                            <span class="site-name">VFStream</span>
-                            <span class="date">08/05/2025</span>
-                            <span class="status in-progress">En cours</span>
-                        </div>
-                        <div class="signalement-desc">
-                            Impossible d'accéder au site depuis hier soir, message "Service indisponible".
-                        </div>
+                </div>
+                
+                <div class="signalement-item">
+                    <div class="signalement-header">
+                        <span class="site-name">VFStream</span>
+                        <span class="date">08/05/2025</span>
+                        <span class="status in-progress">En cours</span>
                     </div>
-                    
-                    <div class="signalement-item">
-                        <div class="signalement-header">
-                            <span class="site-name">Topstream</span>
-                            <span class="date">05/05/2025</span>
-                            <span class="status resolved">Résolu</span>
-                        </div>
-                        <div class="signalement-desc">
-                            Les sous-titres français ne s'affichent pas sur les films récents.
-                        </div>
+                    <div class="signalement-desc">
+                        Impossible d'accéder au site depuis hier soir, message "Service indisponible".
+                    </div>
+                </div>
+                
+                <div class="signalement-item">
+                    <div class="signalement-header">
+                        <span class="site-name">Topstream</span>
+                        <span class="date">05/05/2025</span>
+                        <span class="status resolved">Résolu</span>
+                    </div>
+                    <div class="signalement-desc">
+                        Les sous-titres français ne s'affichent pas sur les films récents.
                     </div>
                 </div>
             </div>
@@ -376,41 +383,25 @@
     </main>
     
     <script>
-        // Toggle menu
+        // Récupération des éléments DOM
         const hamburger = document.querySelector('.hamburger');
         const navMenu = document.querySelector('.nav-menu');
-        
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('menu-open');
-        // Tab switching
-        const tabBtns = document.querySelectorAll('.tab-btn');
+        const siteSelect = document.getElementById('site');
+        const autreSiteGroup = document.getElementById('autreSiteGroup');
+        const deadLinkForm = document.getElementById('deadLinkForm');
+        const successMessage = document.getElementById('successMessage');
+        const formTabBtn = document.getElementById('formTabBtn');
+        const historyTabBtn = document.getElementById('historyTabBtn');
         const formTab = document.getElementById('formTab');
         const historyTab = document.getElementById('historyTab');
         
-        tabBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons
-                tabBtns.forEach(b => b.classList.remove('active'));
-                
-                // Add active class to clicked button
-                btn.classList.add('active');
-                
-                // Show/hide tabs
-                if (btn.dataset.tab === 'form') {
-                    formTab.style.display = 'block';
-                    historyTab.style.display = 'none';
-                } else {
-                    formTab.style.display = 'none';
-                    historyTab.style.display = 'block';
-                }
-            });
+        // Toggle menu
+        hamburger.addEventListener('click', function() {
+            navMenu.classList.toggle('menu-open');
         });
-            
-        // Show "Autre" field when "Autre" is selected
-        const siteSelect = document.getElementById('site');
-        const autreSiteGroup = document.getElementById('autreSiteGroup');
         
-        siteSelect.addEventListener('change', () => {
+        // Show "Autre" field when "Autre" is selected
+        siteSelect.addEventListener('change', function() {
             if (siteSelect.value === 'autre') {
                 autreSiteGroup.style.display = 'block';
             } else {
@@ -419,10 +410,7 @@
         });
         
         // Form submission
-        const deadLinkForm = document.getElementById('deadLinkForm');
-        const successMessage = document.getElementById('successMessage');
-        
-        deadLinkForm.addEventListener('submit', (e) => {
+        deadLinkForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
             // In a real implementation, you would send the form data to a server here
@@ -435,9 +423,25 @@
             autreSiteGroup.style.display = 'none';
             
             // Hide success message after 5 seconds
-            setTimeout(() => {
+            setTimeout(function() {
                 successMessage.style.display = 'none';
             }, 5000);
+        });
+        
+        // Tab switching - Form tab
+        formTabBtn.addEventListener('click', function() {
+            formTabBtn.classList.add('active');
+            historyTabBtn.classList.remove('active');
+            formTab.style.display = 'block';
+            historyTab.style.display = 'none';
+        });
+        
+        // Tab switching - History tab
+        historyTabBtn.addEventListener('click', function() {
+            historyTabBtn.classList.add('active');
+            formTabBtn.classList.remove('active');
+            historyTab.style.display = 'block';
+            formTab.style.display = 'none';
         });
     </script>
 </body>
