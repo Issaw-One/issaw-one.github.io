@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 tags: ['Update : 08/05/2025'],
                 url: 'https://cinepulse.fr/',
                 featured: true,
-                category: 'films'
+                category: 'films',
+                searchUrl: 'https://cinepulse.fr/rechercher?q='
             },
             {
                 id: 'ivdid',
@@ -21,7 +22,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 tags: ['Update : 08/05/2025'],
                 url: 'https://ivdid.com',
                 featured: true,
-                category: 'films'
+                category: 'films',
+                searchUrl: 'https://ivdid.com/index/search?key='
             },
             {
                 id: 'topstream',
@@ -32,7 +34,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 tags: ['Update : 08/05/2025'],
                 url: 'https://top-stream.io',
                 featured: false,
-                category: 'films'
+                category: 'films',
+                searchUrl: 'https://top-stream.io/recherche?s='
             },
             {
                 id: 'vfstream',
@@ -43,7 +46,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 tags: ['Update : 08/05/2025'],
                 url: 'https://films.vfstream.eu/',
                 featured: false,
-                category: 'films'
+                category: 'films',
+                searchUrl: 'https://films.vfstream.eu/?s='
             },
             {
                 id: '1jour1film',
@@ -54,7 +58,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 tags: ['Update : 08/05/2025'],
                 url: 'https://1jour1film11.online/',
                 featured: false,
-                category: 'series'
+                category: 'series',
+                searchUrl: 'https://1jour1film11.online/?s='
             },
             {
                 id: 'cultissime',
@@ -65,7 +70,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 tags: ['Update : 12/05/2025'],
                 url: 'https://cultissime.lol/',
                 featured: false,
-                category: 'series'
+                category: 'series',
+                searchUrl: 'https://cultissime.lol/?s='
             },
             {
                 id: 'senpaistream',
@@ -76,7 +82,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 tags: ['Update : 08/05/2025'],
                 url: 'https://senpai-stream.stream/',
                 featured: true,
-                category: 'series'
+                category: 'series',
+                searchUrl: 'https://senpai-stream.stream/index.php?do=search&subaction=search&story='
             },
             {
                 id: 'wowfilms',
@@ -87,7 +94,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 tags: ['Update : 08/05/2025'],
                 url: 'https://wowfilms1.mom/',
                 featured: true,
-                category: 'series'
+                category: 'series',
+                searchUrl: 'https://wowfilms1.mom/?s='
             },
         ],
         series: [
@@ -100,7 +108,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 tags: ['Update : 08/05/2025'],
                 url: 'https://nightflix.store',
                 featured: true,
-                category: 'series'
+                category: 'series',
+                searchUrl: 'https://nightflix.store/?s='
             },
             {
                 id: 'wiflix',
@@ -111,7 +120,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 tags: ['Update : 08/05/2025'],
                 url: 'https://flemmix.ws/',
                 featured: true,
-                category: 'series'
+                category: 'series',
+                searchUrl: 'https://flemmix.ws/recherche?q='
             },
             {
                 id: 'papadustream',
@@ -122,7 +132,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 tags: ['Update : 08/05/2025'],
                 url: 'https://papadustream.boo',
                 featured: true,
-                category: 'series'
+                category: 'series',
+                searchUrl: 'https://papadustream.boo/recherche?q='
             },
             {
                 id: 'monstream',
@@ -133,7 +144,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 tags: ['Update : 08/05/2025'],
                 url: 'https://vww.monstream.cafe',
                 featured: true,
-                category: 'series'
+                category: 'series',
+                searchUrl: 'https://vww.monstream.cafe/recherche?q='
             },
             {
                 id: 'frenchstream',
@@ -144,7 +156,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 tags: ['Update : 11/05/2025'],
                 url: 'https://fsmirror57.lol/',
                 featured: true,
-                category: 'series'
+                category: 'series',
+                searchUrl: 'https://fsmirror57.lol/?s='
             },
             {
                 id: 'coflix',
@@ -155,7 +168,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 tags: ['Update : 10/05/2025'],
                 url: 'https://coflix.mov/',
                 featured: true,
-                category: 'series'
+                category: 'series',
+                searchUrl: 'https://coflix.mov/?s='
             },
             {
                 id: 'movix',
@@ -166,7 +180,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 tags: ['Update : 10/05/2025'],
                 url: 'https://www.movix.site/',
                 featured: true,
-                category: 'series'
+                category: 'series',
+                searchUrl: 'https://www.movix.site/search?q='
             },
             {
                 id: 'netmirror',
@@ -177,7 +192,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 tags: ['Update : 10/05/2025'],
                 url: 'https://netfree2.cc/home',
                 featured: true,
-                category: 'series'
+                category: 'series',
+                searchUrl: 'https://netfree2.cc/recherche?q='
             },
             {
                 id: 'sadisflix',
@@ -188,7 +204,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 tags: ['Update : 10/05/2025'],
                 url: 'https://sadisflix.hair/',
                 featured: true,
-                category: 'series'
+                category: 'series',
+                searchUrl: 'https://sadisflix.hair/index.php?do=search&story='
             },
             {
                 id: 'yopflix',
@@ -199,7 +216,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 tags: ['Update : 10/05/2025'],
                 url: 'https://yopflix.quest/',
                 featured: true,
-                category: 'series'
+                category: 'series',
+                searchUrl: 'https://yopflix.quest/recherche?q='
             },
             {
                 id: 'hdstream',
@@ -210,7 +228,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 tags: ['Update : 10/05/2025'],
                 url: 'https://www.hdstream.top/',
                 featured: true,
-                category: 'series'
+                category: 'series',
+                searchUrl: 'https://www.hdstream.top/recherche?q='
             },
             {
                 id: 'dulourd',
@@ -221,7 +240,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 tags: ['Update : 10/05/2025'],
                 url: 'https://www.dulourd.day/',
                 featured: true,
-                category: 'series'
+                category: 'series',
+                searchUrl: 'https://www.dulourd.day/?s='
             },
         ],
         animes: [
@@ -234,7 +254,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 tags: ['Update : 08/05/2025'],
                 url: 'https://animekai.to/',
                 featured: true,
-                category: 'animes'
+                category: 'animes',
+                searchUrl: 'https://animekai.to/recherche?q='
             },
             {
                 id: 'animesama',
@@ -245,7 +266,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 tags: ['Update : 08/05/2025'],
                 url: 'https://anime-sama.fr/',
                 featured: false,
-                category: 'animes'
+                category: 'animes',
+                searchUrl: 'https://anime-sama.fr/search.php?s='
             },
             {
                 id: 'frenchanime',
@@ -256,7 +278,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 tags: ['Update : 08/05/2025'],
                 url: 'https://french-anime.com/',
                 featured: false,
-                category: 'animes'
+                category: 'animes',
+                searchUrl: 'https://french-anime.com/recherche?q='
             }
         ],
         drama: [
@@ -269,7 +292,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 tags: ['Update : 08/05/2025'],
                 url: 'https://kisskh.co/',
                 featured: true,
-                category: 'drama'
+                category: 'drama',
+                searchUrl: 'https://kisskh.co/search?q='
             },
             {
                 id: 'voirdrama',
@@ -280,7 +304,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 tags: ['Update : 08/05/2025'],
                 url: 'https://voirdrama.org/',
                 featured: false,
-                category: 'drama'
+                category: 'drama',
+                searchUrl: 'https://voirdrama.org/recherche?q='
             },
             {
                 id: 'dramacool',
@@ -291,7 +316,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 tags: ['Update : 08/05/2025'],
                 url: 'https://ww5.dramacool.com.de/',
                 featured: false,
-                category: 'drama'
+                category: 'drama',
+                searchUrl: 'https://ww5.dramacool.com.de/search?type=movies&keyword='
             },
             {
                 id: 'myasiantv',
@@ -302,7 +328,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 tags: ['Update : 08/05/2025'],
                 url: 'https://www.myasiantv.rest/',
                 featured: false,
-                category: 'drama'
+                category: 'drama',
+                searchUrl: 'https://www.myasiantv.rest/search.html?key='
             },
             {
                 id: 'sojuoppa',
@@ -313,7 +340,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 tags: ['Update : 08/05/2025'],
                 url: 'https://sojuoppa.site/',
                 featured: false,
-                category: 'drama'
+                category: 'drama',
+                searchUrl: 'https://sojuoppa.site/?s='
             },
             {
                 id: 'kissasian',
@@ -324,7 +352,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 tags: ['Update : 08/05/2025'],
                 url: 'https://kissasian.nl/',
                 featured: false,
-                category: 'drama'
+                category: 'drama',
+                searchUrl: 'https://kissasian.nl/Search/?s='
             },
             {
                 id: 'dramacountdown',
@@ -335,7 +364,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 tags: ['Update : 08/05/2025'],
                 url: 'https://dramacountdown.com/',
                 featured: false,
-                category: 'drama'
+                category: 'drama',
+                searchUrl: 'https://dramacountdown.com/?s='
             },
         ]
     };
@@ -362,11 +392,35 @@ document.addEventListener('DOMContentLoaded', function () {
                 <div class="site-tags">
                     ${tagsHTML}
                 </div>
+                <div class="site-search">
+                    <form action="${site.searchUrl}" method="get" target="_blank">
+                        <input type="text" placeholder="Rechercher sur ${site.name}..." class="search-input-site">
+                        <button type="submit" class="search-btn-site"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
             </div>
             <div class="site-footer">
                 <a href="${site.url}" class="visit-btn" target="_blank">Visiter</a>
             </div>
         `;
+
+        // Ajouter un gestionnaire d'événements pour le formulaire de recherche
+        setTimeout(() => {
+            const searchForm = card.querySelector('.site-search form');
+            const searchInput = card.querySelector('.search-input-site');
+            
+            searchForm.addEventListener('submit', function(e) {
+                if (searchInput.value.trim() === '') {
+                    e.preventDefault();
+                    return false;
+                }
+                
+                // Si l'URL de recherche du site contient déjà un paramètre de requête
+                if (!this.action.includes('=')) {
+                    this.action += searchInput.value;
+                }
+            });
+        }, 0);
 
         return card;
     }
@@ -414,7 +468,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Remplir la grille des drama
         const dramaGrid = document.querySelector('.drama-grid');
-        if (animesGrid) {
+        if (dramaGrid) {
             sitesData.drama.forEach(site => {
                 dramaGrid.appendChild(createSiteCard(site));
             });
