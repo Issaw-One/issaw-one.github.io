@@ -394,8 +394,7 @@
         const historyTabBtn = document.getElementById('historyTabBtn');
         const formTab = document.getElementById('formTab');
         const historyTab = document.getElementById('historyTab');
-        const signalementList = document.querySelector('.signalement-list');
-
+        
         // Toggle menu
         hamburger.addEventListener('click', function() {
             navMenu.classList.toggle('menu-open');
@@ -410,68 +409,20 @@
             }
         });
         
-        // Fonction pour ajouter un nouveau signalement à l'historique
-        function addNewSignalement(siteName, description) {
-            // Créer un nouvel élément de signalement
-            const newSignalement = document.createElement('div');
-            newSignalement.className = 'signalement-item';
-            
-            // Obtenir la date d'aujourd'hui
-            const today = new Date();
-            const formattedDate = today.getDate().toString().padStart(2, '0') + '/' + 
-                                (today.getMonth() + 1).toString().padStart(2, '0') + '/' + 
-                                today.getFullYear();
-            
-            // Remplir le contenu du signalement
-            newSignalement.innerHTML = `
-                <div class="signalement-header">
-                    <span class="site-name">${siteName}</span>
-                    <span class="date">${formattedDate}</span>
-                    <span class="status pending">En attente</span>
-                </div>
-                <div class="signalement-desc">
-                    ${description}
-                </div>
-            `;
-            
-            // Ajouter le signalement au début de la liste
-            signalementList.insertBefore(newSignalement, signalementList.firstChild);
-        }
-        
         // Form submission
         deadLinkForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Récupérer les valeurs du formulaire
-            const selectedSite = siteSelect.value;
-            const description = document.getElementById('description').value;
+            // In a real implementation, you would send the form data to a server here
             
-            // Déterminer le nom du site
-            let siteName;
-            if (selectedSite === 'autre') {
-                siteName = document.getElementById('autreSite').value;
-            } else {
-                // Convertir la valeur en nom d'affichage
-                switch(selectedSite) {
-                    case 'cinepulse': siteName = 'Cinepulse'; break;
-                    case 'ivdid': siteName = 'IVDID'; break;
-                    case 'topstream': siteName = 'Topstream'; break;
-                    case 'vfstream': siteName = 'VFStream'; break;
-                    default: siteName = selectedSite;
-                }
-            }
-            
-            // Ajouter le signalement à l'historique
-            addNewSignalement(siteName, description);
-            
-            // Afficher le message de succès
+            // Show success message
             successMessage.style.display = 'block';
             
-            // Réinitialiser le formulaire
+            // Reset form
             deadLinkForm.reset();
             autreSiteGroup.style.display = 'none';
             
-            // Cacher le message de succès après 5 secondes
+            // Hide success message after 5 seconds
             setTimeout(function() {
                 successMessage.style.display = 'none';
             }, 5000);
