@@ -335,49 +335,7 @@
             <h2>Signalements récents</h2>
             
             <div class="signalement-list">
-                <div class="signalement-item">
-                    <div class="signalement-header">
-                        <span class="site-name">Cinepulse</span>
-                        <span class="date">10/05/2025</span>
-                        <span class="status resolved">Résolu</span>
-                    </div>
-                    <div class="signalement-desc">
-                        Le lecteur vidéo ne fonctionne plus sur la page des films d'action.
-                    </div>
-                </div>
-                
-                <div class="signalement-item">
-                    <div class="signalement-header">
-                        <span class="site-name">IVDID</span>
-                        <span class="date">09/05/2025</span>
-                        <span class="status pending">En attente</span>
-                    </div>
-                    <div class="signalement-desc">
-                        La section séries TV affiche une erreur 404.
-                    </div>
-                </div>
-                
-                <div class="signalement-item">
-                    <div class="signalement-header">
-                        <span class="site-name">VFStream</span>
-                        <span class="date">08/05/2025</span>
-                        <span class="status in-progress">En cours</span>
-                    </div>
-                    <div class="signalement-desc">
-                        Impossible d'accéder au site depuis hier soir, message "Service indisponible".
-                    </div>
-                </div>
-                
-                <div class="signalement-item">
-                    <div class="signalement-header">
-                        <span class="site-name">Topstream</span>
-                        <span class="date">05/05/2025</span>
-                        <span class="status resolved">Résolu</span>
-                    </div>
-                    <div class="signalement-desc">
-                        Les sous-titres français ne s'affichent pas sur les films récents.
-                    </div>
-                </div>
+                <!-- Liste des signalements générée dynamiquement -->
             </div>
         </div>
     </main>
@@ -396,6 +354,129 @@
         const historyTab = document.getElementById('historyTab');
         const signalementList = document.querySelector('.signalement-list');
 
+        // Données initiales des signalements
+        const initialSignalements = [
+            {
+                siteName: 'Cinepulse',
+                date: '10/05/2025',
+                status: 'resolved',
+                statusText: 'Résolu',
+                description: 'Le lecteur vidéo ne fonctionne plus sur la page des films d\'action.'
+            },
+            {
+                siteName: 'IVDID',
+                date: '09/05/2025',
+                status: 'pending',
+                statusText: 'En attente',
+                description: 'La section séries TV affiche une erreur 404.'
+            },
+            {
+                siteName: 'VFStream',
+                date: '08/05/2025',
+                status: 'in-progress',
+                statusText: 'En cours',
+                description: 'Impossible d\'accéder au site depuis hier soir, message "Service indisponible".'
+            },
+            {
+                siteName: 'Topstream',
+                date: '05/05/2025',
+                status: 'resolved',
+                statusText: 'Résolu',
+                description: 'Les sous-titres français ne s\'affichent pas sur les films récents.'
+            }
+        ];
+
+        // Fonction pour charger les signalements depuis localStorage ou utiliser les données initiales
+        function loadSignalements() {
+            let signalements;
+            
+            try {
+                // Tenter de charger les signalements depuis localStorage
+                const savedSignalements = localStorage.getItem('signalements');
+                
+                if (savedSignalements) {
+                    signalements = JSON.parse(savedSignalements);
+                } else {
+                    // Si aucun signalement n'est stocké, utiliser les données initiales
+                    signalements = initialSignalements;
+                    // Sauvegarder les données initiales dans localStorage
+                    localStorage.setItem('signalements', JSON.stringify(signalements));
+                }
+            } catch (error) {
+                console.error('Erreur lors du chargement des signalements:', error);
+                signalements = initialSignalements;
+            }
+            
+            return signalements;
+        }
+
+        // Fonction pour sauvegarder les signalements dans localStorage
+        function saveSignalements(signalements) {
+            try {
+                localStorage.setItem('signalements', JSON.stringify(signalements));
+            } catch (error) {
+                console.error('Erreur lors de la sauvegarde des signalements:', error);
+            }
+        }
+
+        // Fonction pour afficher les signalements dans la liste
+        function displaySignalements() {
+            // Vider la liste actuelle
+            signalementList.innerHTML = '';
+            
+            // Charger les signalements
+            const signalements = loadSignalements();
+            
+            // Ajouter chaque signalement à la liste
+            signalements.forEach(item => {
+                const signalementElement = document.createElement('div');
+                signalementElement.className = 'signalement-item';
+                
+                signalementElement.innerHTML = `
+                    <div class="signalement-header">
+                        <span class="site-name">${item.siteName}</span>
+                        <span class="date">${item.date}</span>
+                        <span class="status ${item.status}">${item.statusText}</span>
+                    </div>
+                    <div class="signalement-desc">
+                        ${item.description}
+                    </div>
+                `;
+                
+                signalementList.appendChild(signalementElement);
+            });
+        }
+
+        // Fonction pour ajouter un nouveau signalement
+        function addNewSignalement(siteName, description) {
+            // Obtenir la date d'aujourd'hui
+            const today = new Date();
+            const formattedDate = today.getDate().toString().padStart(2, '0') + '/' + 
+                                (today.getMonth() + 1).toString().padStart(2, '0') + '/' + 
+                                today.getFullYear();
+            
+            // Créer le nouvel objet de signalement
+            const newSignalement = {
+                siteName: siteName,
+                date: formattedDate,
+                status: 'pending',
+                statusText: 'En attente',
+                description: description
+            };
+            
+            // Charger les signalements existants
+            const signalements = loadSignalements();
+            
+            // Ajouter le nouveau signalement au début de la liste
+            signalements.unshift(newSignalement);
+            
+            // Sauvegarder la liste mise à jour
+            saveSignalements(signalements);
+            
+            // Mettre à jour l'affichage
+            displaySignalements();
+        }
+
         // Toggle menu
         hamburger.addEventListener('click', function() {
             navMenu.classList.toggle('menu-open');
@@ -409,34 +490,6 @@
                 autreSiteGroup.style.display = 'none';
             }
         });
-        
-        // Fonction pour ajouter un nouveau signalement à l'historique
-        function addNewSignalement(siteName, description) {
-            // Créer un nouvel élément de signalement
-            const newSignalement = document.createElement('div');
-            newSignalement.className = 'signalement-item';
-            
-            // Obtenir la date d'aujourd'hui
-            const today = new Date();
-            const formattedDate = today.getDate().toString().padStart(2, '0') + '/' + 
-                                (today.getMonth() + 1).toString().padStart(2, '0') + '/' + 
-                                today.getFullYear();
-            
-            // Remplir le contenu du signalement
-            newSignalement.innerHTML = `
-                <div class="signalement-header">
-                    <span class="site-name">${siteName}</span>
-                    <span class="date">${formattedDate}</span>
-                    <span class="status pending">En attente</span>
-                </div>
-                <div class="signalement-desc">
-                    ${description}
-                </div>
-            `;
-            
-            // Ajouter le signalement au début de la liste
-            signalementList.insertBefore(newSignalement, signalementList.firstChild);
-        }
         
         // Form submission
         deadLinkForm.addEventListener('submit', function(e) {
@@ -491,6 +544,11 @@
             formTabBtn.classList.remove('active');
             historyTab.style.display = 'block';
             formTab.style.display = 'none';
+        });
+
+        // Initialiser l'affichage des signalements au chargement de la page
+        document.addEventListener('DOMContentLoaded', function() {
+            displaySignalements();
         });
     </script>
 </body>
