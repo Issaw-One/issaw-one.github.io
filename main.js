@@ -257,6 +257,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 url: 'https://french-anime.com/',
                 featured: false,
                 category: 'animes'
+            },
+            {
+                id: 'franimr',
+                name: 'FRAnime',
+                logo: 'logoSites/FRAnime.webp',
+                headerBg: 'linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%)',
+                description: 'franime.fr',
+                tags: ['Update : 13/05/2025'],
+                url: 'https://franime.fr/',
+                featured: false,
+                category: 'animes'
             }
         ],
         drama: [
