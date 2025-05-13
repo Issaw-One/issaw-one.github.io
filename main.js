@@ -312,6 +312,85 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'myasiantv.rest',
                 tags: ['Update : 13/05/2025'],
                 url: 'https://www.myasiantv.rest/',
+                featured: true,
+                category: 'drama'
+            },
+            {
+                id: 'sojuoppa',
+                name: 'Sojuoppa',
+                logo: 'logoSites/sojuoppa.png',
+                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                description: 'sojuoppa.site',
+                tags: ['Update : 13/05/2025'],
+                url: 'https://sojuoppa.site/',
+                featured: true,
+                category: 'drama'
+            },
+            {
+                id: 'kissasian',
+                name: 'KissAsian',
+                logo: 'logoSites/kissasian.webp',
+                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                description: 'kissasian.nl',
+                tags: ['Update : 13/05/2025'],
+                url: 'https://kissasian.nl/',
+                featured: true,
+                category: 'drama'
+            },
+            {
+                id: 'dramacountdown',
+                name: 'DramaCountDown',
+                logo: 'logoSites/dramacountdown.png',
+                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                description: 'dramacountdown.com',
+                tags: ['Update : 13/05/2025'],
+                url: 'https://dramacountdown.com/',
+                featured: true,
+                category: 'drama'
+            },
+        ]
+        torrent: [
+            {
+                id: 'thepiratebay',
+                name: 'The Pirate Bay',
+                logo: 'logoSites/tpb.webp',
+                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                description: 'thepiratebay10.info',
+                tags: ['Update : 14/05/2025'],
+                url: 'https://thepiratebay10.info/',
+                featured: true,
+                category: 'torrent'
+            },
+            {
+                id: 'voirdrama',
+                name: 'VoirDrama',
+                logo: 'logoSites/VoirDrama.webp',
+                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                description: 'voirdrama.org',
+                tags: ['Update : 13/05/2025'],
+                url: 'https://voirdrama.org/',
+                featured: false,
+                category: 'drama'
+            },
+            {
+                id: 'dramacool',
+                name: 'DramaCool',
+                logo: 'logoSites/dramacool.png',
+                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                description: 'dramacool.com.de',
+                tags: ['Update : 13/05/2025'],
+                url: 'https://ww5.dramacool.com.de/',
+                featured: false,
+                category: 'drama'
+            },
+            {
+                id: 'myasiantv',
+                name: 'MyAsianTv',
+                logo: 'logoSites/myasiantv.png',
+                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                description: 'myasiantv.rest',
+                tags: ['Update : 13/05/2025'],
+                url: 'https://www.myasiantv.rest/',
                 featured: false,
                 category: 'drama'
             },
