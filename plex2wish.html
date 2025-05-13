@@ -396,61 +396,6 @@
             height: 100%;
             background-color: var(--watched-color);
         }
-
-        .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9999;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.75);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-.modal-content {
-    position: relative;
-    width: 90%;
-    max-width: 800px;
-    background: #000;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.modal-content iframe {
-    width: 100%;
-    height: 450px;
-    border: none;
-}
-
-.modal-content .close {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: var(--accent-color);
-    color: white;
-    font-size: 32px;
-    font-weight: bold;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 48px;
-    cursor: pointer;
-    z-index: 1000;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
-    transition: transform 0.2s, background 0.3s ease;
-}
-
-.modal-content .close:hover {
-    background: var(--secondary-accent);
-    transform: scale(1.1);
-}
-
-
     </style>
 </head>
 <body>
@@ -493,9 +438,6 @@
     <script>
         // Sample movie data
         const movies = [
-            { id: 11, name: "Warfare", size: "309.762 Mo", seeders: 3265, leechers: 397, url: "https://uqload.net/embed-d0uxwbusu1zh.html" },
-            { id: 10, name: "Blanche Neige", size: "532.649 Mo", seeders: 3265, leechers: 397, url: "https://uqload.net/embed-gsxr4eli2z7c.html" },
-            { id: 9, name: "Minecraft, Le Film", size: "546.149 Mo", seeders: 3265, leechers: 397, url: "https://uqload.net/embed-o4pdlzinmzvz.html" },
             { id: 8, name: "Ici tout commence - Episode 1176", size: "116.886 Mo", seeders: 3265, leechers: 397, url: "https://uqload.net/embed-l7y8ao9twia9.html" },
             { id: 7, name: "Ici tout commence - Episode 1175", size: "121.447 Mo", seeders: 3265, leechers: 397, url: "https://uqload.net/embed-13cx8leayy78.html" },
             { id: 6, name: "Ici tout commence - Episode 1174", size: "114.224 Mo", seeders: 3265, leechers: 397, url: "https://uqload.net/embed-0a2rt3gwjfh2.html" },
@@ -571,8 +513,7 @@
                     <td class="index-col">${movie.id}</td>
                     <td>
                         <div class="title-container">
-                            <a href="#" class="movie-link" onclick="openVideoModal('${movie.url}')">${movie.name}</a>
-
+                            <a href="${movie.url || '#'}" class="movie-link" target="_blank" data-url="${movie.url || ''}">${movie.name}</a>
                             <span class="watched-icon">✓</span>
                         </div>
                     </td>
@@ -669,50 +610,7 @@
             renderMovies();
             initTags();
             initSearch();
-            // Initialiser le bouton de fermeture
-document.getElementById("closeModal").addEventListener("click", () => {
-    document.getElementById("videoModal").style.display = "none";
-    document.getElementById("videoFrame").src = "";
-});
-
-// Fermer si clic en dehors du lecteur
-document.getElementById("videoModal").addEventListener("click", (e) => {
-    if (e.target.id === "videoModal") {
-        document.getElementById("videoModal").style.display = "none";
-        document.getElementById("videoFrame").src = "";
-    }
-});
-
         });
-
-        function openVideoModal(url) {
-    const modal = document.getElementById("videoModal");
-    const iframe = document.getElementById("videoFrame");
-    iframe.src = url;
-    modal.style.display = "flex";
-}
-
-document.querySelector('.close').addEventListener('click', () => {
-    document.getElementById("videoModal").style.display = "none";
-    document.getElementById("videoFrame").src = "";
-});
-
-window.addEventListener('click', (e) => {
-    const modal = document.getElementById("videoModal");
-    if (e.target === modal) {
-        modal.style.display = "none";
-        document.getElementById("videoFrame").src = "";
-    }
-});
-
     </script>
-    <div id="videoModal" class="modal" style="display:none;">
-    <div class="modal-content">
-        <span id="closeModal" class="close">&times;</span>
-        <iframe id="videoFrame" src="" frameborder="0" allowfullscreen></iframe>
-    </div>
-</div>
-
-
 </body>
 </html>
