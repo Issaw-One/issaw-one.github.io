@@ -476,7 +476,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 ...sitesData.films.filter(site => site.featured),
                 ...sitesData.series.filter(site => site.featured),
                 ...sitesData.animes.filter(site => site.featured),
-                ...sitesData.drama.filter(site => site.featured)
+                ...sitesData.drama.filter(site => site.featured),
+                ...sitesData.torrent.filter(site => site.featured)
             ];
 
             featuredSites.forEach(site => {
@@ -513,6 +514,14 @@ document.addEventListener('DOMContentLoaded', function () {
         if (animesGrid) {
             sitesData.drama.forEach(site => {
                 dramaGrid.appendChild(createSiteCard(site));
+            });
+        }
+
+        // Remplir la grille des torrent
+        const torrentGrid = document.querySelector('.torrent-grid');
+        if (torrentGrid) {
+            sitesData.torrent.forEach(site => {
+                torrentGrid.appendChild(createSiteCard(site));
             });
         }
     }
