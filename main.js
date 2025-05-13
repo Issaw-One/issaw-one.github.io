@@ -377,7 +377,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 name: 'OxTorrent',
                 logo: 'logoSites/oxtorrent.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
-                description: 'oxtorrent5.com/home<br><s>oxtorrent3.com</s>',
+                description: 'oxtorrent5.com<br><s>oxtorrent3.com</s>',
                 tags: ['Update : 14/05/2025'],
                 url: 'https://www.oxtorrent5.com/home',
                 featured: true,
