@@ -16,6 +16,7 @@
             --secondary-accent: #f3a303;
             --gradient-start: #e50914;
             --gradient-end: #f3a303;
+            --watched-color: #4CAF50;
         }
 
         * {
@@ -360,6 +361,41 @@
             font-weight: 700;
             src: url(https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_dJE3gnD_g.woff2) format('woff2');
         }
+
+        /* Styles pour l'icône "vu" */
+        .watched-icon {
+            margin-left: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--watched-color);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .watched .watched-icon {
+            opacity: 1;
+        }
+        
+        .title-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        /* Style pour les lignes avec des épisodes vus */
+        tr.watched {
+            position: relative;
+        }
+        
+        tr.watched::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background-color: var(--watched-color);
+        }
     </style>
 </head>
 <body>
@@ -399,47 +435,95 @@
         </table>
     </main>
 
-
-
     <script>
         // Sample movie data
         const movies = [
-            { id: 7, name: "Ici tout commence - Episode 1175", size: "121.447 Mo", seeders: 3265, leechers: 397, url: "https://uqload.net/embed-13cx8leayy78.html",  },
-            { id: 6, name: "Ici tout commence - Episode 1174", size: "114.224 Mo", seeders: 3265, leechers: 397, url: "https://uqload.net/embed-0a2rt3gwjfh2.html",  },
+            { id: 7, name: "Ici tout commence - Episode 1175", size: "121.447 Mo", seeders: 3265, leechers: 397, url: "https://uqload.net/embed-13cx8leayy78.html" },
+            { id: 6, name: "Ici tout commence - Episode 1174", size: "114.224 Mo", seeders: 3265, leechers: 397, url: "https://uqload.net/embed-0a2rt3gwjfh2.html" },
             { id: 5, name: "Ici tout commence - Episode 1173", size: "110.399 Mo", seeders: 3265, leechers: 397, url: "https://uqload.net/embed-i2k66gnvpv4m.html" },
             { id: 4, name: "Plus belle la vie, encore plus belle - Episode 94", size: "61.162 Mo", seeders: 3265, leechers: 397, url: "https://uqload.net/embed-qowlqnjg63m7.html" },
             { id: 3, name: "Plus belle la vie, encore plus belle - Episode 93", size: "68.74 Mo", seeders: 3265, leechers: 397, url: "https://uqload.net/embed-ne447jclrj4i.html" },
-            { id: 2, name: "Plus belle la vie, encore plus belle - Episode 92", size: "69.11 Mo", seeders: 4341, leechers: 205 , url: "https://uqload.net/embed-kqb28l8f2jdv.html" },
-            { id: 1, name: "Plus belle la vie, encore plus belle - Episode 91", size: "73.179 Mo", seeders: 4341, leechers: 205 , url: "https://uqload.net/embed-6fart5y07838.html" },
+            { id: 2, name: "Plus belle la vie, encore plus belle - Episode 92", size: "69.11 Mo", seeders: 4341, leechers: 205, url: "https://uqload.net/embed-kqb28l8f2jdv.html" },
+            { id: 1, name: "Plus belle la vie, encore plus belle - Episode 91", size: "73.179 Mo", seeders: 4341, leechers: 205, url: "https://uqload.net/embed-6fart5y07838.html" },
         ];
+        
+        // Variable en mémoire pour stocker les épisodes vus pendant la session
+        // Utilisé à la place de localStorage pour éviter les problèmes de sandbox
+        const watchedEpisodes = new Set();
+        
+        // Function to get watched episodes
+        function getWatchedEpisodes() {
+            return Array.from(watchedEpisodes);
+        }
+        
+        // Function to save watched episode
+        function saveWatchedEpisode(url) {
+            if (url) {
+                watchedEpisodes.add(url);
+            }
+        }
+        
+        // Function to check if an episode is watched
+        function isWatched(url) {
+            return watchedEpisodes.has(url);
+        }
+        
+        // Tentative d'utiliser localStorage si disponible, sans causer d'erreur si non disponible
+        try {
+            // Tenter de charger les données précédentes si localStorage est disponible
+            const WATCHED_STORAGE_KEY = 'plex2wish_watched_episodes';
+            const savedData = localStorage.getItem(WATCHED_STORAGE_KEY);
+            if (savedData) {
+                JSON.parse(savedData).forEach(url => watchedEpisodes.add(url));
+            }
+            
+            // Remplacer saveWatchedEpisode pour utiliser localStorage si disponible
+            const originalSave = saveWatchedEpisode;
+            saveWatchedEpisode = function(url) {
+                originalSave(url);
+                localStorage.setItem(WATCHED_STORAGE_KEY, JSON.stringify(Array.from(watchedEpisodes)));
+            };
+        } catch (e) {
+            // Ignorer silencieusement les erreurs de localStorage
+            console.log("localStorage n'est pas disponible, utilisation du stockage en mémoire uniquement");
+        }
         
         // Function to render movies with optional filter
         function renderMovies(filterText = '') {
             const movieListElement = document.getElementById('movieList');
-movieListElement.innerHTML = ''; // Pour vider l'ancien contenu
+            movieListElement.innerHTML = ''; // Pour vider l'ancien contenu
 
             const filteredMovies = filterText 
-    ? movies
-        .filter(movie => movie.name.toLowerCase().includes(filterText.toLowerCase()))
-        .sort((a, b) => a.name.localeCompare(b.name))
-    : [...movies].sort((a, b) => b.id - a.id); // tri par ID décroissant sur l'accueil
-
+                ? movies
+                    .filter(movie => movie.name.toLowerCase().includes(filterText.toLowerCase()))
+                    .sort((a, b) => a.name.localeCompare(b.name))
+                : [...movies].sort((a, b) => b.id - a.id); // tri par ID décroissant sur l'accueil
 
             filteredMovies.forEach(movie => {
                 const row = document.createElement('tr');
                 
+                // Check if this movie has been watched
+                const watched = movie.url && isWatched(movie.url);
+                if (watched) {
+                    row.classList.add('watched');
+                }
+                
                 row.innerHTML = `
-    <td class="index-col">${movie.id}</td>
-    <td><a href="${movie.url || '#'}" class="movie-link" target="_blank">${movie.name}</a></td>
-    <td class="size-col">${movie.size}</td>
-    <td class="action-col">
-        <div class="copy-link" onclick="copyToClipboard('${movie.url || ''}')">Copy link</div>
-    </td>
-    <td class="action-col">
-        <div class="dl-link"><a href="${movie.url || '#'}" target="_blank">link</a></div>
-    </td>
-`;
-
+                    <td class="index-col">${movie.id}</td>
+                    <td>
+                        <div class="title-container">
+                            <a href="${movie.url || '#'}" class="movie-link" target="_blank" data-url="${movie.url || ''}">${movie.name}</a>
+                            <span class="watched-icon">✓</span>
+                        </div>
+                    </td>
+                    <td class="size-col">${movie.size}</td>
+                    <td class="action-col">
+                        <div class="copy-link" onclick="copyToClipboard('${movie.url || ''}')">Copy link</div>
+                    </td>
+                    <td class="action-col">
+                        <div class="dl-link"><a href="${movie.url || '#'}" target="_blank" data-url="${movie.url || ''}">link</a></div>
+                    </td>
+                `;
                 
                 movieListElement.appendChild(row);
             });
@@ -448,6 +532,19 @@ movieListElement.innerHTML = ''; // Pour vider l'ancien contenu
             document.querySelectorAll('.copy-link').forEach((button, index) => {
                 button.addEventListener('click', () => {
                     alert(`Link copied for: ${filteredMovies[index].name}`);
+                });
+            });
+            
+            // Add event listeners for tracking clicked links
+            document.querySelectorAll('a[data-url]').forEach(link => {
+                link.addEventListener('click', function() {
+                    const url = this.getAttribute('data-url');
+                    if (url) {
+                        saveWatchedEpisode(url);
+                        // Add visual indication immediately
+                        const row = this.closest('tr');
+                        row.classList.add('watched');
+                    }
                 });
             });
             
@@ -499,19 +596,20 @@ movieListElement.innerHTML = ''; // Pour vider l'ancien contenu
             });
         }
 
+        // Function to copy link to clipboard
+        function copyToClipboard(text) {
+            if (!text) return alert("Lien non disponible");
+            navigator.clipboard.writeText(text)
+                .then(() => alert("Lien copié dans le presse-papiers !"))
+                .catch(() => alert("Échec de la copie"));
+        }
+
         // Initialize when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
             renderMovies();
             initTags();
             initSearch();
         });
-
-        function copyToClipboard(text) {
-        if (!text) return alert("Lien non disponible");
-        navigator.clipboard.writeText(text)
-            .then(() => alert("Lien copié dans le presse-papiers !"))
-            .catch(() => alert("Échec de la copie"));
-    }
     </script>
 </body>
 </html>
