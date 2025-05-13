@@ -427,6 +427,39 @@ document.addEventListener('DOMContentLoaded', function () {
                 featured: true,
                 category: 'torrent'
             },
+            {
+                id: 'limetorrents',
+                name: 'LimeTorrents',
+                logo: 'logoSites/limetorrents.webp',
+                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                description: 'limetorrents.lol',
+                tags: ['Update : 14/05/2025'],
+                url: 'https://www.limetorrents.lol/',
+                featured: true,
+                category: 'torrent'
+            },
+            {
+                id: 'bingebrowser',
+                name: 'Binge Browser',
+                logo: 'logoSites/binge.ico',
+                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                description: 'binge-browser.vercel.app',
+                tags: ['Update : 14/05/2025'],
+                url: 'https://binge-browser.vercel.app/',
+                featured: true,
+                category: 'torrent'
+            },
+            {
+                id: 'nyaa',
+                name: 'Nyaa',
+                logo: 'logoSites/nyaa.png',
+                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                description: 'nyaa.land',
+                tags: ['Update : 14/05/2025'],
+                url: 'https://nyaa.land/',
+                featured: true,
+                category: 'torrent'
+            },
         ]
     };
 
