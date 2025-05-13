@@ -348,7 +348,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 featured: true,
                 category: 'drama'
             },
-        ]
+        ],
         torrent: [
             {
                 id: 'thepiratebay',
@@ -370,7 +370,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 tags: ['Update : 13/05/2025'],
                 url: 'https://voirdrama.org/',
                 featured: false,
-                category: 'drama'
+                category: 'torrent'
             },
             {
                 id: 'dramacool',
@@ -381,7 +381,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 tags: ['Update : 13/05/2025'],
                 url: 'https://ww5.dramacool.com.de/',
                 featured: false,
-                category: 'drama'
+                category: 'torrent'
             },
             {
                 id: 'myasiantv',
@@ -392,7 +392,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 tags: ['Update : 13/05/2025'],
                 url: 'https://www.myasiantv.rest/',
                 featured: false,
-                category: 'drama'
+                category: 'torrent'
             },
             {
                 id: 'sojuoppa',
@@ -403,7 +403,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 tags: ['Update : 13/05/2025'],
                 url: 'https://sojuoppa.site/',
                 featured: false,
-                category: 'drama'
+                category: 'torrent'
             },
             {
                 id: 'kissasian',
@@ -414,7 +414,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 tags: ['Update : 13/05/2025'],
                 url: 'https://kissasian.nl/',
                 featured: false,
-                category: 'drama'
+                category: 'torrent'
             },
             {
                 id: 'dramacountdown',
@@ -425,7 +425,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 tags: ['Update : 13/05/2025'],
                 url: 'https://dramacountdown.com/',
                 featured: false,
-                category: 'drama'
+                category: 'torrent'
             },
         ]
     };
