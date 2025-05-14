@@ -180,6 +180,7 @@
             transition: all 0.2s;
             display: block;
             font-weight: 500;
+            cursor: pointer;
         }
 
         .movie-link:hover {
@@ -396,6 +397,78 @@
             height: 100%;
             background-color: var(--watched-color);
         }
+
+        /* Style pour le lecteur vidéo */
+        .video-player-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .video-player-container.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .video-player-wrapper {
+            width: 100%;
+            max-width: 900px;
+            position: relative;
+            background-color: #000;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .video-player-iframe {
+            width: 100%;
+            aspect-ratio: 16/9;
+            border: none;
+        }
+
+        .video-player-title {
+            color: white;
+            font-size: 20px;
+            margin-bottom: 15px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .video-player-controls {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .video-player-close {
+            background: linear-gradient(to right, var(--accent-color), var(--secondary-accent));
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-top: 15px;
+        }
+
+        .video-player-close:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(229, 9, 20, 0.4);
+        }
     </style>
 </head>
 <body>
@@ -434,6 +507,15 @@
             </tbody>
         </table>
     </main>
+
+    <!-- Lecteur vidéo en plein écran -->
+    <div class="video-player-container" id="videoPlayerContainer">
+        <div class="video-player-title" id="videoPlayerTitle">Titre de l'épisode</div>
+        <div class="video-player-wrapper">
+            <iframe id="videoPlayerIframe" class="video-player-iframe" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="video-player-close" id="videoPlayerClose">Fermer</div>
+    </div>
 
     <script>
         // Sample movie data
@@ -489,6 +571,50 @@
             console.log("localStorage n'est pas disponible, utilisation du stockage en mémoire uniquement");
         }
         
+        
+
+        // Function pour ouvrir le lecteur vidéo
+        function openVideoPlayer(url, title) {
+            const iframe = document.getElementById('videoPlayerIframe');
+            const titleElement = document.getElementById('videoPlayerTitle');
+            const container = document.getElementById('videoPlayerContainer');
+            
+            iframe.src = url;
+            titleElement.textContent = title;
+            container.classList.add('active');
+            
+            // Marquer l'épisode comme vu
+            saveWatchedEpisode(url);
+            
+            // Mettre à jour visuellement la liste
+            const rows = document.querySelectorAll('#movieList tr');
+            rows.forEach(row => {
+                const link = row.querySelector('a[data-url="' + url + '"]');
+                if (link) {
+                    row.classList.add('watched');
+                }
+            });
+            
+            // Empêcher le défilement de la page
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Function pour fermer le lecteur vidéo
+        function closeVideoPlayer() {
+            const iframe = document.getElementById('videoPlayerIframe');
+            const container = document.getElementById('videoPlayerContainer');
+            
+            container.classList.remove('active');
+            
+            // Attendre que l'animation de fermeture soit terminée avant de vider l'iframe
+            setTimeout(() => {
+                iframe.src = '';
+            }, 300);
+            
+            // Réactiver le défilement de la page
+            document.body.style.overflow = '';
+        }
+        
         // Function to render movies with optional filter
         function renderMovies(filterText = '') {
             const movieListElement = document.getElementById('movieList');
@@ -513,7 +639,7 @@
                     <td class="index-col">${movie.id}</td>
                     <td>
                         <div class="title-container">
-                            <a href="${movie.url || '#'}" class="movie-link" target="_blank" data-url="${movie.url || ''}">${movie.name}</a>
+                            <a class="movie-link" data-url="${movie.url || ''}">${movie.name}</a>
                             <span class="watched-icon">✓</span>
                         </div>
                     </td>
@@ -536,8 +662,19 @@
                 });
             });
             
-            // Add event listeners for tracking clicked links
-            document.querySelectorAll('a[data-url]').forEach(link => {
+            // Add event listeners for movie links to open the video player
+            document.querySelectorAll('.movie-link').forEach((link, index) => {
+                link.addEventListener('click', function() {
+                    const url = this.getAttribute('data-url');
+                    const title = filteredMovies[index].name;
+                    if (url) {
+                        openVideoPlayer(url, title);
+                    }
+                });
+            });
+            
+            // Add event listeners for external links (they still mark as watched)
+            document.querySelectorAll('.dl-link a').forEach(link => {
                 link.addEventListener('click', function() {
                     const url = this.getAttribute('data-url');
                     if (url) {
@@ -610,6 +747,9 @@
             renderMovies();
             initTags();
             initSearch();
+            
+            // Initialiser le bouton Fermer du lecteur vidéo
+            document.getElementById('videoPlayerClose').addEventListener('click', closeVideoPlayer);
         });
     </script>
 </body>

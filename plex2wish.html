@@ -571,6 +571,20 @@
             console.log("localStorage n'est pas disponible, utilisation du stockage en mémoire uniquement");
         }
         
+        const WATCHED_PROGRESS_KEY = 'plex2wish_progress';
+
+function saveProgress(url, time) {
+    const data = JSON.parse(localStorage.getItem(WATCHED_PROGRESS_KEY) || '{}');
+    data[url] = time;
+    localStorage.setItem(WATCHED_PROGRESS_KEY, JSON.stringify(data));
+}
+
+function getProgress(url) {
+    const data = JSON.parse(localStorage.getItem(WATCHED_PROGRESS_KEY) || '{}');
+    return data[url] || 0;
+}
+
+
         // Function pour ouvrir le lecteur vidéo
         function openVideoPlayer(url, title) {
             const iframe = document.getElementById('videoPlayerIframe');
@@ -593,6 +607,8 @@
                 }
             });
             
+            
+
             // Empêcher le défilement de la page
             document.body.style.overflow = 'hidden';
         }
