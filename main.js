@@ -96,9 +96,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 name: 'NightFlix',
                 logo: 'logoSites/NightFlix.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
-                description: 'nightflix.store',
-                tags: ['Update : 13/05/2025'],
-                url: 'https://nightflix.store',
+                description: 'nightflix.run<br><s>nightflix.store</s>',
+                tags: ['Update : 15/05/2025'],
+                url: 'https://nightflix.run/',
                 featured: true,
                 category: 'series'
             },
