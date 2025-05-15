@@ -72,9 +72,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 name: 'Senpai-Stream',
                 logo: 'logoSites/senpai-stream.svg',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
-                description: 'senpai-stream.stream',
-                tags: ['Update : 13/05/2025'],
-                url: 'https://senpai-stream.stream/',
+                description: 'senpai-stream.art<br><s>senpai-stream.stream</s>',
+                tags: ['Update : 16/05/2025'],
+                url: 'https://senpai-stream.art/',
                 featured: true,
                 category: 'series'
             },
