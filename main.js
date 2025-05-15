@@ -83,9 +83,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 name: 'WOW-FILMS',
                 logo: 'logoSites/WowFilms.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
-                description: 'wowfilms1.mom',
-                tags: ['Update : 13/05/2025'],
-                url: 'https://wowfilms1.mom/',
+                description: 'wowfilms11.mom<br><s>wowfilms1.mom</s>',
+                tags: ['Update : 15/05/2025'],
+                url: 'https://wowfilms11.mom/',
                 featured: true,
                 category: 'series'
             },
