@@ -1,6 +1,6 @@
         // Sample movie data
         const movies = [
-            { id: 23, name: "Ici tout commence - Episode 1177", size: "219.8 Mo", seeders: 3265, leechers: 397, url: "https://uqload.net/embed-akmsieeo14w1.html" },
+            { id: 23, name: "Ici tout commence - Episode 1177", size: "297.83 Mo", seeders: 3265, leechers: 397, url: "https://uqload.net/embed-akmsieeo14w1.html" },
             { id: 22, name: "Sword Art Online - Sasison 3 - Episode 3", size: "219.8 Mo", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-x2v9qlld4hjd.html" },
             { id: 21, name: "Sword Art Online - Sasison 3 - Episode 2", size: "219.8 Mo", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-10tpukl5o2nf.html" },
             { id: 20, name: "Sword Art Online - Sasison 3 - Episode 1", size: "219.8 Mo", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-47vym5ertd4u.html" },
