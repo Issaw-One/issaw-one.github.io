@@ -496,7 +496,6 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>
         `;
 
-
         return card;
     }
 
