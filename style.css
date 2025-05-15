@@ -542,3 +542,40 @@ footer {
 .site-search-form button:hover {
     background: var(--secondary-color);
 }
+
+
+
+/* Affichage du menu mobile quand il est ouvert */
+nav.mobile-open ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--button-radius);
+    padding: 10px 0;
+    z-index: 200;
+    width: 200px;
+    box-shadow: var(--shadow);
+}
+
+nav.mobile-open ul li {
+    margin: 10px 0;
+    text-align: center;
+}
+
+/* Bouton du menu mobile */
+.mobile-menu-button {
+    display: none;
+    font-size: 24px;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-button {
+        display: block;
+    }
+}
