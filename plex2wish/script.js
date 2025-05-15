@@ -1,5 +1,8 @@
         // Sample movie data
         const movies = [
+            { id: 26, name: "Plus belle la vie, encore plus belle - Episode 96", size: "297.83 Mo", seeders: 3265, leechers: 397, url: "vidmoly.to/embed-f01yt31h74ah.html" },
+            { id: 25, name: "Plus belle la vie, encore plus belle - Episode 95", size: "297.83 Mo", seeders: 3265, leechers: 397, url: "vidmoly.to/embed-i02544pnrrpy.html" },
+            { id: 24, name: "Ici tout commence - Episode 1178", size: "297.83 Mo", seeders: 3265, leechers: 397, url: "vidmoly.to/embed-nhlbpvi9upmh.html" },
             { id: 23, name: "Ici tout commence - Episode 1177", size: "297.83 Mo", seeders: 3265, leechers: 397, url: "https://uqload.net/embed-akmsieeo14w1.html" },
             { id: 22, name: "Sword Art Online - Sasison 3 - Episode 3", size: "219.8 Mo", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-x2v9qlld4hjd.html" },
             { id: 21, name: "Sword Art Online - Sasison 3 - Episode 2", size: "219.8 Mo", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-10tpukl5o2nf.html" },
