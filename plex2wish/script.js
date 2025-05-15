@@ -126,76 +126,88 @@ function getProgress(url) {
         
         // Function to render movies with optional filter
         function renderMovies(filterText = '') {
-    const movieListElement = document.getElementById('movieList');
-    movieListElement.innerHTML = ''; // Clear previous content
+            const movieListElement = document.getElementById('movieList');
+            movieListElement.innerHTML = ''; // Pour vider l'ancien contenu
 
-    const filteredMovies = filterText 
-        ? movies
-            .filter(movie => movie.name.toLowerCase().includes(filterText.toLowerCase()))
-            .sort((a, b) => a.name.localeCompare(b.name))
-        : [...movies].sort((a, b) => b.id - a.id);
+            const filteredMovies = filterText 
+                ? movies
+                    .filter(movie => movie.name.toLowerCase().includes(filterText.toLowerCase()))
+                    .sort((a, b) => a.name.localeCompare(b.name))
+                : [...movies].sort((a, b) => b.id - a.id); // tri par ID décroissant sur l'accueil
 
-    filteredMovies.forEach(movie => {
-        const row = document.createElement('tr');
+            filteredMovies.forEach(movie => {
+                const row = document.createElement('tr');
+                
+                // Check if this movie has been watched
+                const watched = movie.url && isWatched(movie.url);
+                if (watched) {
+                    row.classList.add('watched');
+                }
+                
+                row.innerHTML = `
+                    <td class="index-col">${movie.id}</td>
+                    <td>
+                        <div class="title-container">
+                            <a class="movie-link" data-url="${movie.url || ''}">${movie.name}</a>
+                            <span class="watched-icon">✓</span>
+                        </div>
+                    </td>
+                    <td class="size-col">${movie.size}</td>
+                    <td class="action-col">
+                        <div class="copy-link" onclick="copyToClipboard('${movie.url || ''}')">Copy link</div>
+                    </td>
+                    <td class="action-col">
+                        <div class="dl-link"><a href="${movie.url || '#'}" target="_blank" data-url="${movie.url || ''}">link</a></div>
+                    </td>
+                `;
+                
+                movieListElement.appendChild(row);
+            });
 
-        const watched = movie.url && isWatched(movie.url);
-        if (watched) {
-            row.classList.add('watched');
+            // Add event listeners for copy links
+            document.querySelectorAll('.copy-link').forEach((button, index) => {
+                button.addEventListener('click', () => {
+                    alert(`Link copied for: ${filteredMovies[index].name}`);
+                });
+            });
+            
+            // Add event listeners for movie links to open the video player
+            document.querySelectorAll('.movie-link').forEach((link, index) => {
+                link.addEventListener('click', function() {
+                    const url = this.getAttribute('data-url');
+                    const title = filteredMovies[index].name;
+                    if (url) {
+                        openVideoPlayer(url, title);
+                    }
+                });
+            });
+            
+            // Add event listeners for external links (they still mark as watched)
+            document.querySelectorAll('.dl-link a').forEach(link => {
+                link.addEventListener('click', function() {
+                    const url = this.getAttribute('data-url');
+                    if (url) {
+                        saveWatchedEpisode(url);
+                        // Add visual indication immediately
+                        const row = this.closest('tr');
+                        row.classList.add('watched');
+                    }
+                });
+            });
+            
+            // Show message if no results found
+            if (filteredMovies.length === 0) {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td colspan="5" style="text-align: center; padding: 20px;">
+                        No results found matching "${filterText}"
+                    </td>
+                `;
+                movieListElement.appendChild(row);
+            }
         }
 
-        row.innerHTML = `
-            <td class="index-col" data-label="#">${movie.id}</td>
-            <td data-label="Nom">
-                <div class="title-container">
-                    <a class="movie-link" data-url="${movie.url || ''}">${movie.name}</a>
-                    <span class="watched-icon">✓</span>
-                </div>
-            </td>
-            <td class="size-col" data-label="Taille">${movie.size}</td>
-            <td class="action-col" data-label="Lien">
-                <div class="copy-link" onclick="copyToClipboard('${movie.url || ''}')">Copy link</div>
-            </td>
-            <td class="action-col" data-label="Lien Cliquable">
-                <div class="dl-link"><a href="${movie.url || '#'}" target="_blank" data-url="${movie.url || ''}">link</a></div>
-            </td>
-        `;
-
-        movieListElement.appendChild(row);
-    });
-
-    // Event listeners...
-    document.querySelectorAll('.copy-link').forEach((button, index) => {
-        button.addEventListener('click', () => {
-            alert(`Link copied for: ${filteredMovies[index].name}`);
-        });
-    });
-
-    document.querySelectorAll('.movie-link').forEach((link, index) => {
-        link.addEventListener('click', function () {
-            const url = this.getAttribute('data-url');
-            const title = filteredMovies[index].name;
-            if (url) openVideoPlayer(url, title);
-        });
-    });
-
-    document.querySelectorAll('.dl-link a').forEach(link => {
-        link.addEventListener('click', function () {
-            const url = this.getAttribute('data-url');
-            if (url) {
-                saveWatchedEpisode(url);
-                this.closest('tr').classList.add('watched');
-            }
-        });
-    });
-
-    if (filteredMovies.length === 0) {
-        const row = document.createElement('tr');
-        row.innerHTML = `<td colspan="5" style="text-align: center; padding: 20px;">No results found matching "${filterText}"</td>`;
-        movieListElement.appendChild(row);
-    }
-}
-
-// Initialize tag functionality
+        // Initialize tag functionality
         function initTags() {
             const tags = document.querySelectorAll('.tag');
             tags.forEach(tag => {
