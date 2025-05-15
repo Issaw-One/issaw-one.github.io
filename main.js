@@ -50,9 +50,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 name: '1jour1film',
                 logo: 'logoSites/1jour1film.webp',
                 headerBg: 'linear-gradient(135deg, #3A1C71 0%, #D76D77 50%, #FFAF7B 100%)',
-                description: '1jour1film11.online',
-                tags: ['Update : 13/05/2025'],
-                url: 'https://1jour1film11.online/',
+                description: '1jour1film2.online<br><s>1jour1film11.online</s>',
+                tags: ['Update : 15/05/2025'],
+                url: 'https://1jour1film2.online/',
                 featured: false,
                 category: 'series'
             },
