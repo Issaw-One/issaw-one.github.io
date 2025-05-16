@@ -255,7 +255,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'anime-sama.fr',
                 tags: ['Update : 13/05/2025'],
                 url: 'https://anime-sama.fr/',
-                featured: false,
+                featured: true,
                 category: 'animes'
             },
             {
@@ -266,7 +266,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'french-anime.com',
                 tags: ['Update : 13/05/2025'],
                 url: 'https://french-anime.com/',
-                featured: false,
+                featured: true,
                 category: 'animes'
             },
             {
@@ -277,7 +277,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'franime.fr',
                 tags: ['Update : 13/05/2025'],
                 url: 'https://franime.fr/',
-                featured: false,
+                featured: true,
                 category: 'animes'
             },
             {
@@ -288,7 +288,29 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'v6.voiranime.com',
                 tags: ['Update : 16/05/2025'],
                 url: 'https://v6.voiranime.com/',
-                featured: false,
+                featured: true,
+                category: 'animes'
+            },
+            {
+                id: 'mavanimes',
+                name: 'Mavanimes',
+                logo: 'logoSites/MavAnimes.webp',
+                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                description: 'mavanimes.co',
+                tags: ['Update : 16/05/2025'],
+                url: 'https://www.mavanimes.co/',
+                featured: true,
+                category: 'animes'
+            },
+            {
+                id: 'yukiflix',
+                name: 'YukiFlix',
+                logo: 'logoSites/YukiFlix.webp',
+                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                description: 'yukiflix.pythonanywhere.com',
+                tags: ['Update : 16/05/2025'],
+                url: 'https://yukiflix.pythonanywhere.com/decouvrir',
+                featured: true,
                 category: 'animes'
             }
         ],
