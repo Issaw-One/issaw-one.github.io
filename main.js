@@ -195,9 +195,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 name: 'Sadisflix',
                 logo: 'logoSites/SadisFlix.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
-                description: 'sadisflix.hair',
-                tags: ['Update : 13/05/2025'],
-                url: 'https://sadisflix.hair/',
+                description: 'sadisflix-officiel.sbs<br><s>sadisflix.hair</s>',
+                tags: ['Update : 16/05/2025'],
+                url: 'https://sadisflix-officiel.sbs/',
                 featured: true,
                 category: 'series'
             },
