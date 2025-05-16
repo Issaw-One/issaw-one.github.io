@@ -234,6 +234,39 @@ document.addEventListener('DOMContentLoaded', function () {
                 featured: true,
                 category: 'series'
             },
+            {
+                id: 'filmoflix',
+                name: 'FilmoFlix',
+                logo: 'logoSites/FilmoFlix.webp',
+                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                description: 'filmoflix.is',
+                tags: ['Update : 16/05/2025'],
+                url: 'https://www.filmoflix.is/',
+                featured: true,
+                category: 'series'
+            },
+            {
+                id: 'cinemay',
+                name: 'Cinemay',
+                logo: 'logoSites/cinemay.png',
+                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                description: 'cinemay.cloud',
+                tags: ['Update : 16/05/2025'],
+                url: 'https://cinemay.cloud/',
+                featured: true,
+                category: 'series'
+            },
+            {
+                id: 'dustreaming',
+                name: 'Dustreaming',
+                logo: 'logoSites/dustreaming.png',
+                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                description: 'dustreaming.info',
+                tags: ['Update : 16/05/2025'],
+                url: 'https://dustreaming.info/',
+                featured: true,
+                category: 'series'
+            },
         ],
         animes: [
             {
