@@ -89,6 +89,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 featured: true,
                 category: 'series'
             },
+            {
+                id: 'darkiworld',
+                name: 'Darkiworld',
+                logo: 'logoSites/darkiworld.webp',
+                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                description: 'darki-tometjerry.com<br><s>darkiworld9.com</s>',
+                tags: ['Update : 16/05/2025'],
+                url: 'https://darki-tometjerry.com/',
+                featured: true,
+                category: 'series'
+            },
         ],
         series: [
             {
