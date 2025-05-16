@@ -637,23 +637,37 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Fonction pour la recherche
     function setupSearch() {
-        const searchInput = document.getElementById('search-input');
+    const searchInput = document.getElementById('search-input');
 
-        if (searchInput) {
-            searchInput.addEventListener('input', function () {
-                const query = this.value.toLowerCase().trim();
-                const allSiteCards = document.querySelectorAll('.site-card');
+    if (searchInput) {
+        searchInput.addEventListener('input', function () {
+            const query = this.value.toLowerCase().trim();
+            const allSiteCards = document.querySelectorAll('.site-card');
 
-                allSiteCards.forEach(card => {
-                    const siteName = card.querySelector('.site-title').textContent.toLowerCase();
-                    const siteDesc = card.querySelector('.site-desc').textContent.toLowerCase();
-                    const shouldShow = siteName.includes(query) || siteDesc.includes(query);
+            allSiteCards.forEach(card => {
+                const siteName = card.querySelector('.site-title').textContent.toLowerCase();
+                const siteDesc = card.querySelector('.site-desc').textContent.toLowerCase();
+                const shouldShow = siteName.includes(query) || siteDesc.includes(query);
 
-                    card.style.display = shouldShow ? 'block' : 'none';
-                });
+                card.style.display = shouldShow ? 'block' : 'none';
             });
-        }
+
+            // 🔽 Masquer les grilles de catégories vides
+            const categoryGrids = document.querySelectorAll('.films-grid, .series-grid, .animes-grid, .drama-grid, .torrent-grid');
+
+            categoryGrids.forEach(grid => {
+                const visibleCards = Array.from(grid.querySelectorAll('.site-card')).filter(card => card.style.display !== 'none');
+                const section = grid.closest('section'); // S'assure que toute la section est masquée
+                if (visibleCards.length === 0) {
+                    if (section) section.style.display = 'none';
+                } else {
+                    if (section) section.style.display = '';
+                }
+            });
+        });
     }
+}
+
 
     
     function setupCategorySearch() {
