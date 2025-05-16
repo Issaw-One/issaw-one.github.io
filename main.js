@@ -270,13 +270,24 @@ document.addEventListener('DOMContentLoaded', function () {
                 category: 'animes'
             },
             {
-                id: 'franimr',
+                id: 'franime',
                 name: 'FRAnime',
                 logo: 'logoSites/FRAnime.webp',
                 headerBg: 'linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%)',
                 description: 'franime.fr',
                 tags: ['Update : 13/05/2025'],
                 url: 'https://franime.fr/',
+                featured: false,
+                category: 'animes'
+            },
+            {
+                id: 'voiranime',
+                name: 'Voiranime',
+                logo: 'logoSites/VoirAnime.webp',
+                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                description: 'v6.voiranime.com',
+                tags: ['Update : 16/05/2025'],
+                url: 'https://v6.voiranime.com/',
                 featured: false,
                 category: 'animes'
             }
