@@ -462,24 +462,3 @@
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(229, 9, 20, 0.4);
         }
-
-        #install-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 9999;
-    background: linear-gradient(135deg, var(--accent-color), var(--secondary-accent));
-    color: white;
-    padding: 12px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-#install-button:hover {
-    background: linear-gradient(135deg, var(--secondary-accent), var(--accent-color));
-    transform: translateY(-3px);
-}

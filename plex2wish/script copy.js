@@ -265,27 +265,3 @@ function getProgress(url) {
             // Initialiser le bouton Fermer du lecteur vidéo
             document.getElementById('videoPlayerClose').addEventListener('click', closeVideoPlayer);
         });
-
-        let deferredPrompt;
-const installButton = document.getElementById('install-button');
-
-window.addEventListener('beforeinstallprompt', (e) => {
-    e.preventDefault();
-    deferredPrompt = e;
-    installButton.style.display = 'block';
-});
-
-installButton.addEventListener('click', () => {
-    if (deferredPrompt) {
-        deferredPrompt.prompt();
-        deferredPrompt.userChoice.then((choiceResult) => {
-            if (choiceResult.outcome === 'accepted') {
-                console.log('✅ Installation acceptée');
-            } else {
-                console.log('❌ Installation refusée');
-            }
-            deferredPrompt = null;
-            installButton.style.display = 'none';
-        });
-    }
-});
