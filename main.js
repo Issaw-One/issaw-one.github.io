@@ -2,104 +2,89 @@ document.addEventListener('DOMContentLoaded', function () {
     const sitesData = {
         films: [
             {
-                id: 'cinepulse',
-                name: 'Cinepulse',
-                logo: 'logoSites/Cinepulse.webp',
-                headerBg: 'linear-gradient(135deg, #6A11CB 0%, #2575FC 100%)',
-                description: 'cinepulse.fr',
-                tags: ['Update : 13/05/2025'],
-                url: 'https://cinepulse.fr/',
-                featured: true,
-                category: 'films'
-            },
-            {
-                id: 'ivdid',
-                name: 'IVDID',
-                logo: 'logoSites/Ivdid.webp',
-                headerBg: 'linear-gradient(135deg, #E21143 0%, #FFB03A 100%)',
-                description: 'ivdid.com',
-                tags: ['Update : 13/05/2025'],
-                url: 'https://ivdid.com',
-                featured: true,
-                category: 'films'
-            },
-            {
-                id: 'topstream',
-                name: 'Topstream',
-                logo: 'logoSites/TopStream.webp',
-                headerBg: 'linear-gradient(135deg, #834D9B 0%, #D04ED6 100%)',
-                description: 'top-stream.io',
-                tags: ['Update : 13/05/2025'],
-                url: 'https://top-stream.io',
-                featured: false,
-                category: 'films'
-            },
-            {
-                id: 'vfstream',
-                name: 'VFStream',
-                logo: 'logoSites/VfStream.webp',
-                headerBg: 'linear-gradient(135deg, #C31432 0%, #240B36 100%)',
-                description: 'films.vfstream.eu',
-                tags: ['Update : 13/05/2025'],
-                url: 'https://films.vfstream.eu/',
-                featured: false,
-                category: 'films'
-            },
-            {
-                id: '1jour1film',
-                name: '1jour1film',
-                logo: 'logoSites/1jour1film.webp',
-                headerBg: 'linear-gradient(135deg, #3A1C71 0%, #D76D77 50%, #FFAF7B 100%)',
-                description: '1jour1film2.online<br><s>1jour1film11.online</s>',
-                tags: ['Update : 15/05/2025'],
-                url: 'https://1jour1film2.online/',
-                featured: false,
-                category: 'series'
-            },
-            {
-                id: 'cultissime',
-                name: 'Cultissime',
-                logo: 'logoSites/16.webp',
-                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
-                description: 'cultissime.lol',
-                tags: ['Update : 13/05/2025'],
-                url: 'https://cultissime.lol/',
-                featured: false,
-                category: 'series'
-            },
-            {
-                id: 'senpaistream',
-                name: 'Senpai-Stream',
-                logo: 'logoSites/senpai-stream.svg',
-                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
-                description: 'senpai-stream.art<br><s>senpai-stream.stream</s>',
-                tags: ['Update : 16/05/2025'],
-                url: 'https://senpai-stream.art/',
-                featured: true,
-                category: 'series'
-            },
-            {
-                id: 'wowfilms',
-                name: 'WOW-FILMS',
-                logo: 'logoSites/WowFilms.webp',
-                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
-                description: 'wowfilms11.mom<br><s>wowfilms1.mom</s>',
-                tags: ['Update : 15/05/2025'],
-                url: 'https://wowfilms11.mom/',
-                featured: true,
-                category: 'series'
-            },
-            {
-                id: 'darkiworld',
-                name: 'Darkiworld',
-                logo: 'logoSites/darkiworld.webp',
-                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
-                description: 'darki-tometjerry.com<br><s>darkiworld9.com</s>',
-                tags: ['Update : 16/05/2025'],
-                url: 'https://darki-tometjerry.com/',
-                featured: true,
-                category: 'series'
-            },
+            id: 'cinepulse',
+            name: 'Cinepulse',
+            logo: 'logoSites/Cinepulse.webp',
+            headerBg: 'linear-gradient(135deg, #6A11CB 0%, #2575FC 100%)',
+            description: 'cinepulse.fr',
+            tags: ['Update : 13/05/2025'],
+            url: 'https://cinepulse.fr/',
+            searchUrl: 'https://cinepulse.fr/catalog?query={query}&sort-by=pertinence',
+            featured: true,
+            category: 'films'
+        },
+        {
+            id: 'ivdid',
+            name: 'IVDID',
+            logo: 'logoSites/Ivdid.webp',
+            headerBg: 'linear-gradient(135deg, #E21143 0%, #FFB03A 100%)',
+            description: 'ivdid.com',
+            tags: ['Update : 13/05/2025'],
+            url: 'https://ivdid.com/2alhobzy6/home/ivdid',
+            searchUrl: '',
+            featured: true,
+            category: 'films'
+        },
+        {
+            id: 'topstream',
+            name: 'Topstream',
+            logo: 'logoSites/TopStream.webp',
+            headerBg: 'linear-gradient(135deg, #834D9B 0%, #D04ED6 100%)',
+            description: 'top-stream.io',
+            tags: ['Update : 13/05/2025'],
+            url: 'https://top-stream.io',
+            searchUrl: 'https://top-stream.io/search/{query}',
+            featured: false,
+            category: 'films'
+        },
+        {
+            id: 'vfstream',
+            name: 'VFStream',
+            logo: 'logoSites/VfStream.webp',
+            headerBg: 'linear-gradient(135deg, #C31432 0%, #240B36 100%)',
+            description: 'films.vfstream.eu',
+            tags: ['Update : 13/05/2025'],
+            url: 'https://films.vfstream.eu/',
+            searchUrl: '',
+            featured: false,
+            category: 'films'
+        },
+        {
+            id: '1jour1film',
+            name: '1jour1film',
+            logo: 'logoSites/1jour1film.webp',
+            headerBg: 'linear-gradient(135deg, #3A1C71 0%, #D76D77 50%, #FFAF7B 100%)',
+            description: '1jour1film2.online<br><s>1jour1film11.online</s>',
+            tags: ['Update : 15/05/2025'],
+            url: 'https://1jour1film2.online/',
+            searchUrl: 'https://1jour1film2.online/?s={query}',
+            featured: false,
+            category: 'series'
+        },
+        {
+            id: 'wowfilms',
+            name: 'WOW-FILMS',
+            logo: 'logoSites/WowFilms.webp',
+            headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+            description: 'wowfilms11.mom<br><s>wowfilms1.mom</s>',
+            tags: ['Update : 15/05/2025'],
+            url: 'https://wowfilms11.mom/',
+            searchUrl: 'https://wowfilms11.mom/?s={query}',
+            featured: true,
+            category: 'series'
+        },
+        {
+            id: 'darkiworld',
+            name: 'Darkiworld',
+            logo: 'logoSites/darkiworld.webp',
+            headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+            description: 'darki-tometjerry.com<br><s>darkiworld9.com</s>',
+            tags: ['Update : 16/05/2025'],
+            url: 'https://darki-tometjerry.com/',
+            searchUrl: 'https://darki-tometjerry.com/search/{query}',
+            featured: true,
+            category: 'series'
+        },
         ],
         series: [
             {
@@ -110,6 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'nightflix.run<br><s>nightflix.store</s>',
                 tags: ['Update : 15/05/2025'],
                 url: 'https://nightflix.run/',
+                searchUrl: 'https://nightflix.run/recherche?q={query}',
                 featured: true,
                 category: 'series'
             },
@@ -121,6 +107,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'flemmix.ws',
                 tags: ['Update : 13/05/2025'],
                 url: 'https://flemmix.ws/',
+                searchUrl: 'https://flemmix.ws/index.php?do=search&subaction=search&search_start=0&full_search=0&story={query}',
                 featured: true,
                 category: 'series'
             },
@@ -129,9 +116,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 name: 'PapaDuStream',
                 logo: 'logoSites/PapaDuStream.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
-                description: 'papadustream.boo',
-                tags: ['Update : 13/05/2025'],
-                url: 'https://papadustream.boo',
+                description: 'papadustream.cash<br><s>papadustream.boo</s>',
+                tags: ['Update : 17/05/2025'],
+                url: 'https://papadustream.cash/',
+                searchUrl: 'https://papadustream.cash/index.php?do=search&subaction=search&search_start=0&full_search=0&story={query}',
                 featured: true,
                 category: 'series'
             },
@@ -143,6 +131,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'monstream.cafe',
                 tags: ['Update : 13/05/2025'],
                 url: 'https://vww.monstream.cafe',
+                searchUrl: 'https://vww.monstream.cafe/index.php?do=search&subaction=search&search_start=0&full_search=0&story={query}',
                 featured: true,
                 category: 'series'
             },
@@ -154,6 +143,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'fsmirror57.lol<br><s>fsmirror41.lol</s>',
                 tags: ['Update : 13/05/2025'],
                 url: 'https://fsmirror57.lol/',
+                searchUrl: 'https://fsmirror57.lol/index.php?story={query}&do=search&subaction=search',
                 featured: true,
                 category: 'series'
             },
@@ -165,6 +155,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'wookafr.tel<br><s>wookafr.app</s>',
                 tags: ['Update : 17/05/2025'],
                 url: 'https://wookafr.tel/',
+                searchUrl: 'https://wookafr.tel/?s={query}',
                 featured: true,
                 category: 'series'
             },
@@ -176,6 +167,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'coflix.mov',
                 tags: ['Update : 13/05/2025'],
                 url: 'https://coflix.mov/',
+                searchUrl: 'https://coflix.mov/?s={query}',
                 featured: true,
                 category: 'series'
             },
@@ -187,6 +179,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'movix.site',
                 tags: ['Update : 13/05/2025'],
                 url: 'https://www.movix.site/',
+                searchUrl: 'https://www.movix.site/search?q={query}',
                 featured: true,
                 category: 'series'
             },
@@ -198,6 +191,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'netfree2.cc',
                 tags: ['Update : 13/05/2025'],
                 url: 'https://netfree2.cc/home',
+                searchUrl: '',
                 featured: true,
                 category: 'series'
             },
@@ -209,6 +203,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'sadisflix-officiel.sbs<br><s>sadisflix.hair</s>',
                 tags: ['Update : 16/05/2025'],
                 url: 'https://sadisflix-officiel.sbs/',
+                searchUrl: 'https://sadisflix-officiel.sbs/search?q={query}',
                 featured: true,
                 category: 'series'
             },
@@ -220,6 +215,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'yopflix.quest',
                 tags: ['Update : 13/05/2025'],
                 url: 'https://yopflix.quest/',
+                searchUrl: '',
                 featured: true,
                 category: 'series'
             },
@@ -231,6 +227,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'hdstream.top',
                 tags: ['Update : 13/05/2025'],
                 url: 'https://www.hdstream.top/',
+                searchUrl: 'https://www.hdstream.top/index.php?do=search&subaction=search&search_start=0&full_search=0&story={query}',
                 featured: true,
                 category: 'series'
             },
@@ -242,6 +239,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'dulourd.day',
                 tags: ['Update : 13/05/2025'],
                 url: 'https://www.dulourd.day/',
+                searchUrl: 'https://www.dulourd.day/index.php?do=search&subaction=search&search_start=0&full_search=0&story={query}',
                 featured: true,
                 category: 'series'
             },
@@ -253,6 +251,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'filmoflix.is',
                 tags: ['Update : 16/05/2025'],
                 url: 'https://www.filmoflix.is/',
+                searchUrl: 'https://www.filmoflix.is/search?keywords={query}',
                 featured: true,
                 category: 'series'
             },
@@ -264,6 +263,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'cinemay.cloud',
                 tags: ['Update : 16/05/2025'],
                 url: 'https://cinemay.cloud/',
+                searchUrl: 'https://cinemay.cloud/index.php?do=search&subaction=search&search_start=0&full_search=0&story={query}',
                 featured: true,
                 category: 'series'
             },
@@ -275,6 +275,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'dustreaming.info',
                 tags: ['Update : 16/05/2025'],
                 url: 'https://dustreaming.info/',
+                searchUrl: 'https://dustreaming.info/index.php?do=search&subaction=search&search_start=0&full_search=0&story={query}',
                 featured: true,
                 category: 'series'
             },
@@ -553,36 +554,46 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Fonction pour créer une carte de site
     function createSiteCard(site) {
-        const card = document.createElement('div');
-        card.className = 'site-card';
-        card.dataset.id = site.id;
-        card.dataset.category = site.category;
+    const card = document.createElement('div');
+    card.className = 'site-card';
+    card.dataset.id = site.id;
+    card.dataset.category = site.category;
 
-        // Créer des tags à partir des tags du site
-        const tagsHTML = site.tags.map(tag => `<span class="site-tag">${tag}</span>`).join('');
+    const tagsHTML = site.tags.map(tag => `<span class="site-tag">${tag}</span>`).join('');
 
-        
-        card.innerHTML = `
-            <div class="site-header" style="background: ${site.headerBg}">
-                <div class="logo-container">
-                    <img src="${site.logo}" alt="${site.name}" class="site-logo">
-                </div>
-            </div>
-            <div class="site-content">
-                <h3 class="site-title"><a href="${site.url}" target="_blank">${site.name}</a></h3>
-                <p class="site-desc">${site.description}</p>
-                <div class="site-tags">
-                    ${tagsHTML}
-                </div>
-                
-            </div>
-            <div class="site-footer">
-                <a href="${site.url}" class="visit-btn" target="_blank">Visiter</a>
-            </div>
+    // Génération du champ de recherche si searchUrl est défini
+    let searchFormHTML = '';
+    if (site.searchUrl && site.searchUrl.includes('{query}')) {
+        searchFormHTML = `
+            <form class="site-search-form" onsubmit="event.preventDefault(); const q = this.querySelector('input').value.trim(); if (q) window.open('${site.searchUrl.replace('{query}', "' + encodeURIComponent(q) + '")}', '_blank');">
+                <input type="text" placeholder="Rechercher sur ${site.name}...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
         `;
-
-        return card;
     }
+
+    card.innerHTML = `
+        <div class="site-header" style="background: ${site.headerBg}">
+            <div class="logo-container">
+                <img src="${site.logo}" alt="${site.name}" class="site-logo">
+            </div>
+        </div>
+        <div class="site-content">
+            <h3 class="site-title"><a href="${site.url}" target="_blank">${site.name}</a></h3>
+            <p class="site-desc">${site.description}</p>
+            <div class="site-tags">
+                ${tagsHTML}
+            </div>
+            ${searchFormHTML}
+        </div>
+        <div class="site-footer">
+            <a href="${site.url}" class="visit-btn" target="_blank">Visiter</a>
+        </div>
+    `;
+
+    return card;
+}
+
 
     // Fonction pour remplir les grilles de sites
     function populateSiteGrids() {
