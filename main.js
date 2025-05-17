@@ -158,6 +158,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 category: 'series'
             },
             {
+                id: 'wookafr',
+                name: 'WookaFR',
+                logo: 'logoSites/WookaFr.webp',
+                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                description: 'wookafr.tel<br><s>wookafr.app</s>',
+                tags: ['Update : 17/05/2025'],
+                url: 'https://wookafr.tel/',
+                featured: true,
+                category: 'series'
+            },
+            {
                 id: 'coflix',
                 name: 'Coflix',
                 logo: 'logoSites/coflix.webp',
