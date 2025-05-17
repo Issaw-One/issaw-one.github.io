@@ -1,5 +1,7 @@
         // Sample movie data
         const movies = [
+            { id: 28, name: "Plus belle la vie, encore plus belle - S02 - Episode 97", size: "297.83 Mo", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-t752rsb7cp1o.html" },
+            { id: 27, name: "Ici tout commence - Episode 1179", size: "297.83 Mo", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-lpj9kfyc66sb.html" },
             { id: 26, name: "Plus belle la vie, encore plus belle - Episode 96", size: "297.83 Mo", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-f01yt31h74ah.html" },
             { id: 25, name: "Plus belle la vie, encore plus belle - Episode 95", size: "297.83 Mo", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-i02544pnrrpy.html" },
             { id: 24, name: "Ici tout commence - Episode 1178", size: "297.83 Mo", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-nhlbpvi9upmh.html" },
