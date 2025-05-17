@@ -301,6 +301,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'anime-sama.fr',
                 tags: ['Update : 13/05/2025'],
                 url: 'https://anime-sama.fr/',
+                searchUrl: '',
                 featured: true,
                 category: 'animes'
             },
@@ -312,6 +313,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'french-anime.com',
                 tags: ['Update : 13/05/2025'],
                 url: 'https://french-anime.com/',
+                searchUrl: 'https://french-anime.com/index.php?do=search&subaction=search&search_start=0&full_search=0&story={query}',
                 featured: true,
                 category: 'animes'
             },
@@ -323,6 +325,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'franime.fr',
                 tags: ['Update : 13/05/2025'],
                 url: 'https://franime.fr/',
+                searchUrl: 'https://franime.fr/recherche?search={query}',
                 featured: true,
                 category: 'animes'
             },
@@ -334,6 +337,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'v6.voiranime.com',
                 tags: ['Update : 16/05/2025'],
                 url: 'https://v6.voiranime.com/',
+                searchUrl: 'https://v6.voiranime.com/?s={query}',
                 featured: true,
                 category: 'animes'
             },
@@ -345,6 +349,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'mavanimes.co',
                 tags: ['Update : 16/05/2025'],
                 url: 'https://www.mavanimes.co/',
+                searchUrl: 'https://www.mavanimes.co/?s={query}',
                 featured: true,
                 category: 'animes'
             },
@@ -356,6 +361,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'yukiflix.pythonanywhere.com',
                 tags: ['Update : 16/05/2025'],
                 url: 'https://yukiflix.pythonanywhere.com/decouvrir',
+                searchUrl: 'https://yukiflix.pythonanywhere.com/search?q={query}',
                 featured: true,
                 category: 'animes'
             }
@@ -369,6 +375,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'kisskh.co',
                 tags: ['Update : 13/05/2025'],
                 url: 'https://kisskh.co/',
+                searchUrl: '',
                 featured: true,
                 category: 'drama'
             },
@@ -380,7 +387,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'voirdrama.org',
                 tags: ['Update : 13/05/2025'],
                 url: 'https://voirdrama.org/',
-                featured: false,
+                searchUrl: 'https://voirdrama.org/?post_type=wp-manga&s={query}',
+                featured: true,
                 category: 'drama'
             },
             {
@@ -391,7 +399,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'dramacool.com.de',
                 tags: ['Update : 13/05/2025'],
                 url: 'https://ww5.dramacool.com.de/',
-                featured: false,
+                searchUrl: 'https://ww5.dramacool.com.de/search?keyword={query}',
+                featured: true,
                 category: 'drama'
             },
             {
@@ -402,17 +411,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'myasiantv.rest',
                 tags: ['Update : 13/05/2025'],
                 url: 'https://www.myasiantv.rest/',
+                searchUrl: 'https://ww2.myasiantv.rest/?s={query}',
                 featured: true,
                 category: 'drama'
             },
             {
                 id: 'sojuoppa',
-                name: 'Sojuoppa',
+                name: '<s>Sojuoppa</s>',
                 logo: 'logoSites/sojuoppa.png',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
-                description: 'sojuoppa.site',
-                tags: ['Update : 13/05/2025'],
-                url: 'https://sojuoppa.site/',
+                description: '<s>sojuoppa.site</s>',
+                tags: ['Update : 17/05/2025'],
+                url: '#',
+                searchUrl: '',
                 featured: true,
                 category: 'drama'
             },
@@ -424,6 +435,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'kissasian.nl',
                 tags: ['Update : 13/05/2025'],
                 url: 'https://kissasian.nl/',
+                searchUrl: 'https://kissasian.nl/search/drama?keyword={query}&x=0&y=0',
                 featured: true,
                 category: 'drama'
             },
@@ -435,6 +447,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'dramacountdown.com',
                 tags: ['Update : 13/05/2025'],
                 url: 'https://dramacountdown.com/',
+                searchUrl: 'https://dramacountdown.com/search?q={query}',
                 featured: true,
                 category: 'drama'
             },
@@ -448,6 +461,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'thepiratebay10.info',
                 tags: ['Update : 14/05/2025'],
                 url: 'https://thepiratebay10.info/',
+                searchUrl: 'https://thepiratebay10.info/search/{query}/1/99/0',
                 featured: true,
                 category: 'torrent'
             },
@@ -459,6 +473,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: '1337x.to',
                 tags: ['Update : 14/05/2025'],
                 url: 'https://1337x.to/',
+                searchUrl: 'https://1337x.to/search/{query}/1/',
                 featured: true,
                 category: 'torrent'
             },
@@ -470,6 +485,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'oxtorrent5.com<br><s>oxtorrent3.com</s>',
                 tags: ['Update : 14/05/2025'],
                 url: 'https://www.oxtorrent5.com/home',
+                searchUrl: 'https://www.oxtorrent5.com/recherche/{query}',
                 featured: true,
                 category: 'torrent'
             },
@@ -481,6 +497,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'yggtorrent3.com',
                 tags: ['Update : 14/05/2025'],
                 url: 'https://www.yggtorrent3.com/home',
+                searchUrl: 'https://www.yggtorrent3.com/recherche/{query}',
                 featured: true,
                 category: 'torrent'
             },
@@ -492,6 +509,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'cpasbien4.com',
                 tags: ['Update : 14/05/2025'],
                 url: 'https://www.cpasbien4.com/home',
+                searchUrl: 'https://www.cpasbien4.com/recherche/{query}',
                 featured: true,
                 category: 'torrent'
             },
@@ -503,6 +521,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'zetorrents1.com',
                 tags: ['Update : 14/05/2025'],
                 url: 'https://www.zetorrents1.com/home',
+                searchUrl: 'https://www.zetorrents1.com/recherche/{query}',
                 featured: true,
                 category: 'torrent'
             },
@@ -514,6 +533,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'torrentz9.org',
                 tags: ['Update : 13/05/2025'],
                 url: 'https://torrentz9.org/',
+                searchUrl: 'https://torrentz9.org/search?keyword={query}',
                 featured: true,
                 category: 'torrent'
             },
@@ -525,6 +545,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'limetorrents.lol',
                 tags: ['Update : 14/05/2025'],
                 url: 'https://www.limetorrents.lol/',
+                searchUrl: 'https://www.limetorrents.lol/search/all/{query}/',
                 featured: true,
                 category: 'torrent'
             },
@@ -536,6 +557,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'binge-browser.vercel.app',
                 tags: ['Update : 14/05/2025'],
                 url: 'https://binge-browser.vercel.app/',
+                searchUrl: 'https://binge-browser.vercel.app/?search_query={query}',
                 featured: true,
                 category: 'torrent'
             },
@@ -547,6 +569,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'nyaa.land',
                 tags: ['Update : 14/05/2025'],
                 url: 'https://nyaa.land/',
+                searchUrl: 'https://nyaa.land/?f=0&c=0_0&q={query}',
                 featured: true,
                 category: 'torrent'
             },
