@@ -574,10 +574,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <div class="site-tags">
                     ${tagsHTML}
                 </div>
-                <form class="site-search-form" action="${site.url}" method="get" target="_blank">
-                    <input type="text" name="s" placeholder="Rechercher sur ${site.name}...">
-                    <button type="submit"><i class="fas fa-search"></i></button>
-                </form>
+                
             </div>
             <div class="site-footer">
                 <a href="${site.url}" class="visit-btn" target="_blank">Visiter</a>
