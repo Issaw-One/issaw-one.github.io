@@ -85,6 +85,18 @@ document.addEventListener('DOMContentLoaded', function () {
             featured: true,
             category: 'series'
         },
+        {
+            id: 'wawacity',
+            name: 'Wawacity',
+            logo: 'logoSites/wawacity.png',
+            headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+            description: 'wawacity.pet<br><s>wawacity.rodeo</s>',
+            tags: ['Update : 17/05/2025'],
+            url: 'https://www.wawacity.pet/',
+            searchUrl: 'https://darki-tometjerry.com/search/{query}',
+            featured: true,
+            category: 'series'
+        },
         ],
         series: [
             {
