@@ -224,9 +224,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 name: 'YopFlix',
                 logo: 'logoSites/YopFlix.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
-                description: 'yopflix.quest',
+                description: 'yopflix.pics<br><s>yopflix.quest</s>',
                 tags: ['Update : 17/05/2025'],
-                url: 'https://yopflix.quest/',
+                url: 'https://yopflix.pics/',
                 searchUrl: '',
                 featured: true,
                 category: 'series'
