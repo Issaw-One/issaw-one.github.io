@@ -579,3 +579,19 @@ nav.mobile-open ul li {
         display: block;
     }
 }
+
+#install-button {
+    z-index: 9999;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+#install-button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
