@@ -903,3 +903,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // Démarrer l'application
     initApp();
 });
+
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+      .then(reg => console.log("✅ Service Worker enregistré"))
+      .catch(err => console.warn("❌ Erreur SW :", err));
+  }
