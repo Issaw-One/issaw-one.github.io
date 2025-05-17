@@ -6,8 +6,8 @@
     <title>Paf-Links</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="manifest" href="manifest.webmanifest" />
-    <meta name="theme-color" content="#8C52FF" />
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name="theme-color" content="#8C52FF">
 </head>
 <body>
     <header>
@@ -43,11 +43,12 @@
         </div>
     </section>
 
-    
+    <!-- Bouton PWA -->
+    <button id="install-button" style="display:none; position: fixed; bottom: 20px; right: 20px; padding: 10px 15px; font-size: 16px;">📲 Installer l'application</button>
+
     <section id="films" class="category">
         <div class="container">
             <div class="section-header">
-
                 <h3>Films HD Gratuits</h3>
             </div>
             <div class="sites-grid films-grid">
@@ -59,7 +60,6 @@
     <section id="series" class="category">
         <div class="container">
             <div class="section-header">
-
                 <h3>Films / Séries en streaming</h3>
             </div>
             <div class="sites-grid series-grid">
@@ -71,7 +71,6 @@
     <section id="animes" class="category">
         <div class="container">
             <div class="section-header">
-
                 <h3>Animés</h3>
             </div>
             <div class="sites-grid animes-grid">
@@ -83,7 +82,6 @@
     <section id="drama" class="category">
         <div class="container">
             <div class="section-header">
-
                 <h3>Drama</h3>
             </div>
             <div class="sites-grid drama-grid">
@@ -95,7 +93,6 @@
     <section id="torrent" class="category">
         <div class="container">
             <div class="section-header">
-
                 <h3>Torrent</h3>
             </div>
             <div class="sites-grid torrent-grid">
@@ -141,5 +138,6 @@
     </footer>
 
     <script src="main.js"></script>
+    <script src="install-pwa.js"></script>
 </body>
 </html>
