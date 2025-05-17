@@ -558,7 +558,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 </div>
             </div>
             <div class="site-content">
-                <h3 class="site-title">${site.name}</h3>
+                <h3 class="site-title"><a href="${site.url}" target="_blank">${site.name}</a></h3>
                 <p class="site-desc">${site.description}</p>
                 <div class="site-tags">
                     ${tagsHTML}
