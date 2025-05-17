@@ -289,6 +289,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'animekai.to',
                 tags: ['Update : 13/05/2025'],
                 url: 'https://animekai.to/',
+                searchUrl: 'https://animekai.to/browser?keyword={query}',
                 featured: true,
                 category: 'animes'
             },
