@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
             description: 'wawacity.pet<br><s>wawacity.rodeo</s>',
             tags: ['Update : 17/05/2025'],
             url: 'https://www.wawacity.pet/',
-            searchUrl: 'https://darki-tometjerry.com/search/{query}',
+            searchUrl: 'https://www.wawacity.pet/?search={query}&p=films',
             featured: true,
             category: 'series'
         },
