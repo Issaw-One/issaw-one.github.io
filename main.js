@@ -227,7 +227,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 description: 'yopflix.pics <i class="fa-solid fa-check" style="color: #63E6BE;"></i><br><s>yopflix.quest</s> <i class="fa-solid fa-x" style="color: #ff0000;"></i>',
                 tags: ['Update : 17/05/2025'],
                 url: 'https://yopflix.pics/',
-                searchUrl: '',
+                searchUrl: "https://yopflix.pics/search?query={query}",
                 featured: true,
                 category: 'series'
             },
