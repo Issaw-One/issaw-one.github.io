@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
         series: [
             {
                 id: 'nightflix',
-                name: 'NightFlix',
+                name: '<i class="fa-solid fa-star" style="color: #FFD43B;"></i> NightFlix <i class="fa-solid fa-star" style="color: #FFD43B;"></i>',
                 logo: 'logoSites/NightFlix.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'nightflix.run<br><s>nightflix.store</s>',
