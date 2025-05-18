@@ -257,15 +257,9 @@ section {
     position: relative;
 }
 
-.site-card {
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    transform-style: preserve-3d;
-    will-change: transform;
-}
-
 .site-card:hover {
-    transform: translateY(-8px) scale(1.02) rotateX(1deg);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .site-card .site-header {
@@ -584,53 +578,4 @@ nav.mobile-open ul li {
     .mobile-menu-button {
         display: block;
     }
-}
-
-#install-button {
-    z-index: 9999;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    transition: transform 0.2s ease, background-color 0.3s ease;
-}
-
-#install-button:hover {
-    background-color: var(--secondary-color);
-    transform: translateY(-3px);
-}
-
-.category-icon {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    font-size: 22px;
-    color: white;
-    background: rgba(0, 0, 0, 0.4);
-    padding: 6px 8px;
-    border-radius: 50%;
-    z-index: 2;
-}
-
-.site-card .site-logo {
-    transition: transform 0.4s ease;
-}
-
-.site-card:hover .site-logo {
-    transform: scale(1.1);
-}
-
-.favorite-icon {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 20px;
-    color: rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.favorite-icon.active {
-    color: #FFD43B;
 }
