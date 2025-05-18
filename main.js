@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 logo: 'logoSites/10.webp',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
                 description: 'hdstream.top <i class="fa-solid fa-check" style="color: #63E6BE;"></i>',
-                tags: ['Update : 17/05/2025'],
+                tags: ['Update : 18/05/2025'],
                 url: 'https://www.hdstream.top/',
                 searchUrl: 'https://www.hdstream.top/index.php?do=search&subaction=search&search_start=0&full_search=0&story={query}',
                 featured: true,
