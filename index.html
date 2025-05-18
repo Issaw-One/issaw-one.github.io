@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paf-Links</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name="theme-color" content="#8C52FF">
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -32,8 +36,6 @@
     <section class="hero">
         <div class="container">
             <h2>Streaming Websites List</h2>
-            <h4>use <a target="_blank" rel="nofollow" class="t1" href="https://ublockorigin.com/">uBlock Origin</a> to block ads</h4>
-            <br>
             <div class="search-box">
                 <input type="text" id="search-input" placeholder="Rechercher un site de streaming...">
                 <button><i class="fas fa-search"></i></button>
@@ -41,12 +43,14 @@
         </div>
     </section>
 
-    
+    <!-- Bouton PWA -->
+    <button id="install-button"
+        style="display:none; position: fixed; bottom: 20px; right: 20px; padding: 10px 15px; font-size: 16px;">📲
+        Installer l'application</button>
 
     <section id="films" class="category">
         <div class="container">
             <div class="section-header">
-
                 <h3>Films HD Gratuits</h3>
             </div>
             <div class="sites-grid films-grid">
@@ -58,7 +62,6 @@
     <section id="series" class="category">
         <div class="container">
             <div class="section-header">
-
                 <h3>Films / Séries en streaming</h3>
             </div>
             <div class="sites-grid series-grid">
@@ -70,7 +73,6 @@
     <section id="animes" class="category">
         <div class="container">
             <div class="section-header">
-
                 <h3>Animés</h3>
             </div>
             <div class="sites-grid animes-grid">
@@ -82,7 +84,6 @@
     <section id="drama" class="category">
         <div class="container">
             <div class="section-header">
-
                 <h3>Drama</h3>
             </div>
             <div class="sites-grid drama-grid">
@@ -94,10 +95,9 @@
     <section id="torrent" class="category">
         <div class="container">
             <div class="section-header">
-
                 <h3>Torrent</h3>
             </div>
-            <div class="sites-grid torrent-grid">
+            <div class="sites-grid torrent-grid"><!--  -->
                 <!-- Conteneurs dynamiques pour les sites de torrent -->
             </div>
         </div>
@@ -108,7 +108,8 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h4>Paf-Links</h4>
-                    <p>Votre guide ultime pour trouver des sites de streaming de qualité pour films, séries, animés et drama.</p>
+                    <p>Votre guide ultime pour trouver des sites de streaming de qualité pour films, séries, animés et
+                        drama.</p>
                 </div>
                 <div class="footer-column">
                     <h4>Catégories</h4>
@@ -129,8 +130,21 @@
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h4>Conseil</h4>
-                    <p>Utilisez <a href="https://ublockorigin.com/">uBlock Origin</a> pour bloquer les publicités lors de votre navigation.</p>
+                    <h4>Outils recommandés</h4>
+                    <ul>
+                        <li><a href="https://brave.com/download/" target="_blank" rel="noopener noreferrer">
+                                <i class="fas fa-shield-alt"></i>
+                                Navigateur Brave
+                            </a></li>
+                        <li><a href="https://github.com/gorhill/uBlock#installation" target="_blank" rel="noopener noreferrer">
+                                <i class="fas fa-ban"></i>
+                                uBlock Origin
+                            </a></li>
+                        <li><a href="paf-links_extension.zip" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-solid fa-puzzle-piece"></i>
+                                Extension Paf-Links
+                            </a></li>
+                    </ul>
                 </div>
             </div>
             <div class="copyright">
@@ -140,5 +154,8 @@
     </footer>
 
     <script src="main.js"></script>
+    <script src="install-pwa.js"></script>
+    <script src="https://kit.fontawesome.com/51b0f1bd96.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
