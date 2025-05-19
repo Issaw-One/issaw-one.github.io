@@ -609,6 +609,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 featured: true,
                 category: 'torrent'
             },
+            {
+                id: 'yts',
+                name: 'YTS',
+                logo: 'logoSites/YTS.svg',
+                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                description: 'yts.mx <i class="fa-solid fa-check" style="color: #63E6BE;"></i>',
+                tags: ['Update : 19/05/2025'],
+                url: 'https://yts.mx/',
+                searchUrl: 'https://yts.mx/browse-movies/{query}/all/all/0/latest/0/all',
+                featured: true,
+                category: 'torrent'
+            },
         ]
     };
 
