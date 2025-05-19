@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-    
-
     // Fonction pour créer une carte de site
     function createSiteCard(site) {
     const card = document.createElement('div');
