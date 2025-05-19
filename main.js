@@ -370,9 +370,8 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Fonction d'initialisation
-    function initApp() {
-        // Appeler les fonctions principales
+    function initApp() 
+    {
         populateSiteGrids();
         setupSearch();
         setupCategorySearch();
@@ -385,8 +384,7 @@ document.addEventListener('DOMContentLoaded', function () {
         handleMissingImages();
     }
 
-    // Démarrer l'application
-    initApp();
+        initApp();
 });
 
 if ('serviceWorker' in navigator) {
