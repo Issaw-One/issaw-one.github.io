@@ -435,7 +435,55 @@ const sitesData = {
                 searchUrl: 'https://yukiflix.pythonanywhere.com/search?q={query}',
                 featured: true,
                 category: 'animes'
-            }
+            },
+            {
+                id: 'animesite',
+                name: 'AnimeSite',
+                logo: 'logoSites/AnimeSite.webp',
+                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                description: 'https://animesite.fr <i class="fa-solid fa-check" style="color: #63E6BE;"></i>',
+                tags: ['Update : 19/05/2025'],
+                url: 'https://animesite.fr/',
+                searchUrl: 'https://animesite.fr/search/{query}',
+                featured: true,
+                category: 'animes'
+            },
+            {
+                id: 'ryokaianime',
+                name: 'RyokaiAnime',
+                logo: 'logoSites/ryokaianime.png',
+                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                description: 'ryokaianime.fr <i class="fa-solid fa-check" style="color: #63E6BE;"></i>',
+                tags: ['Update : 19/05/2025'],
+                url: 'https://ryokaianime.fr/',
+                searchUrl: 'https://ryokaianime.fr/search/{query}',
+                featured: true,
+                category: 'animes'
+            },
+            {
+                id: 'jetanimes',
+                name: 'JetAnimes',
+                logo: 'logoSites/JetAnimes.webp',
+                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                description: 'on.jetanimes.com <i class="fa-solid fa-check" style="color: #63E6BE;"></i>',
+                tags: ['Update : 19/05/2025'],
+                url: 'https://on.jetanimes.com/',
+                searchUrl: 'https://on.jetanimes.com/?s={query}',
+                featured: true,
+                category: 'animes'
+            },
+            {
+                id: 'vostanime',
+                name: 'VostAnime',
+                logo: 'logoSites/vostanime.webp',
+                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                description: 'ww2.vostanime.fr <i class="fa-solid fa-check" style="color: #63E6BE;"></i>',
+                tags: ['Update : 19/05/2025'],
+                url: 'https://ww2.vostanime.fr/',
+                searchUrl: 'https://ww2.vostanime.fr/?s={query}',
+                featured: true,
+                category: 'animes'
+            },
         ],
         drama: [
             {
