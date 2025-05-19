@@ -998,7 +998,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Fonction d'initialisation
     function initApp() {
         // Appeler les fonctions principales
-        populateSiteGrids(); // Cette fonction est cruciale pour afficher les sites
+        populateSiteGrids();
         setupSearch();
         setupCategorySearch();
         setupFilters();
