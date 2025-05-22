@@ -221,12 +221,12 @@ const sitesData = {
             {
                 id: 'yopflix',
                 name: 'YopFlix',
-                logo: 'logoSites/YopFlix.webp',
+                logo: 'logoSites/YopFlix.png',
                 headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
-                description: '<s>yopflix.pics</s> <i class="fa-solid fa-x" style="color: #ff0000;"></i><br><s>yopflix.quest</s> <i class="fa-solid fa-x" style="color: #ff0000;"></i>',
-                tags: ['Update : 19/05/2025'],
-                url: 'https://yopflix.pics/',
-                searchUrl: "https://yopflix.pics/search?query={query}",
+                description: 'yopflix.my <i class="fa-solid fa-check" style="color: #63E6BE;"></i><br><s>yopflix.pics</s> <i class="fa-solid fa-x" style="color: #ff0000;"></i>',
+                tags: ['Update : 22/05/2025'],
+                url: 'https://yopflix.my/',
+                searchUrl: "https://yopflix.my/search?query={query}",
                 featured: true,
                 category: 'series'
             },
