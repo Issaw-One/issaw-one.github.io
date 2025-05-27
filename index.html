@@ -1,11 +1,162 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maintenance</title>
+    <title>Paf-Links</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name="theme-color" content="#8C52FF">
 </head>
+
 <body>
-    <h1>Maintenance en cours</h1>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Paf-Links<span>.</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#films" class="active">Films HD</a></li>
+                    <li><a href="#series">Films/Séries</a></li>
+                    <li><a href="#animes">Animés</a></li>
+                    <li><a href="#drama">Drama</a></li>
+                    <li><a href="#torrent">Torrent</a></li>
+                    <li><a href="plex2wish" target="_blank">Paf-Streaming</a></li>
+                </ul>
+            </nav>
+            <div class="theme-switch">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Streaming Websites List</h2>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Rechercher un site de streaming...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bouton PWA -->
+    <button id="install-button"
+        style="display:none; position: fixed; bottom: 20px; right: 20px; padding: 10px 15px; font-size: 16px;">📲
+        Installer l'application</button>
+
+    <section id="films" class="category">
+        <div class="container">
+            <div class="section-header">
+                <h3>Films HD Gratuits (8)</h3>
+            </div>
+            <div class="sites-grid films-grid">
+                <!-- Conteneurs dynamiques pour les sites de films -->
+            </div>
+        </div>
+    </section>
+
+    <section id="series" class="category">
+        <div class="container">
+            <div class="section-header">
+                <h3>Films / Séries (18)</h3>
+            </div>
+            <div class="sites-grid series-grid">
+                <!-- Conteneurs dynamiques pour les sites de séries -->
+            </div>
+        </div>
+    </section>
+
+    <section id="animes" class="category">
+        <div class="container">
+            <div class="section-header">
+                <h3>Animés (7)</h3>
+            </div>
+            <div class="sites-grid animes-grid">
+                <!-- Conteneurs dynamiques pour les sites d'animés -->
+            </div>
+        </div>
+    </section>
+
+    <section id="drama" class="category">
+        <div class="container">
+            <div class="section-header">
+                <h3>Drama (7)</h3>
+            </div>
+            <div class="sites-grid drama-grid">
+                <!-- Conteneurs dynamiques pour les sites de drama -->
+            </div>
+        </div>
+    </section>
+
+    <section id="torrent" class="category">
+        <div class="container">
+            <div class="section-header">
+                <h3>Torrent (11)</h3>
+            </div>
+            <div class="sites-grid torrent-grid"><!--  -->
+                <!-- Conteneurs dynamiques pour les sites de torrent -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Paf-Links</h4>
+                    <p>Votre guide ultime pour trouver des sites de streaming de qualité pour films, séries, animés et
+                        drama.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Catégories</h4>
+                    <ul>
+                        <li><a href="#films">Films</a></li>
+                        <li><a href="#series">Séries</a></li>
+                        <li><a href="#animes">Animés</a></li>
+                        <li><a href="#drama">Drama</a></li>
+                        <li><a href="#torrent">Torrent</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Liens utiles</h4>
+                    <ul>
+                        <li><a href="#about">À propos</a></li>
+                        <li><a href="#" id="toggleTheme">Changer de thème</a></li>
+                        <li><a href="lien-mort.html">Signaler un lien mort</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Outils recommandés</h4>
+                    <ul>
+                        <li><a href="https://brave.com/download/" target="_blank" rel="noopener noreferrer">
+                                <i class="fas fa-shield-alt"></i>
+                                Navigateur Brave
+                            </a></li>
+                        <li><a href="https://github.com/gorhill/uBlock#installation" target="_blank" rel="noopener noreferrer">
+                                <i class="fas fa-ban"></i>
+                                uBlock Origin
+                            </a></li>
+                        <li><a href="paf-links_extension.zip" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-solid fa-puzzle-piece"></i>
+                                Extension Paf-Links
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Paf-Links. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="sites.js"></script>
+    <script src="install-pwa.js"></script>
+    <script src="https://kit.fontawesome.com/51b0f1bd96.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
