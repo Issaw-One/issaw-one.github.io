@@ -4,7 +4,7 @@ const sitesData = {
             id: 'cinepulse',
             name: 'Cinepulse',
             logo: 'logoSites/Cinepulse.webp',
-            headerBg: 'linear-gradient(135deg, #6A11CB 0%, #2575FC 100%)',
+            headerBg: '#1A1A1A',
             description: 'cinepulse.fr <i class="fa-solid fa-check" style="color: #63E6BE;"></i>',
             tags: ['Update : 17/05/2025'],
             url: 'https://cinepulse.fr/',

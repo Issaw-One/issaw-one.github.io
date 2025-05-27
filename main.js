@@ -31,330 +31,201 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     card.innerHTML = `
-        <div class="site-header" style="background: ${site.headerBg}; position: relative;">
-  <div class="category-icon">${getCategoryIcon(site.category)}</div>
-
-            <div class="logo-container">
-                <img src="${site.logo}" alt="${site.name}" class="site-logo">
-            </div>
+        <div class="site-card-header" style="background: ${site.headerBg};">
+            <img src="${site.logo}" alt="${site.name} logo">
+            <div class="category-icon">${getCategoryIcon(site.category)}</div>
         </div>
-        <div class="site-content">
-            <h3 class="site-title">
-  <a href="${site.url}" target="_blank">
-    ${site.name}
-    ${site.showStar ? '<i class="fa-solid fa-star" style="color: #FFD43B; margin-left: 5px;"></i>' : ''}
-  </a>
-</h3>
-
-            <p class="site-desc">${site.description}</p>
+        <div class="site-card-content">
+            <h3>${site.name}</h3>
+            <p>${site.description}</p>
             <div class="site-tags">
                 ${tagsHTML}
             </div>
             ${searchFormHTML}
-        </div>
-        <div class="site-footer">
-            <a href="${site.url}" class="visit-btn" target="_blank">Visiter</a>
+            <div class="site-actions">
+                <a href="${site.url}" target="_blank" rel="noopener noreferrer" class="btn-visit">Visiter le site</a>
+            </div>
         </div>
     `;
+
+    // Ajout de la classe 'new-site' si la date de mise à jour est récente
+    // La logique ici est basée sur une date en dur pour l'exemple.
+    // Pour une utilisation réelle, vous devriez ajouter une propriété 'dateAdded' ou 'lastUpdated' à vos objets 'site' dans sites.js.
+    const isNew = site.tags.some(tag => tag.includes('Update : 17/05/2025')); // Adapte la date si tu veux afficher que les très récents
+    if (isNew) {
+        card.classList.add('new-site');
+    }
+
+    // Ajout de la classe d'animation pour l'apparition
+    setTimeout(() => {
+        card.classList.add('animate-in');
+    }, 100); // Délai léger pour l'animation (ajustable)
 
     return card;
 }
 
 
-    // Fonction pour remplir les grilles de sites
+    // Fonction pour populer les grilles de sites
     function populateSiteGrids() {
-        // Remplir la grille des sites mis en avant
-        const featuredGrid = document.querySelector('.featured-sites');
-        if (featuredGrid) {
-            const featuredSites = [
-                ...sitesData.films.filter(site => site.featured),
-                ...sitesData.series.filter(site => site.featured),
-                ...sitesData.animes.filter(site => site.featured),
-                ...sitesData.drama.filter(site => site.featured),
-                ...sitesData.torrent.filter(site => site.featured)
-            ];
-
-            featuredSites.forEach(site => {
-                featuredGrid.appendChild(createSiteCard(site));
-            });
-        }
-
-        // Remplir la grille des films
-        const filmsGrid = document.querySelector('.films-grid');
-        if (filmsGrid) {
-            sitesData.films.forEach(site => {
-                filmsGrid.appendChild(createSiteCard(site));
-            });
-        }
-
-        // Remplir la grille des séries
-        const seriesGrid = document.querySelector('.series-grid');
-        if (seriesGrid) {
-            sitesData.series.forEach(site => {
-                seriesGrid.appendChild(createSiteCard(site));
-            });
-        }
-
-        // Remplir la grille des animés
-        const animesGrid = document.querySelector('.animes-grid');
-        if (animesGrid) {
-            sitesData.animes.forEach(site => {
-                animesGrid.appendChild(createSiteCard(site));
-            });
-        }
-
-        // Remplir la grille des drama
-        const dramaGrid = document.querySelector('.drama-grid');
-        if (animesGrid) {
-            sitesData.drama.forEach(site => {
-                dramaGrid.appendChild(createSiteCard(site));
-            });
-        }
-
-        // Remplir la grille des torrent
-        const torrentGrid = document.querySelector('.torrent-grid');
-        if (torrentGrid) {
-            sitesData.torrent.forEach(site => {
-                torrentGrid.appendChild(createSiteCard(site));
-            });
+        for (const category in sitesData) {
+            const grid = document.getElementById(`${category}-grid`);
+            if (grid) {
+                sitesData[category].forEach(site => {
+                    grid.appendChild(createSiteCard(site));
+                });
+            }
         }
     }
 
-    // Fonction pour la recherche
+    // Fonction de recherche
     function setupSearch() {
-    const searchInput = document.getElementById('search-input');
-
-    if (searchInput) {
-        searchInput.addEventListener('input', function () {
-            const query = this.value.toLowerCase().trim();
+        const searchInput = document.getElementById('search-input');
+        searchInput.addEventListener('input', function() {
+            const query = this.value.toLowerCase();
             const allSiteCards = document.querySelectorAll('.site-card');
 
             allSiteCards.forEach(card => {
-                const siteName = card.querySelector('.site-title').textContent.toLowerCase();
-                const siteDesc = card.querySelector('.site-desc').textContent.toLowerCase();
-                const shouldShow = siteName.includes(query) || siteDesc.includes(query);
+                const siteName = card.querySelector('h3').textContent.toLowerCase();
+                const siteDescription = card.querySelector('p').textContent.toLowerCase();
+                const siteTags = card.querySelectorAll('.site-tag');
+                let tagsText = '';
+                siteTags.forEach(tag => {
+                    tagsText += tag.textContent.toLowerCase() + ' ';
+                });
 
-                card.style.display = shouldShow ? 'block' : 'none';
-            });
-
-            // 🔽 Masquer les grilles de catégories vides
-            const categoryGrids = document.querySelectorAll('.films-grid, .series-grid, .animes-grid, .drama-grid, .torrent-grid');
-
-            categoryGrids.forEach(grid => {
-                const visibleCards = Array.from(grid.querySelectorAll('.site-card')).filter(card => card.style.display !== 'none');
-                const section = grid.closest('section'); // S'assure que toute la section est masquée
-                if (visibleCards.length === 0) {
-                    if (section) section.style.display = 'none';
+                if (siteName.includes(query) || siteDescription.includes(query) || tagsText.includes(query)) {
+                    card.style.display = 'flex';
                 } else {
-                    if (section) section.style.display = '';
+                    card.style.display = 'none';
                 }
             });
         });
     }
-}
 
-
-    
+    // Fonction de recherche par catégorie (si besoin de plus de filtres à l'avenir)
     function setupCategorySearch() {
-        const searchInputs = document.querySelectorAll('.category-search');
-        searchInputs.forEach(input => {
-            input.addEventListener('input', function () {
-                const category = this.dataset.category;
-                const query = this.value.toLowerCase().trim();
-                const cards = document.querySelectorAll(`.${category}-grid .site-card`);
-                cards.forEach(card => {
-                    const name = card.querySelector('.site-title').textContent.toLowerCase();
-                    const desc = card.querySelector('.site-desc').textContent.toLowerCase();
-                    const match = name.includes(query) || desc.includes(query);
-                    card.style.display = match ? 'block' : 'none';
+        // Cette fonction peut être étendue pour gérer des filtres par catégorie
+        // Actuellement, la recherche est globale, mais on peut ajouter des boutons de filtre ici
+    }
+
+    // Fonction de filtrage (actuellement non utilisée directement, mais peut être utile)
+    function setupFilters() {
+        // Peut être utilisée pour des filtres plus complexes (ex: par langue, par type de contenu)
+    }
+
+    // Fonction pour le basculement du thème
+    function setupThemeToggle() {
+        const themeSwitch = document.querySelector('.theme-switch');
+        const body = document.body;
+
+        // Charger le thème depuis localStorage
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            body.classList.add(savedTheme);
+            if (savedTheme === 'light-theme') {
+                themeSwitch.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+            }
+        } else {
+            // Définir le thème par défaut si aucun n'est sauvegardé
+            body.classList.add('dark-theme');
+        }
+
+        themeSwitch.addEventListener('click', () => {
+            if (body.classList.contains('dark-theme')) {
+                body.classList.remove('dark-theme');
+                body.classList.add('light-theme');
+                themeSwitch.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('theme', 'light-theme');
+            } else {
+                body.classList.remove('light-theme');
+                body.classList.add('dark-theme');
+                themeSwitch.querySelector('i').classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('theme', 'dark-theme');
+            }
+        });
+    }
+
+    // Fonction pour les animations de défilement (si tu en as déjà)
+    function setupScrollAnimations() {
+        // Exemple basique : animer les sections quand elles apparaissent
+        const sections = document.querySelectorAll('.category-section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // observer.unobserve(entry.target); // Optionnel: pour n'animer qu'une seule fois
+                }
+            });
+        }, { threshold: 0.1 }); // Se déclenche quand 10% de la section est visible
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    }
+
+    // Fonction pour le défilement fluide
+    function setupSmoothScrolling() {
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
                 });
             });
         });
     }
 
-    // Fonction pour configurer les filtres
-    function setupFilters() {
-        const filterButtons = document.querySelectorAll('.filter-btn');
-
-        filterButtons.forEach(button => {
-            button.addEventListener('click', function () {
-                // Retirer la classe active de tous les boutons
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-
-                // Ajouter la classe active au bouton cliqué
-                this.classList.add('active');
-
-                // Filtrer les sites
-                const filter = this.dataset.filter;
-                const featuredCards = document.querySelectorAll('.featured-sites .site-card');
-
-                if (filter === 'all') {
-                    // Afficher tous les sites
-                    featuredCards.forEach(card => card.style.display = 'block');
-                } else {
-                    // Filtrer les sites selon le tag
-                    featuredCards.forEach(card => {
-                        const tags = card.querySelectorAll('.site-tag');
-                        let hasTag = false;
-
-                        tags.forEach(tag => {
-                            if (tag.textContent.toLowerCase().includes(filter.toLowerCase())) {
-                                hasTag = true;
-                            }
-                        });
-
-                        card.style.display = hasTag ? 'block' : 'none';
-                    });
-                }
-            });
-        });
-    }
-
-    // Fonction pour basculer entre les thèmes clair et sombre
-    function setupThemeToggle() {
-        const themeSwitch = document.querySelector('.theme-switch');
-        const themeIcon = themeSwitch.querySelector('i');
-        const toggleThemeLink = document.getElementById('toggleTheme');
-        const body = document.body;
-
-        // Vérifier si un thème est déjà enregistré dans le localStorage
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark') {
-            body.classList.add('dark-theme');
-            themeIcon.classList.replace('fa-moon', 'fa-sun');
-        }
-
-        // Fonction pour basculer le thème
-        function toggleTheme() {
-            if (body.classList.contains('dark-theme')) {
-                body.classList.remove('dark-theme');
-                themeIcon.classList.replace('fa-sun', 'fa-moon');
-                localStorage.setItem('theme', 'light');
-            } else {
-                body.classList.add('dark-theme');
-                themeIcon.classList.replace('fa-moon', 'fa-sun');
-                localStorage.setItem('theme', 'dark');
-            }
-        }
-
-        // Ajouter des écouteurs d'événements pour le basculement du thème
-        if (themeSwitch) {
-            themeSwitch.addEventListener('click', toggleTheme);
-        }
-
-        if (toggleThemeLink) {
-            toggleThemeLink.addEventListener('click', function (e) {
-                e.preventDefault();
-                toggleTheme();
-            });
-        }
-    }
-
-    // Fonction pour les animations au défilement
-    function setupScrollAnimations() {
-        const sections = document.querySelectorAll('section');
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        sections.forEach(section => {
-            observer.observe(section);
-            section.classList.add('scroll-animation');
-        });
-    }
-
-    // Fonction pour gérer le défilement fluide
-    function setupSmoothScrolling() {
-        const navLinks = document.querySelectorAll('nav a');
-
-        navLinks.forEach(link => {
-            link.addEventListener('click', function (e) {
-                const targetId = this.getAttribute('href');
-
-                if (targetId.startsWith('#') && targetId !== '#') {
-                    e.preventDefault();
-                    const targetElement = document.querySelector(targetId);
-
-                    if (targetElement) {
-                        // Défiler vers l'élément cible avec une animation fluide
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-
-                        // Ajouter la classe active au lien cliqué et la retirer des autres
-                        navLinks.forEach(navLink => navLink.classList.remove('active'));
-                        this.classList.add('active');
-                    }
-                }
-            });
-        });
-    }
-
-    // Fonction pour mettre à jour les éléments actifs dans le menu de navigation lors du défilement
+    // Fonction pour le "scroll spy" (active le lien de nav quand on scroll)
     function setupScrollSpy() {
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('nav a');
+        const sections = document.querySelectorAll('.category-section');
+        const navLinks = document.querySelectorAll('nav ul li a');
 
-        window.addEventListener('scroll', function () {
+        window.addEventListener('scroll', () => {
             let current = '';
-
             sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
+                const sectionTop = section.offsetTop;
                 const sectionHeight = section.clientHeight;
-
-                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-                    current = '#' + section.getAttribute('id');
+                if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                    current = section.getAttribute('id');
                 }
             });
 
             navLinks.forEach(link => {
                 link.classList.remove('active');
-                if (link.getAttribute('href') === current) {
+                if (link.getAttribute('href').includes(current)) {
                     link.classList.add('active');
                 }
             });
         });
     }
 
-    // Fonction pour gérer le menu mobile
+    // Fonction pour le menu mobile
     function setupMobileMenu() {
-        const header = document.querySelector('header');
-        const mobileMenuButton = document.createElement('div');
-        mobileMenuButton.className = 'mobile-menu-button';
-        mobileMenuButton.innerHTML = '<i class="fas fa-bars"></i>';
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileNav = document.querySelector('nav.mobile-nav');
 
-        header.querySelector('.container').appendChild(mobileMenuButton);
-
-        mobileMenuButton.addEventListener('click', function () {
-            const nav = document.querySelector('nav');
-            nav.classList.toggle('mobile-open');
-
-            const icon = this.querySelector('i');
-            if (nav.classList.contains('mobile-open')) {
-                icon.classList.replace('fa-bars', 'fa-times');
-            } else {
-                icon.classList.replace('fa-times', 'fa-bars');
-            }
-        });
-
-        // Fermer le menu mobile lorsqu'un lien est cliqué
-        const navLinks = document.querySelectorAll('nav a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function () {
-                const nav = document.querySelector('nav');
-                nav.classList.remove('mobile-open');
-
-                const icon = document.querySelector('.mobile-menu-button i');
-                if (icon) {
+        if (mobileMenuButton && mobileNav) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileNav.classList.toggle('mobile-open');
+                const icon = mobileMenuButton.querySelector('i');
+                if (mobileNav.classList.contains('mobile-open')) {
+                    icon.classList.replace('fa-bars', 'fa-times');
+                } else {
                     icon.classList.replace('fa-times', 'fa-bars');
                 }
             });
-        });
+
+            // Fermer le menu si un lien est cliqué
+            mobileNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileNav.classList.remove('mobile-open');
+                    const icon = document.querySelector('.mobile-menu-button i');
+                    if (icon) {
+                        icon.classList.replace('fa-times', 'fa-bars');
+                    }
+                });
+            });
+        }
     }
 
     // Fonction pour gérer les images manquantes
@@ -364,9 +235,21 @@ document.addEventListener('DOMContentLoaded', function () {
         images.forEach(img => {
             img.onerror = function () {
                 // Remplacer l'image par un placeholder
-                this.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"%3E%3Crect width="100" height="100" fill="%23cccccc"/%3E%3Ctext x="50" y="50" font-size="18" text-anchor="middle" alignment-baseline="middle" font-family="Arial" fill="%23666666"%3E' + this.alt + '%3C/text%3E%3C/svg%3E';
+                this.src = 'data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\" viewBox=\"0 0 100 100\"%3E%3Crect width=\"100\" height=\"100\" fill=\"%23cccccc\"/%3E%3Ctext x=\"50\" y=\"50\" font-size=\"18\" text-anchor=\"middle\" alignment-baseline=\"middle\" font-family=\"Arial\" fill=\"%23666666\"%3E' + this.alt + '%3C/text%3E%3C/svg%3E';
                 this.classList.add('placeholder-img');
             };
+        });
+    }
+
+    // Nouvelle fonction pour l'effet de header au scroll
+    function setupHeaderScroll() {
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) { // Si l'utilisateur a scrollé plus de 50px
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
         });
     }
 
@@ -382,13 +265,20 @@ document.addEventListener('DOMContentLoaded', function () {
         setupScrollSpy();
         setupMobileMenu();
         handleMissingImages();
+        setupHeaderScroll(); // Appel de la nouvelle fonction
     }
 
         initApp();
 });
 
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('service-worker.js')
-      .then(reg => console.log("✅ Service Worker enregistré"))
-      .catch(err => console.warn("❌ Erreur SW :", err));
-  }
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+            .then(registration => {
+                console.log('ServiceWorker registered: ', registration);
+            })
+            .catch(registrationError => {
+                console.log('ServiceWorker registration failed: ', registrationError);
+            });
+    });
+}

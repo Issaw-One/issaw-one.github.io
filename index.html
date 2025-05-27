@@ -35,84 +35,56 @@
 
     <section class="hero">
         <div class="container">
-            <h2>Streaming Websites List</h2>
+            <h2>Votre Guide Ultime du Streaming</h2>
+            <p class="hero-subtitle">Découvrez et accédez facilement aux meilleurs sites de films, séries, animés et plus encore.</p>
             <div class="search-box">
                 <input type="text" id="search-input" placeholder="Rechercher un site de streaming...">
-                <button><i class="fas fa-search"></i></button>
+                <i class="fas fa-search"></i>
             </div>
         </div>
     </section>
 
-    <!-- Bouton PWA -->
-    <button id="install-button"
-        style="display:none; position: fixed; bottom: 20px; right: 20px; padding: 10px 15px; font-size: 16px;">📲
-        Installer l'application</button>
-
-    <section id="films" class="category">
+    <main>
         <div class="container">
-            <div class="section-header">
-                <h3>Films HD Gratuits (8)</h3>
-            </div>
-            <div class="sites-grid films-grid">
-                <!-- Conteneurs dynamiques pour les sites de films -->
-            </div>
-        </div>
-    </section>
+            <section id="films" class="category-section">
+                <h2>Films HD <i class="fas fa-film"></i></h2>
+                <div class="site-grid" id="films-grid"></div>
+            </section>
 
-    <section id="series" class="category">
-        <div class="container">
-            <div class="section-header">
-                <h3>Films / Séries (18)</h3>
-            </div>
-            <div class="sites-grid series-grid">
-                <!-- Conteneurs dynamiques pour les sites de séries -->
-            </div>
-        </div>
-    </section>
+            <section id="series" class="category-section">
+                <h2>Films/Séries <i class="fas fa-tv"></i></h2>
+                <div class="site-grid" id="series-grid"></div>
+            </section>
 
-    <section id="animes" class="category">
-        <div class="container">
-            <div class="section-header">
-                <h3>Animés (7)</h3>
-            </div>
-            <div class="sites-grid animes-grid">
-                <!-- Conteneurs dynamiques pour les sites d'animés -->
-            </div>
-        </div>
-    </section>
+            <section id="animes" class="category-section">
+                <h2>Animés <i class="fas fa-dragon"></i></h2>
+                <div class="site-grid" id="animes-grid"></div>
+            </section>
 
-    <section id="drama" class="category">
-        <div class="container">
-            <div class="section-header">
-                <h3>Drama (7)</h3>
-            </div>
-            <div class="sites-grid drama-grid">
-                <!-- Conteneurs dynamiques pour les sites de drama -->
-            </div>
-        </div>
-    </section>
+            <section id="drama" class="category-section">
+                <h2>Drama <i class="fas fa-theater-masks"></i></h2>
+                <div class="site-grid" id="drama-grid"></div>
+            </section>
 
-    <section id="torrent" class="category">
-        <div class="container">
-            <div class="section-header">
-                <h3>Torrent (11)</h3>
-            </div>
-            <div class="sites-grid torrent-grid"><!--  -->
-                <!-- Conteneurs dynamiques pour les sites de torrent -->
-            </div>
+            <section id="torrent" class="category-section">
+                <h2>Torrent <i class="fas fa-magnet"></i></h2>
+                <div class="site-grid" id="torrent-grid"></div>
+            </section>
         </div>
-    </section>
+    </main>
 
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
                     <h4>Paf-Links</h4>
-                    <p>Votre guide ultime pour trouver des sites de streaming de qualité pour films, séries, animés et
-                        drama.</p>
+                    <p>Votre portail unique pour le streaming.</p>
+                    <div class="social-icons">
+                        <a href="https://github.com/vittorio-p/Paf-Links" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                        </div>
                 </div>
                 <div class="footer-column">
-                    <h4>Catégories</h4>
+                    <h4>Liens Rapides</h4>
                     <ul>
                         <li><a href="#films">Films</a></li>
                         <li><a href="#series">Séries</a></li>
@@ -122,10 +94,12 @@
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h4>Liens utiles</h4>
+                    <h4>Aide et Support</h4>
                     <ul>
-                        <li><a href="#about">À propos</a></li>
-                        <li><a href="#" id="toggleTheme">Changer de thème</a></li>
+                        <li><a href="about.html">À Propos</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="privacy.html">Confidentialité</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                         <li><a href="lien-mort.html">Signaler un lien mort</a></li>
                     </ul>
                 </div>

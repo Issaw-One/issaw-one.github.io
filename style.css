@@ -11,6 +11,7 @@
     --transition: all 0.3s ease;
     --card-border-radius: 12px;
     --button-radius: 8px;
+    --background-color-rgb: 18, 18, 18; /* RGB de #121212 */
 }
 
 .dark-theme {
@@ -23,7 +24,23 @@
     --text-light: #AAAAAA;
     --border-color: #333333;
     --shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --background-color-rgb: 18, 18, 18;
 }
+
+/* Light Theme (exemple) */
+.light-theme {
+    --primary-color: #6A11CB;
+    --secondary-color: #2575FC;
+    --accent-color: #FF5983;
+    --background-color: #F0F2F5;
+    --card-bg: #FFFFFF;
+    --text-color: #333333;
+    --text-light: #666666;
+    --border-color: #E0E0E0;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    --background-color-rgb: 240, 242, 245;
+}
+
 
 * {
     margin: 0;
@@ -36,28 +53,14 @@ html {
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background: var(--background-color);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
-}
-
-a {
-    text-decoration: none;
-    color: var(--primary-color);
-    transition: var(--transition);
-}
-
-a:hover {
-    color: var(--secondary-color);
-}
-
-ul {
-    list-style: none;
+    transition: background-color var(--transition), color var(--transition);
 }
 
 .container {
-    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
@@ -65,511 +68,553 @@ ul {
 
 /* Header */
 header {
-    background-color: var(--card-bg);
-    box-shadow: var(--shadow);
-    position: sticky;
+    background-color: var(--background-color);
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky; /* Rendre le header "collant" */
     top: 0;
     z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease; /* Pour l'effet de réduction */
+}
+
+header.scrolled {
+    padding: 10px 0; /* Réduit le padding quand on scroll */
+    background-color: rgba(var(--background-color-rgb), 0.95); /* Légèrement transparent */
+    backdrop-filter: blur(5px); /* Effet de flou sur le fond */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
 }
 
 .logo h1 {
-    font-size: 24px;
-    font-weight: 700;
+    font-size: 2.5em; /* Un peu plus grand */
     color: var(--text-color);
+    font-weight: 700;
 }
 
-.logo span {
+.logo h1 span {
     color: var(--primary-color);
 }
 
 nav ul {
+    list-style: none;
     display: flex;
-}
-
-nav ul li {
-    margin: 0 15px;
+    gap: 25px; /* Plus d'espace entre les liens */
 }
 
 nav ul li a {
-    color: var(--text-color);
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 1.1em;
     font-weight: 500;
-    font-size: 16px;
-    padding: 8px 15px;
-    border-radius: var(--button-radius);
-    transition: var(--transition);
-}
-
-nav ul li a:hover, nav ul li a.active {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-.theme-switch {
-    cursor: pointer;
-    padding: 8px;
-    border-radius: 50%;
-    background-color: var(--background-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: var(--transition);
-}
-
-.theme-switch:hover {
-    background-color: var(--border-color);
-}
-
-/* Hero Section */
-.hero {
-    padding: 80px 0;
-    text-align: center;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    color: white;
-}
-
-.hero h2 {
-    font-size: 48px;
-    margin-bottom: 20px;
-    font-weight: 800;
-}
-
-.hero p {
-    font-size: 18px;
-    margin-bottom: 40px;
-    opacity: 0.9;
-}
-
-.search-box {
-    display: flex;
-    max-width: 600px;
-    margin: 0 auto;
-    border-radius: var(--button-radius);
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.search-box input {
-    flex: 1;
-    padding: 15px 20px;
-    border: none;
-    outline: none;
-    font-size: 16px;
-}
-
-.search-box button {
-    background-color: var(--accent-color);
-    color: white;
-    border: none;
-    padding: 0 25px;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.search-box button:hover {
-    background-color: var(--secondary-color);
-}
-
-/* Section Styles */
-section {
-    padding: 60px 0;
-}
-
-.section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
-}
-
-.section-header h3 {
-    font-size: 24px;
-    font-weight: 700;
+    padding-bottom: 5px; /* Pour l'indicateur actif */
     position: relative;
+    transition: color var(--transition);
 }
 
-.section-header h3::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 50px;
-    height: 4px;
-    background: var(--primary-color);
-    border-radius: 2px;
+nav ul li a:hover {
+    color: var(--primary-color);
 }
 
-.view-all {
-    display: flex;
-    align-items: center;
+nav ul li a.active {
     color: var(--primary-color);
     font-weight: 600;
 }
 
-.view-all i {
-    margin-left: 8px;
-    font-size: 12px;
+nav ul li a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0; /* Placé en bas du lien */
+    width: 100%;
+    height: 3px; /* Épaisseur de la ligne */
+    background-color: var(--primary-color);
+    border-radius: 2px;
+    animation: revealUnderline 0.3s ease-out forwards; /* Animation d'apparition */
 }
 
-/* Filter Buttons */
-.filters {
-    display: flex;
-    gap: 10px;
+@keyframes revealUnderline {
+    from {
+        width: 0;
+        transform: translateX(50%);
+    }
+    to {
+        width: 100%;
+        transform: translateX(0);
+    }
 }
 
-.filter-btn {
+/* Pour le thème switch */
+.theme-switch {
+    font-size: 1.5em;
+    cursor: pointer;
+    color: var(--text-light);
+    transition: color var(--transition);
+}
+
+.theme-switch:hover {
+    color: var(--primary-color);
+}
+
+
+/* Hero Section - Améliorations */
+.hero {
+    position: relative; /* Nécessaire pour le pseudo-élément */
+    overflow: hidden; /* Cache les débordements de l'animation */
+    padding: 100px 20px; /* Plus d'espace vertical */
+    text-align: center;
+    color: var(--text-color);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); /* Dégradé de base */
+    animation: backgroundGradient 15s ease infinite alternate; /* Animation du dégradé */
+}
+
+@keyframes backgroundGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.hero h2 {
+    font-size: 3.5em; /* Plus grand */
+    margin-bottom: 20px;
+    letter-spacing: -1.5px; /* Rapproche légèrement les lettres */
+    background: linear-gradient(45deg, #FFD700, #FF69B4); /* Dégradé pour le texte */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero .hero-subtitle {
+    font-size: 1.3em;
+    color: var(--text-light);
+    max-width: 700px;
+    margin: 0 auto 40px; /* Centrer et espacer */
+    line-height: 1.6;
+}
+
+.hero .search-box {
+    margin-top: 30px;
+    position: relative; /* Pour positionner l'icône de recherche */
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero .search-box input {
+    width: 100%;
+    padding: 15px 50px 15px 20px; /* Plus de padding à droite pour l'icône */
+    border-radius: var(--button-radius);
+    border: 1px solid var(--border-color);
     background-color: var(--card-bg);
     color: var(--text-color);
-    border: 1px solid var(--border-color);
-    padding: 8px 15px;
-    border-radius: var(--button-radius);
-    cursor: pointer;
-    transition: var(--transition);
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 1.1em;
+    outline: none;
+    transition: border-color var(--transition);
 }
 
-.filter-btn:hover, .filter-btn.active {
-    background-color: var(--primary-color);
-    color: white;
+.hero .search-box input:focus {
     border-color: var(--primary-color);
 }
 
-/* Sites Grid */
-.sites-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 25px;
+.hero .search-box .fas.fa-search {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-light);
+    font-size: 1.2em;
 }
 
+
+/* Main Content */
+main {
+    padding: 40px 0;
+}
+
+.category-section {
+    margin-bottom: 60px;
+}
+
+.category-section h2 {
+    font-size: 2.2em;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.category-section h2 i {
+    color: var(--text-light);
+}
+
+/* Site Grid */
+.site-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; /* Plus d'espace entre les cartes */
+    padding-top: 20px; /* Assure un peu d'espace */
+}
+
+/* Site Card */
 .site-card {
     background-color: var(--card-bg);
     border-radius: var(--card-border-radius);
     overflow: hidden;
     box-shadow: var(--shadow);
-    transition: var(--transition);
-    position: relative;
-}
-
-.site-card {
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    transform-style: preserve-3d;
-    will-change: transform;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column; /* Pour organiser le contenu */
+    position: relative; /* Pour le badge "Nouveau" */
+    height: 100%; /* Assure que toutes les cartes ont la même hauteur dans la grille */
 }
 
 .site-card:hover {
-    transform: translateY(-8px) scale(1.02) rotateX(1deg);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    transform: translateY(-8px) scale(1.02); /* Soulève et agrandit légèrement */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Ombre plus prononcée */
 }
 
-.site-card .site-header {
-    height: 160px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
-
-.site-card .site-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
-}
-
-.site-card .logo-container {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+.site-card-header {
+    height: 120px; /* Augmente la hauteur pour donner plus d'espace au logo */
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    padding: 10px; /* Maintient un petit padding autour du logo */
+    position: relative; /* Pour la position du logo */
+    /* Assurez-vous que le background est bien défini ici pour la couleur uniforme */
+    background-color: var(--card-bg); /* Ou la couleur uniforme que tu as choisie, ex: #282828 */
 }
 
-.site-card .site-logo {
-    max-width: 80%;
-    max-height: 80px;
-    object-fit: contain;
+.site-card-header img {
+    max-width: 90px; /* Augmente la taille maximale du logo */
+    max-height: 90px; /* Augmente la taille maximale du logo */
+    object-fit: contain; /* <--- TRÈS IMPORTANT : Garantit que le logo ne sera pas déformé */
+    border-radius: 50%; /* Rendre les logos ronds */
+    border: 3px solid rgba(255, 255, 255, 0.2); /* Petite bordure autour du logo */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-.site-card .site-content {
+.site-card-content {
     padding: 20px;
-}
-
-.site-card .site-title {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.site-card .site-desc {
-    color: var(--text-light);
-    font-size: 14px;
-    margin-bottom: 15px;
-    line-height: 1.5;
-}
-
-.site-card .site-tags {
     display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    flex-grow: 1; /* Permet au contenu de prendre l'espace restant */
+}
+
+.site-card h3 {
+    font-size: 1.5em;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.site-card p {
+    font-size: 0.95em;
+    color: var(--text-light);
     margin-bottom: 15px;
+    flex-grow: 1; /* Permet à la description de prendre de la place */
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limite à 2 lignes */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.site-tags {
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px; /* Espace entre les tags */
+    justify-content: center;
 }
 
 .site-tag {
-    padding: 4px 10px;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-size: 12px;
-    border-radius: 50px;
-    font-weight: 500;
+    background-color: rgba(var(--primary-color), 0.2); /* Couleur plus transparente */
+    color: var(--primary-color);
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    font-weight: 600;
 }
 
-.site-card .site-footer {
+.site-actions {
     display: flex;
-    justify-content: space-between;
+    gap: 10px;
+    margin-top: auto; /* Pousse les actions vers le bas de la carte */
+    justify-content: center;
+}
+
+.site-actions a,
+.site-actions button {
+    display: inline-flex; /* Pour centrer le contenu de l'icône/texte */
     align-items: center;
-    padding: 15px 20px;
-    border-top: 1px solid var(--border-color);
+    justify-content: center;
+    padding: 10px 15px;
+    border-radius: var(--button-radius);
+    font-size: 0.9em;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color var(--transition), transform 0.2s ease;
+    cursor: pointer;
 }
 
-.site-card .site-rating {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.site-card .stars {
-    color: #FFD700;
-}
-
-.site-card .rate-count {
-    color: var(--text-light);
-    font-size: 12px;
-}
-
-.site-card .visit-btn {
-    padding: 8px 15px;
+.site-actions .btn-visit {
     background-color: var(--primary-color);
     color: white;
-    border-radius: var(--button-radius);
-    font-size: 14px;
-    font-weight: 500;
-    transition: var(--transition);
+    border: none;
+    flex-grow: 1; /* Prend plus de place */
 }
 
-.site-card .visit-btn:hover {
+.site-actions .btn-visit:hover {
     background-color: var(--secondary-color);
+    transform: translateY(-2px);
 }
 
-/* Featured Sites */
-.featured {
-    background-color: rgba(140, 82, 255, 0.05);
+.site-actions .btn-search {
+    background-color: var(--card-bg);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    flex-grow: 1;
 }
 
-.featured-sites .site-card {
-    border: 2px solid var(--primary-color);
+.site-actions .btn-search:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Badge "Nouveau" */
+.site-card.new-site::before {
+    content: 'Nouveau';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--accent-color); /* Couleur accent */
+    color: white;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 0.7em;
+    font-weight: bold;
+    z-index: 10;
+    animation: pulse 1.5s infinite; /* Petite animation */
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Icônes de catégorie */
+.category-icon {
+    position: absolute;
+    bottom: 10px; /* Positionnement au bas de l'en-tête */
+    right: 10px;
+    font-size: 1.5em;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Formulaire de recherche dans la carte */
+.site-search-form {
+    display: flex;
+    margin-top: 10px; /* Espace au-dessus du formulaire */
+    margin-bottom: 15px; /* <--- AJOUTE CETTE LIGNE (ajuste la valeur si tu veux plus ou moins d'espace) */
+    border: 1px solid var(--border-color);
+    border-radius: var(--button-radius);
+    overflow: hidden; /* Pour que les bords soient arrondis */
+}
+
+.site-search-form input {
+    flex-grow: 1;
+    padding: 8px 12px;
+    border: none;
+    background-color: var(--background-color); /* Un peu plus sombre que le fond de carte */
+    color: var(--text-color);
+    outline: none;
+    font-size: 0.9em;
+}
+
+.site-search-form button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color var(--transition);
+}
+
+.site-search-form button:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Animations pour l'apparition des cartes */
+.site-card.animate-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlideUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Footer */
 footer {
     background-color: var(--card-bg);
-    padding: 60px 0 30px;
+    color: var(--text-light);
+    padding: 40px 0 20px;
     border-top: 1px solid var(--border-color);
+    margin-top: 60px;
 }
 
 .footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
-    margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
 }
 
 .footer-column h4 {
-    font-size: 18px;
+    color: var(--text-color);
+    font-size: 1.3em;
     margin-bottom: 20px;
-    position: relative;
 }
 
-.footer-column h4::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 30px;
-    height: 3px;
-    background: var(--primary-color);
+.footer-column p,
+.footer-column ul {
+    font-size: 0.95em;
+    line-height: 1.8;
 }
 
-.footer-column p {
-    color: var(--text-light);
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-.footer-column ul li {
-    margin-bottom: 10px;
+.footer-column ul {
+    list-style: none;
+    padding: 0;
 }
 
 .footer-column ul li a {
     color: var(--text-light);
-    font-size: 14px;
+    text-decoration: none;
+    transition: color var(--transition);
+    display: block; /* Pour que le padding/margin fonctionne bien */
+    padding: 2px 0;
 }
 
 .footer-column ul li a:hover {
     color: var(--primary-color);
 }
 
+.social-icons a {
+    color: var(--text-light);
+    font-size: 1.5em;
+    margin-right: 15px;
+    transition: color var(--transition);
+}
+
+.social-icons a:hover {
+    color: var(--primary-color);
+}
+
 .copyright {
     text-align: center;
-    padding-top: 30px;
     border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+    font-size: 0.9em;
     color: var(--text-light);
-    font-size: 14px;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
-    .hero h2 {
-        font-size: 36px;
+    nav {
+        display: none; /* Cache la nav par défaut sur mobile */
     }
-    
-    .section-header {
+
+    .hero {
+        padding: 80px 15px;
+    }
+
+    .hero h2 {
+        font-size: 2.5em;
+    }
+
+    .hero .hero-subtitle {
+        font-size: 1em;
+    }
+
+    .site-grid {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+    }
+
+    .category-section h2 {
+        font-size: 1.8em;
+    }
+
+    .footer-content {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
+        text-align: center;
     }
-    
-    .filters {
+
+    .footer-column {
+        min-width: unset;
         width: 100%;
-        overflow-x: auto;
-        padding-bottom: 10px;
     }
-    
-    .sites-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
+    .social-icons {
+        margin-top: 15px;
     }
-    
-    nav ul {
-        display: none;
+
+    .social-icons a {
+        margin: 0 10px;
     }
-}
 
-@media (max-width: 480px) {
-    .sites-grid {
-        grid-template-columns: 1fr;
+    /* Menu mobile */
+    .mobile-menu-button {
+        display: block;
     }
-    
-    .hero h2 {
-        font-size: 28px;
+
+    header .container {
+        justify-content: space-between;
     }
-    
-    .hero p {
-        font-size: 16px;
+
+    /* Styles pour le menu mobile quand il est ouvert */
+    nav.mobile-nav {
+        display: block;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: var(--button-radius);
+        padding: 10px 0;
+        z-index: 200;
+        width: 200px;
+        box-shadow: var(--shadow);
     }
-}
 
-/* Mise à jour du pied de page des cartes */
-.site-card .site-footer {
-    display: flex;
-    justify-content: flex-end; /* Changement de space-between à flex-end */
-    align-items: center;
-    padding: 15px 20px;
-    border-top: 1px solid var(--border-color);
-}
-
-.site-card .visit-btn {
-    padding: 8px 15px;
-    background-color: var(--primary-color);
-    color: white;
-    border-radius: var(--button-radius);
-    font-size: 14px;
-    font-weight: 500;
-    transition: var(--transition);
-}
-
-.site-card .visit-btn:hover {
-    background-color: var(--secondary-color);
-}
-.category-search-box {
-    max-width: 500px;
-    margin: 20px auto 40px;
-    display: flex;
-    background-color: var(--card-bg);
-    border-radius: var(--button-radius);
-    overflow: hidden;
-    box-shadow: var(--shadow);
-}
-
-.category-search-box input {
-    flex: 1;
-    padding: 12px 18px;
-    font-size: 16px;
-    border: none;
-    outline: none;
-    color: var(--text-color);
-    background: none;
-}
-
-.site-search-form {
-    display: flex;
-    margin-top: 15px;
-    border-radius: var(--button-radius);
-    overflow: hidden;
-    border: 1px solid var(--border-color);
-}
-
-.site-search-form input {
-    flex: 1;
-    padding: 10px 12px;
-    font-size: 14px;
-    background: var(--background-color);
-    border: none;
-    color: var(--text-color);
-}
-
-.site-search-form button {
-    background: var(--accent-color);
-    border: none;
-    padding: 0 15px;
-    color: white;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.site-search-form button:hover {
-    background: var(--secondary-color);
-}
-
-
-
-/* Affichage du menu mobile quand il est ouvert */
-nav.mobile-open ul {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    right: 20px;
-    background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: var(--button-radius);
-    padding: 10px 0;
-    z-index: 200;
-    width: 200px;
-    box-shadow: var(--shadow);
-}
-
-nav.mobile-open ul li {
-    margin: 10px 0;
-    text-align: center;
+    nav.mobile-open ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
 }
 
 /* Bouton du menu mobile */
@@ -580,8 +625,19 @@ nav.mobile-open ul li {
     cursor: pointer;
 }
 
+/* S'assurer que le bouton mobile est visible sur les petits écrans */
 @media (max-width: 768px) {
     .mobile-menu-button {
+        display: block;
+    }
+    header .container {
+        justify-content: space-between; /* Assure que le logo et le bouton sont bien séparés */
+    }
+    nav { /* Masquer la navigation par défaut sur mobile */
+        display: none;
+    }
+    /* Afficher la navigation mobile seulement quand la classe est active */
+    nav.mobile-open {
         display: block;
     }
 }
@@ -605,32 +661,6 @@ nav.mobile-open ul li {
     position: absolute;
     top: 10px;
     left: 10px;
-    font-size: 22px;
-    color: white;
-    background: rgba(0, 0, 0, 0.4);
-    padding: 6px 8px;
-    border-radius: 50%;
-    z-index: 2;
-}
-
-.site-card .site-logo {
-    transition: transform 0.4s ease;
-}
-
-.site-card:hover .site-logo {
-    transform: scale(1.1);
-}
-
-.favorite-icon {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+    color: var(--text-color);
     font-size: 20px;
-    color: rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.favorite-icon.active {
-    color: #FFD43B;
 }
