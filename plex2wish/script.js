@@ -1,5 +1,6 @@
         // Sample movie data
         const movies = [
+            { id: 25, name: "Plus belle la vie, encore plus belle - Episode 342 du mercredi 28 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://voe.sx/e/adr9dbchyslm" },
             { id: 24, name: "Ici tout commence - Episode 1184 du mardi 27 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://oneupload.net/embed-xtziiejv3nzk.html" },
             { id: 23, name: "Plus belle la vie, encore plus belle - Episode 341 du mardi 27 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://oneupload.net/embed-vvtun26k7k7n.html" },
             { id: 22, name: "Plus belle la vie, encore plus belle - Episode 340 du lundi 26 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-akf0qnjysrs2.html" },
