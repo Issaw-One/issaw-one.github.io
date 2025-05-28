@@ -664,3 +664,39 @@ footer {
     color: var(--text-color);
     font-size: 20px;
 }
+
+/* Add this to your style.css */
+.new-tag {
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    background-color: #FF6B6B; /* A vibrant red, adjust to your preference */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    font-weight: bold;
+    z-index: 10; /* Ensure it's above other elements */
+    /* Optional: subtle shadow for depth */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* Optional: slight animation */
+    animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+}
+
+/* You might want to adjust positioning slightly based on your existing design */
+/* For example, if your category icon or logo is too close to the top-right */
+.site-card-header {
+    position: relative; /* Ensure position:relative so absolute positioning works */
+    overflow: hidden; /* To clip content if it goes outside */
+}

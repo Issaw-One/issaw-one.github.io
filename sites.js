@@ -4,96 +4,104 @@ const sitesData = {
             id: 'cinepulse',
             name: 'Cinepulse',
             logo: 'logoSites/Cinepulse.webp',
-            headerBg: '#1A1A1A',
+            headerBg: 'linear-gradient(135deg,rgb(0, 0, 0) 0%,rgb(255, 255, 255) 100%)',
             description: 'cinepulse.to <i class="fa-solid fa-check" style="color: #63E6BE;"></i><br><s>cinepulse.fr</s> <i class="fa-solid fa-x" style="color: #ff0000;"></i>',
             tags: ['Update : 28/05/2025'],
             url: 'https://cinepulse.to/',
             searchUrl: 'https://cinepulse.to/catalog?query={query}&sort-by=pertinence',
             featured: true,
+            isNew: false,
             category: 'films'
         },
         {
             id: 'ivdid',
             name: 'IVDID',
             logo: 'logoSites/Ivdid.webp',
-            headerBg: 'linear-gradient(135deg, #E21143 0%, #FFB03A 100%)',
+            headerBg: 'linear-gradient(45deg,rgb(201, 0, 50) 0%,rgb(245, 180, 140) 100%)',
             description: 'ivdid.com <i class="fa-solid fa-check" style="color: #63E6BE;"></i>',
             tags: ['Update : 17/05/2025'],
             url: 'https://ivdid.com/2alhobzy6/home/ivdid',
             searchUrl: '',
             featured: true,
+            isNew: false,
             category: 'films'
         },
         {
             id: 'topstream',
             name: 'Topstream',
             logo: 'logoSites/TopStream.webp',
-            headerBg: 'linear-gradient(135deg, #834D9B 0%, #D04ED6 100%)',
+            headerBg: 'linear-gradient(135deg,rgb(209, 0, 35) 0%,rgb(255, 255, 255) 100%)',
             description: 'top-stream.io <i class="fa-solid fa-check" style="color: #63E6BE;"></i>',
             tags: ['Update : 17/05/2025'],
             url: 'https://top-stream.io',
             searchUrl: 'https://top-stream.io/search/{query}',
             featured: false,
+            isNew: false,
             category: 'films'
         },
         {
             id: 'vfstream',
             name: 'VFStream',
             logo: 'logoSites/VfStream.webp',
-            headerBg: 'linear-gradient(135deg, #C31432 0%, #240B36 100%)',
+            headerBg: 'linear-gradient(135deg,rgb(1, 3, 1) 0%,rgb(237, 0, 36) 100%)',
             description: 'films.vfstream.eu <i class="fa-solid fa-check" style="color: #63E6BE;"></i>',
             tags: ['Update : 17/05/2025'],
             url: 'https://films.vfstream.eu/',
             searchUrl: '',
             featured: false,
+            isNew: false,
             category: 'films'
         },
         {
             id: '1jour1film',
             name: '1jour1film',
             logo: 'logoSites/1jour1film.webp',
-            headerBg: 'linear-gradient(135deg, #3A1C71 0%, #D76D77 50%, #FFAF7B 100%)',
+            headerBg: 'linear-gradient(135deg,rgb(41, 40, 34) 0%,rgb(186, 161, 97) 100%)',
             description: '1jour1film22.online <i class="fa-solid fa-check" style="color: #63E6BE;"></i><br><s>1jour1film2.online</s> <i class="fa-solid fa-x" style="color: #ff0000;"></i>',
             tags: ['Update : 28/05/2025'],
             url: 'https://1jour1film22.online/',
             searchUrl: 'https://1jour1film22.online/?s={query}',
             featured: false,
+            isNew: false,
             category: 'series'
         },
         {
             id: 'wowfilms',
             name: 'WOW-FILMS',
             logo: 'logoSites/WowFilms.webp',
-            headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+            headerBg: 'linear-gradient(135deg,rgb(61, 166, 50) 0%,rgb(255, 190, 61) 100%)',
             description: 'wowfilms2.mom <i class="fa-solid fa-check" style="color: #63E6BE;"></i><br><s>wowfilms11.mom</s> <i class="fa-solid fa-x" style="color: #ff0000;"></i>',
             tags: ['Update : 28/05/2025'],
             url: 'https://wowfilms2.mom/',
             searchUrl: 'https://wowfilms2.mom/?s={query}',
             featured: true,
+            isNew: false,
             category: 'series'
         },
         {
             id: 'darkiworld',
             name: 'Darkiworld',
             logo: 'logoSites/darkiworld.webp',
-            headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+            headerBg: 'linear-gradient(135deg,rgb(28, 28, 31) 0%,rgb(255, 112, 51) 100%)',
             description: 'darkiworld2025.com <i class="fa-solid fa-check" style="color: #63E6BE;"></i><br><s>darki-tometjerry.com</s> <i class="fa-solid fa-x" style="color: #ff0000;"></i>',
             tags: ['Update : 25/05/2025'],
             url: 'https://darkiworld2025.com/',
             searchUrl: 'https://darkiworld2025.com/search/{query}',
             featured: true,
+            isNew: false,
             category: 'series'
         },
         {
             id: 'wawacity',
             name: 'Wawacity',
             logo: 'logoSites/wawacity.png',
-            headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+            headerBg: 'linear-gradient(135deg,#77c255 0%,#f8bf42 100%)',
             description: 'wawacity.pictures <i class="fa-solid fa-check" style="color: #63E6BE;"></i><br><s>wawacity.pet</s> <i class="fa-solid fa-x" style="color: #ff0000;"></i>',
             tags: ['Update : 23/05/2025'],
             url: 'https://www.wawacity.pictures/',
             searchUrl: 'https://www.wawacity.pictures/?search={query}&p=films',
             featured: true,
+            isNew: false,
             category: 'series'
         },
         ],
@@ -102,240 +110,260 @@ const sitesData = {
                 id: 'nightflix',
                 name: 'NightFlix',
                 logo: 'logoSites/NightFlix.webp',
-                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                headerBg: 'linear-gradient(135deg,rgb(0, 0, 0) 0%,rgb(59, 59, 59) 100%)',
                 description: 'nightflix.run <i class="fa-solid fa-check" style="color: #63E6BE;"></i><br><s>nightflix.store</s> <i class="fa-solid fa-x" style="color: #ff0000;"></i>',
                 tags: ['Update : 17/05/2025'],
                 url: 'https://nightflix.run/',
                 searchUrl: 'https://nightflix.run/recherche?q={query}',
                 featured: true,
+                isNew: false,
                 category: 'series'
             },
             {
                 id: 'wiflix',
                 name: 'WiFlix',
                 logo: 'logoSites/WiFlix.webp',
-                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                headerBg: 'linear-gradient(135deg,rgb(0, 0, 0) 0%,rgb(59, 59, 59) 100%)',
                 description: 'flemmix.net <i class="fa-solid fa-check" style="color: #63E6BE;"></i><br><s>flemmix.ws</s> <i class="fa-solid fa-x" style="color: #ff0000;"></i>',
                 tags: ['Update : 22/05/2025'],
                 url: 'https://flemmix.net/',
                 searchUrl: 'https://flemmix.net/index.php?do=search&subaction=search&search_start=0&full_search=0&story={query}',
                 featured: true,
+                isNew: false,
                 category: 'series'
             },
             {
                 id: 'papadustream',
                 name: 'PapaDuStream',
                 logo: 'logoSites/PapaDuStream.webp',
-                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                headerBg: 'linear-gradient(135deg,rgb(0, 0, 0) 0%,rgb(59, 59, 59) 100%)',
                 description: 'papadustream.cash <i class="fa-solid fa-check" style="color: #63E6BE;"></i><br><s>papadustream.boo</s> <i class="fa-solid fa-x" style="color: #ff0000;"></i>',
                 tags: ['Update : 17/05/2025'],
                 url: 'https://papadustream.cash/',
                 searchUrl: 'https://papadustream.cash/index.php?do=search&subaction=search&search_start=0&full_search=0&story={query}',
                 featured: true,
+                isNew: false,
                 category: 'series'
             },
             {
                 id: 'monstream',
                 name: 'MonStream',
                 logo: 'logoSites/MonStream.webp',
-                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                headerBg: 'linear-gradient(135deg,rgb(0, 0, 0) 0%,rgb(59, 59, 59) 100%)',
                 description: 'monstream.cafe <i class="fa-solid fa-check" style="color: #63E6BE;"></i>',
                 tags: ['Update : 17/05/2025'],
                 url: 'https://vww.monstream.cafe',
                 searchUrl: 'https://vww.monstream.cafe/index.php?do=search&subaction=search&search_start=0&full_search=0&story={query}',
                 featured: true,
+                isNew: false,
                 category: 'series'
             },
             {
                 id: 'frenchstream',
                 name: 'French-Stream',
                 logo: 'logoSites/FrechStream.webp',
-                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                headerBg: 'linear-gradient(135deg,rgb(0, 0, 0) 0%,rgb(59, 59, 59) 100%)',
                 description: 'fsmirror77.lol <i class="fa-solid fa-check" style="color: #63E6BE;"></i><br><s>fsmirror57.lol</s> <i class="fa-solid fa-x" style="color: #ff0000;"></i>',
                 tags: ['Update : 27/05/2025'],
                 url: 'https://fsmirror77.lol/',
                 searchUrl: 'https://fsmirror77.lol/index.php?story={query}&do=search&subaction=search',
                 featured: true,
+                isNew: false,
                 category: 'series'
             },
             {
                 id: 'wookafr',
                 name: 'WookaFR',
                 logo: 'logoSites/WookaFr.webp',
-                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                headerBg: 'linear-gradient(135deg,rgb(0, 0, 0) 0%,rgb(59, 59, 59) 100%)',
                 description: 'wookafr.tel <i class="fa-solid fa-check" style="color: #63E6BE;"></i><br><s>wookafr.app</s> <i class="fa-solid fa-x" style="color: #ff0000;"></i>',
                 tags: ['Update : 17/05/2025'],
                 url: 'https://wookafr.tel/',
                 searchUrl: 'https://wookafr.tel/?s={query}',
                 featured: true,
+                isNew: false,
                 category: 'series'
             },
             {
                 id: 'coflix',
                 name: 'Coflix',
                 logo: 'logoSites/coflix.webp',
-                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                headerBg: 'linear-gradient(135deg,rgb(0, 0, 0) 0%,rgb(59, 59, 59) 100%)',
                 description: 'coflix.mov <i class="fa-solid fa-check" style="color: #63E6BE;"></i>',
                 tags: ['Update : 17/05/2025'],
                 url: 'https://coflix.mov/',
                 searchUrl: 'https://coflix.mov/?s={query}',
                 featured: true,
+                isNew: false,
                 category: 'series'
             },
             {
                 id: 'movix',
                 name: 'Movix',
                 logo: 'logoSites/Movix.webp',
-                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                headerBg: 'linear-gradient(135deg,rgb(0, 0, 0) 0%,rgb(59, 59, 59) 100%)',
                 description: 'movix.site <i class="fa-solid fa-check" style="color: #63E6BE;"></i>',
                 tags: ['Update : 17/05/2025'],
                 url: 'https://www.movix.site/',
                 searchUrl: 'https://www.movix.site/search?q={query}',
                 featured: true,
+                isNew: false,
                 category: 'series'
             },
             {
                 id: 'netmirror',
                 name: 'NetMirror',
                 logo: 'logoSites/netmirror.png',
-                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                headerBg: 'linear-gradient(135deg,rgb(0, 0, 0) 0%,rgb(59, 59, 59) 100%)',
                 description: 'netfree2.cc <i class="fa-solid fa-check" style="color: #63E6BE;"></i>',
                 tags: ['Update : 17/05/2025'],
                 url: 'https://netfree2.cc/home',
                 searchUrl: '',
                 featured: true,
+                isNew: false,
                 category: 'series'
             },
             {
                 id: 'sadisflix',
                 name: 'Sadisflix',
                 logo: 'logoSites/SadisFlix.webp',
-                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                headerBg: 'linear-gradient(135deg,rgb(0, 0, 0) 0%,rgb(59, 59, 59) 100%)',
                 description: 'sadisflix-officiel.sbs <i class="fa-solid fa-check" style="color: #63E6BE;"></i><br><s>sadisflix.hair</s> <i class="fa-solid fa-x" style="color: #ff0000;"></i>',
                 tags: ['Update : 17/05/2025'],
                 url: 'https://sadisflix-officiel.sbs/',
                 searchUrl: 'https://sadisflix-officiel.sbs/search?q={query}',
                 featured: true,
+                isNew: false,
                 category: 'series'
             },
             {
                 id: 'yopflix',
                 name: 'YopFlix',
                 logo: 'logoSites/YopFlix.png',
-                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                headerBg: 'linear-gradient(135deg,rgb(0, 0, 0) 0%,rgb(59, 59, 59) 100%)',
                 description: 'yopflix.my <i class="fa-solid fa-check" style="color: #63E6BE;"></i><br><s>yopflix.pics</s> <i class="fa-solid fa-x" style="color: #ff0000;"></i>',
                 tags: ['Update : 22/05/2025'],
                 url: 'https://yopflix.my/',
                 searchUrl: "https://yopflix.my/search?query={query}",
                 featured: true,
+                isNew: false,
                 category: 'series'
             },
             {
                 id: 'hdstream',
                 name: 'Hdstream',
                 logo: 'logoSites/10.webp',
-                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                headerBg: 'linear-gradient(135deg,rgb(0, 0, 0) 0%,rgb(59, 59, 59) 100%)',
                 description: 'hdstream.top <i class="fa-solid fa-check" style="color: #63E6BE;"></i>',
                 tags: ['Update : 18/05/2025'],
                 url: 'https://www.hdstream.top/',
                 searchUrl: 'https://www.hdstream.top/index.php?do=search&subaction=search&search_start=0&full_search=0&story={query}',
                 featured: true,
+                isNew: false,
                 category: 'series'
             },
             {
                 id: 'dulourd',
                 name: 'Dulourd',
                 logo: 'logoSites/dulourd.webp',
-                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                headerBg: 'linear-gradient(135deg,rgb(0, 0, 0) 0%,rgb(59, 59, 59) 100%)',
                 description: 'dulourd.day <i class="fa-solid fa-check" style="color: #63E6BE;"></i>',
                 tags: ['Update : 17/05/2025'],
                 url: 'https://www.dulourd.day/',
                 searchUrl: 'https://www.dulourd.day/index.php?do=search&subaction=search&search_start=0&full_search=0&story={query}',
                 featured: true,
+                isNew: false,
                 category: 'series'
             },
             {
                 id: 'filmoflix',
                 name: 'FilmoFlix',
                 logo: 'logoSites/FilmoFlix.webp',
-                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                headerBg: 'linear-gradient(135deg,rgb(0, 0, 0) 0%,rgb(59, 59, 59) 100%)',
                 description: 'filmoflix.bz <i class="fa-solid fa-check" style="color: #63E6BE;"></i><br><s>filmoflix.is</s> <i class="fa-solid fa-x" style="color: #ff0000;"></i>',
                 tags: ['Update : 19/05/2025'],
                 url: 'https://filmoflix.bz/',
                 searchUrl: 'https://filmoflix.bz/index.php?do=search&subaction=search&search_start=0&full_search=0&story={query}',
                 featured: true,
+                isNew: false,
                 category: 'series'
             },
             {
                 id: 'cinemay',
                 name: 'Cinemay',
                 logo: 'logoSites/cinemay.png',
-                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                headerBg: 'linear-gradient(135deg,rgb(0, 0, 0) 0%,rgb(59, 59, 59) 100%)',
                 description: 'cinemay.cloud <i class="fa-solid fa-check" style="color: #63E6BE;"></i>',
                 tags: ['Update : 17/05/2025'],
                 url: 'https://cinemay.cloud/',
                 searchUrl: 'https://cinemay.cloud/index.php?do=search&subaction=search&search_start=0&full_search=0&story={query}',
                 featured: true,
+                isNew: false,
                 category: 'series'
             },
             {
                 id: 'dustreaming',
                 name: 'Dustreaming',
                 logo: 'logoSites/dustreaming.png',
-                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                headerBg: 'linear-gradient(135deg,rgb(0, 0, 0) 0%,rgb(59, 59, 59) 100%)',
                 description: 'dustreaming.info <i class="fa-solid fa-check" style="color: #63E6BE;"></i>',
                 tags: ['Update : 17/05/2025'],
                 url: 'https://dustreaming.info/',
                 searchUrl: 'https://dustreaming.info/index.php?do=search&subaction=search&search_start=0&full_search=0&story={query}',
                 featured: true,
+                isNew: false,
                 category: 'series'
             },
             {
                 id: 'megastream',
                 name: 'MegaStream',
                 logo: 'logoSites/megastream.png',
-                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                headerBg: 'linear-gradient(135deg,rgb(0, 0, 0) 0%,rgb(59, 59, 59) 100%)',
                 description: 'megastream.link <i class="fa-solid fa-check" style="color: #63E6BE;"></i>',
                 tags: ['Update : 19/05/2025'],
                 url: 'https://www.megastream.link/',
                 searchUrl: 'https://www.megastream.link/index.php?do=search&subaction=search&search_start=0&full_search=0&story={query}',
                 featured: true,
+                isNew: false,
                 category: 'series'
             },
             {
                 id: 'megafilms',
                 name: 'MegaFilms',
                 logo: 'logoSites/megafilms.png',
-                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                headerBg: 'linear-gradient(135deg,rgb(0, 0, 0) 0%,rgb(59, 59, 59) 100%)',
                 description: 'megafilms.click <i class="fa-solid fa-check" style="color: #63E6BE;"></i>',
                 tags: ['Update : 19/05/2025'],
                 url: 'https://www.megafilms.click/',
                 searchUrl: 'https://www.megafilms.click/index.php?do=search&subaction=search&search_start=0&full_search=0&story={query}',
                 featured: true,
+                isNew: false,
                 category: 'series'
             },
             {
                 id: 'frenchflix',
                 name: 'FrenchFlix',
                 logo: 'logoSites/FrenchFlix.webp',
-                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                headerBg: 'linear-gradient(135deg,rgb(0, 0, 0) 0%,rgb(59, 59, 59) 100%)',
                 description: 'frenchflix.cc <i class="fa-solid fa-check" style="color: #63E6BE;"></i>',
                 tags: ['Update : 19/05/2025'],
                 url: 'https://frenchflix.cc/',
                 searchUrl: 'https://frenchflix.cc/?s={query}',
                 featured: true,
+                isNew: false,
                 category: 'series'
             },
             {
                 id: 'netflax',
                 name: 'NetFlax',
                 logo: 'logoSites/NetFlax.webp',
-                headerBg: 'linear-gradient(135deg, #355C7D 0%, #6C5B7B 50%, #C06C84 100%)',
+                headerBg: 'linear-gradient(135deg,rgb(0, 0, 0) 0%,rgb(59, 59, 59) 100%)',
                 description: 'netflax.fr <i class="fa-solid fa-check" style="color: #63E6BE;"></i>',
                 tags: ['Update : 19/05/2025'],
                 url: 'https://netflax.fr/',
                 searchUrl: 'https://netflax.fr/search/{query}',
                 featured: true,
+                isNew: false,
                 category: 'series'
             },
             {
@@ -348,6 +376,7 @@ const sitesData = {
                 url: 'https://seko-stream.com/',
                 searchUrl: 'https://seko-stream.com/search/{query}',
                 featured: true,
+                isNew: false,
                 category: 'series'
             },
         ],
@@ -362,6 +391,7 @@ const sitesData = {
                 url: 'https://animekai.to/',
                 searchUrl: 'https://animekai.to/browser?keyword={query}',
                 featured: true,
+                isNew: false,
                 category: 'animes'
             },
             {
@@ -374,6 +404,7 @@ const sitesData = {
                 url: 'https://anime-sama.fr/',
                 searchUrl: '',
                 featured: true,
+                isNew: false,
                 category: 'animes'
             },
             {
@@ -386,6 +417,7 @@ const sitesData = {
                 url: 'https://french-anime.com/',
                 searchUrl: 'https://french-anime.com/index.php?do=search&subaction=search&search_start=0&full_search=0&story={query}',
                 featured: true,
+                isNew: false,
                 category: 'animes'
             },
             {
@@ -398,6 +430,7 @@ const sitesData = {
                 url: 'https://franime.fr/',
                 searchUrl: 'https://franime.fr/recherche?search={query}',
                 featured: true,
+                isNew: false,
                 category: 'animes'
             },
             {
@@ -410,6 +443,7 @@ const sitesData = {
                 url: 'https://v6.voiranime.com/',
                 searchUrl: 'https://v6.voiranime.com/?s={query}',
                 featured: true,
+                isNew: false,
                 category: 'animes'
             },
             {
@@ -422,6 +456,7 @@ const sitesData = {
                 url: 'https://www.mavanimes.co/',
                 searchUrl: 'https://www.mavanimes.co/?s={query}',
                 featured: true,
+                isNew: false,
                 category: 'animes'
             },
             {
@@ -434,6 +469,7 @@ const sitesData = {
                 url: 'https://yukiflix.pythonanywhere.com/decouvrir',
                 searchUrl: 'https://yukiflix.pythonanywhere.com/search?q={query}',
                 featured: true,
+                isNew: false,
                 category: 'animes'
             },
             {
@@ -446,6 +482,7 @@ const sitesData = {
                 url: 'https://animesite.fr/',
                 searchUrl: 'https://animesite.fr/search/{query}',
                 featured: true,
+                isNew: false,
                 category: 'animes'
             },
             {
@@ -458,6 +495,7 @@ const sitesData = {
                 url: 'https://ryokaianime.fr/',
                 searchUrl: 'https://ryokaianime.fr/search/{query}',
                 featured: true,
+                isNew: false,
                 category: 'animes'
             },
             {
@@ -470,6 +508,7 @@ const sitesData = {
                 url: 'https://on.jetanimes.com/',
                 searchUrl: 'https://on.jetanimes.com/?s={query}',
                 featured: true,
+                isNew: false,
                 category: 'animes'
             },
             {
@@ -482,6 +521,7 @@ const sitesData = {
                 url: 'https://ww2.vostanime.fr/',
                 searchUrl: 'https://ww2.vostanime.fr/?s={query}',
                 featured: true,
+                isNew: false,
                 category: 'animes'
             },
         ],
@@ -496,6 +536,7 @@ const sitesData = {
                 url: 'https://kisskh.co/',
                 searchUrl: '',
                 featured: true,
+                isNew: false,
                 category: 'drama'
             },
             {
@@ -508,6 +549,7 @@ const sitesData = {
                 url: 'https://voirdrama.org/',
                 searchUrl: 'https://voirdrama.org/?post_type=wp-manga&s={query}',
                 featured: true,
+                isNew: false,
                 category: 'drama'
             },
             {
@@ -520,6 +562,7 @@ const sitesData = {
                 url: 'https://ww5.dramacool.com.de/',
                 searchUrl: 'https://ww5.dramacool.com.de/search?keyword={query}',
                 featured: true,
+                isNew: false,
                 category: 'drama'
             },
             {
@@ -532,6 +575,7 @@ const sitesData = {
                 url: 'https://ww3.myasiantv.rest/',
                 searchUrl: 'https://ww3.myasiantv.rest/?s={query}',
                 featured: true,
+                isNew: false,
                 category: 'drama'
             },
             {
@@ -544,6 +588,7 @@ const sitesData = {
                 url: '',
                 searchUrl: '',
                 featured: true,
+                isNew: false,
                 category: 'drama'
             },
             {
@@ -556,6 +601,7 @@ const sitesData = {
                 url: 'https://kissasian.nl/',
                 searchUrl: 'https://kissasian.nl/search/drama?keyword={query}&x=0&y=0',
                 featured: true,
+                isNew: false,
                 category: 'drama'
             },
             {
@@ -568,6 +614,7 @@ const sitesData = {
                 url: 'https://dramacountdown.com/',
                 searchUrl: 'https://dramacountdown.com/search?q={query}',
                 featured: true,
+                isNew: false,
                 category: 'drama'
             },
         ],
@@ -582,6 +629,7 @@ const sitesData = {
                 url: 'https://thepiratebay10.info/',
                 searchUrl: 'https://thepiratebay10.info/search/{query}/1/99/0',
                 featured: true,
+                isNew: false,
                 category: 'torrent'
             },
             {
@@ -594,6 +642,7 @@ const sitesData = {
                 url: 'https://1337x.to/',
                 searchUrl: 'https://1337x.to/search/{query}/1/',
                 featured: true,
+                isNew: false,
                 category: 'torrent'
             },
             {
@@ -606,6 +655,7 @@ const sitesData = {
                 url: 'https://www.oxtorrent5.com/home',
                 searchUrl: 'https://www.oxtorrent5.com/recherche/{query}',
                 featured: true,
+                isNew: false,
                 category: 'torrent'
             },
             {
@@ -618,6 +668,7 @@ const sitesData = {
                 url: 'https://www.yggtorrent3.com/home',
                 searchUrl: 'https://www.yggtorrent3.com/recherche/{query}',
                 featured: true,
+                isNew: false,
                 category: 'torrent'
             },
             {
@@ -630,6 +681,7 @@ const sitesData = {
                 url: 'https://www.cpasbien4.com/home',
                 searchUrl: 'https://www.cpasbien4.com/recherche/{query}',
                 featured: true,
+                isNew: false,
                 category: 'torrent'
             },
             {
@@ -642,6 +694,7 @@ const sitesData = {
                 url: 'https://www.zetorrents1.com/home',
                 searchUrl: 'https://www.zetorrents1.com/recherche/{query}',
                 featured: true,
+                isNew: false,
                 category: 'torrent'
             },
             {
@@ -654,6 +707,7 @@ const sitesData = {
                 url: 'https://torrentz9.org/',
                 searchUrl: 'https://torrentz9.org/search?keyword={query}',
                 featured: true,
+                isNew: false,
                 category: 'torrent'
             },
             {
@@ -666,6 +720,7 @@ const sitesData = {
                 url: 'https://www.limetorrents.lol/',
                 searchUrl: 'https://www.limetorrents.lol/search/all/{query}/',
                 featured: true,
+                isNew: false,
                 category: 'torrent'
             },
             {
@@ -678,6 +733,7 @@ const sitesData = {
                 url: 'https://binge-browser.vercel.app/',
                 searchUrl: 'https://binge-browser.vercel.app/?search_query={query}',
                 featured: true,
+                isNew: false,
                 category: 'torrent'
             },
             {
@@ -690,6 +746,7 @@ const sitesData = {
                 url: 'https://nyaa.land/',
                 searchUrl: 'https://nyaa.land/?f=0&c=0_0&q={query}',
                 featured: true,
+                isNew: false,
                 category: 'torrent'
             },
             {
@@ -702,6 +759,7 @@ const sitesData = {
                 url: 'https://yts.mx/',
                 searchUrl: 'https://yts.mx/browse-movies/{query}/all/all/0/latest/0/all',
                 featured: true,
+                isNew: false,
                 category: 'torrent'
             },
         ]

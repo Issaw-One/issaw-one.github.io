@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
         `;
 
         // Ajout de la classe 'new-site' si la date de mise à jour est récente
-        const isNew = site.tags.some(tag => tag.includes('Update : 17/05/2025'));
+        const isNew = site.isNew === true;
         if (isNew) {
             card.classList.add('new-site');
         }
