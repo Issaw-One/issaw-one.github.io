@@ -1,69 +1,66 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Fonction pour créer une carte de site
     function createSiteCard(site) {
-    const card = document.createElement('div');
-    card.className = 'site-card';
-    card.dataset.id = site.id;
-    card.dataset.category = site.category;
+        const card = document.createElement('div');
+        card.className = 'site-card';
+        card.dataset.id = site.id;
+        card.dataset.category = site.category;
 
-    const tagsHTML = site.tags.map(tag => `<span class="site-tag">${tag}</span>`).join('');
-    
-    function getCategoryIcon(category) {
-    switch (category) {
-        case 'films': return '<i class="fas fa-film"></i>';
-        case 'series': return '<i class="fas fa-tv"></i>';
-        case 'animes': return '<i class="fas fa-dragon"></i>';
-        case 'drama': return '<i class="fas fa-theater-masks"></i>';
-        case 'torrent': return '<i class="fas fa-magnet"></i>';
-        default: return '';
-    }
-}
+        const tagsHTML = site.tags.map(tag => `<span class="site-tag">${tag}</span>`).join('');
+        
+        function getCategoryIcon(category) {
+            switch (category) {
+                case 'films': return '<i class="fas fa-film"></i>';
+                case 'series': return '<i class="fas fa-tv"></i>';
+                case 'animes': return '<i class="fas fa-dragon"></i>';
+                case 'drama': return '<i class="fas fa-theater-masks"></i>';
+                case 'torrent': return '<i class="fas fa-magnet"></i>';
+                default: return '';
+            }
+        }
 
-    // Génération du champ de recherche si searchUrl est défini
-    let searchFormHTML = '';
-    if (site.searchUrl && site.searchUrl.includes('{query}')) {
-        searchFormHTML = `
-            <form class="site-search-form" onsubmit="event.preventDefault(); const q = this.querySelector('input').value.trim(); if (q) window.open('${site.searchUrl.replace('{query}', "' + encodeURIComponent(q) + '")}', '_blank');">
-                <input type="text" placeholder="Rechercher sur ${site.name}...">
-                <button type="submit"><i class="fas fa-search"></i></button>
-            </form>
+        // Génération du champ de recherche si searchUrl est défini
+        let searchFormHTML = '';
+        if (site.searchUrl && site.searchUrl.includes('{query}')) {
+            searchFormHTML = `
+                <form class="site-search-form" onsubmit="event.preventDefault(); const q = this.querySelector('input').value.trim(); if (q) window.open('${site.searchUrl.replace('{query}', "' + encodeURIComponent(q) + '")}', '_blank');">
+                    <input type="text" placeholder="Rechercher sur ${site.name}...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            `;
+        }
+
+        card.innerHTML = `
+            <div class="site-card-header" style="background: ${site.headerBg};">
+                <img src="${site.logo}" alt="${site.name} logo">
+                <div class="category-icon">${getCategoryIcon(site.category)}</div>
+            </div>
+            <div class="site-card-content">
+                <h3>${site.name}</h3>
+                <p>${site.description}</p>
+                <div class="site-tags">
+                    ${tagsHTML}
+                </div>
+                ${searchFormHTML}
+                <div class="site-actions">
+                    <a href="${site.url}" target="_blank" rel="noopener noreferrer" class="btn-visit">Visiter le site</a>
+                </div>
+            </div>
         `;
+
+        // Ajout de la classe 'new-site' si la date de mise à jour est récente
+        const isNew = site.tags.some(tag => tag.includes('Update : 17/05/2025'));
+        if (isNew) {
+            card.classList.add('new-site');
+        }
+
+        // Ajout de la classe d'animation pour l'apparition
+        setTimeout(() => {
+            card.classList.add('animate-in');
+        }, 100);
+
+        return card;
     }
-
-    card.innerHTML = `
-        <div class="site-card-header" style="background: ${site.headerBg};">
-            <img src="${site.logo}" alt="${site.name} logo">
-            <div class="category-icon">${getCategoryIcon(site.category)}</div>
-        </div>
-        <div class="site-card-content">
-            <h3>${site.name}</h3>
-            <p>${site.description}</p>
-            <div class="site-tags">
-                ${tagsHTML}
-            </div>
-            ${searchFormHTML}
-            <div class="site-actions">
-                <a href="${site.url}" target="_blank" rel="noopener noreferrer" class="btn-visit">Visiter le site</a>
-            </div>
-        </div>
-    `;
-
-    // Ajout de la classe 'new-site' si la date de mise à jour est récente
-    // La logique ici est basée sur une date en dur pour l'exemple.
-    // Pour une utilisation réelle, vous devriez ajouter une propriété 'dateAdded' ou 'lastUpdated' à vos objets 'site' dans sites.js.
-    const isNew = site.tags.some(tag => tag.includes('Update : 17/05/2025')); // Adapte la date si tu veux afficher que les très récents
-    if (isNew) {
-        card.classList.add('new-site');
-    }
-
-    // Ajout de la classe d'animation pour l'apparition
-    setTimeout(() => {
-        card.classList.add('animate-in');
-    }, 100); // Délai léger pour l'animation (ajustable)
-
-    return card;
-}
-
 
     // Fonction pour populer les grilles de sites
     function populateSiteGrids() {
@@ -77,13 +74,29 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Fonction de recherche
+    // Fonction de recherche améliorée avec masquage des catégories vides
     function setupSearch() {
         const searchInput = document.getElementById('search-input');
         searchInput.addEventListener('input', function() {
-            const query = this.value.toLowerCase();
+            const query = this.value.toLowerCase().trim();
             const allSiteCards = document.querySelectorAll('.site-card');
+            const categorySection = document.querySelectorAll('.category-section');
 
+            // Si la recherche est vide, afficher tout
+            if (query === '') {
+                allSiteCards.forEach(card => {
+                    card.style.display = 'flex';
+                });
+                categorySection.forEach(section => {
+                    section.style.display = 'block';
+                });
+                return;
+            }
+
+            // Objet pour tracker les catégories qui ont des résultats
+            const categoriesWithResults = new Set();
+
+            // Filtrer les cartes
             allSiteCards.forEach(card => {
                 const siteName = card.querySelector('h3').textContent.toLowerCase();
                 const siteDescription = card.querySelector('p').textContent.toLowerCase();
@@ -93,10 +106,29 @@ document.addEventListener('DOMContentLoaded', function () {
                     tagsText += tag.textContent.toLowerCase() + ' ';
                 });
 
-                if (siteName.includes(query) || siteDescription.includes(query) || tagsText.includes(query)) {
+                const isMatch = siteName.includes(query) || 
+                              siteDescription.includes(query) || 
+                              tagsText.includes(query);
+
+                if (isMatch) {
                     card.style.display = 'flex';
+                    // Ajouter la catégorie de cette carte aux catégories avec résultats
+                    const categoryId = card.dataset.category;
+                    if (categoryId) {
+                        categoriesWithResults.add(categoryId);
+                    }
                 } else {
                     card.style.display = 'none';
+                }
+            });
+
+            // Gérer l'affichage des sections de catégories
+            categorySection.forEach(section => {
+                const sectionId = section.id;
+                if (categoriesWithResults.has(sectionId)) {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
                 }
             });
         });
@@ -118,45 +150,37 @@ document.addEventListener('DOMContentLoaded', function () {
         const themeSwitch = document.querySelector('.theme-switch');
         const body = document.body;
 
-        // Charger le thème depuis localStorage
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            body.classList.add(savedTheme);
-            if (savedTheme === 'light-theme') {
-                themeSwitch.querySelector('i').classList.replace('fa-moon', 'fa-sun');
-            }
-        } else {
-            // Définir le thème par défaut si aucun n'est sauvegardé
-            body.classList.add('dark-theme');
-        }
+        // Charger le thème depuis les variables JavaScript (pas localStorage pour éviter les erreurs)
+        let currentTheme = 'dark-theme'; // Thème par défaut
+
+        // Appliquer le thème par défaut
+        body.classList.add(currentTheme);
 
         themeSwitch.addEventListener('click', () => {
             if (body.classList.contains('dark-theme')) {
                 body.classList.remove('dark-theme');
                 body.classList.add('light-theme');
                 themeSwitch.querySelector('i').classList.replace('fa-moon', 'fa-sun');
-                localStorage.setItem('theme', 'light-theme');
+                currentTheme = 'light-theme';
             } else {
                 body.classList.remove('light-theme');
                 body.classList.add('dark-theme');
                 themeSwitch.querySelector('i').classList.replace('fa-sun', 'fa-moon');
-                localStorage.setItem('theme', 'dark-theme');
+                currentTheme = 'dark-theme';
             }
         });
     }
 
-    // Fonction pour les animations de défilement (si tu en as déjà)
+    // Fonction pour les animations de défilement
     function setupScrollAnimations() {
-        // Exemple basique : animer les sections quand elles apparaissent
         const sections = document.querySelectorAll('.category-section');
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('is-visible');
-                    // observer.unobserve(entry.target); // Optionnel: pour n'animer qu'une seule fois
                 }
             });
-        }, { threshold: 0.1 }); // Se déclenche quand 10% de la section est visible
+        }, { threshold: 0.1 });
 
         sections.forEach(section => {
             observer.observe(section);
@@ -165,12 +189,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Fonction pour le défilement fluide
     function setupSmoothScrolling() {
-        document.querySelectorAll('nav a').forEach(anchor => {
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
     }
@@ -178,7 +206,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Fonction pour le "scroll spy" (active le lien de nav quand on scroll)
     function setupScrollSpy() {
         const sections = document.querySelectorAll('.category-section');
-        const navLinks = document.querySelectorAll('nav ul li a');
+        const navLinks = document.querySelectorAll('nav ul li a[href^="#"]');
 
         window.addEventListener('scroll', () => {
             let current = '';
@@ -241,11 +269,11 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Nouvelle fonction pour l'effet de header au scroll
+    // Fonction pour l'effet de header au scroll
     function setupHeaderScroll() {
         const header = document.querySelector('header');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) { // Si l'utilisateur a scrollé plus de 50px
+            if (window.scrollY > 50) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
@@ -253,8 +281,66 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    function initApp() 
-    {
+    // Fonction pour gérer le lien Paf-Streaming avec vérification
+    function setupPafStreamingLink() {
+        const pafStreamingLink = document.querySelector('a[href="plex2wish/index.html"]');
+        
+        if (pafStreamingLink) {
+            pafStreamingLink.addEventListener('click', function(e) {
+                console.log('Tentative d\'ouverture de Paf-Streaming...');
+            });
+        }
+    }
+
+    // Fonction d'erreur pour Paf-Streaming (optionnelle)
+    function showPafStreamingError() {
+        const notification = document.createElement('div');
+        notification.innerHTML = `
+            <div style="
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+                color: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+                z-index: 9999;
+                max-width: 350px;
+                font-family: inherit;
+            ">
+                <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                    <i class="fas fa-exclamation-triangle" style="margin-right: 10px; font-size: 20px;"></i>
+                    <strong>Paf-Streaming indisponible</strong>
+                </div>
+                <p style="margin: 0 0 15px 0; opacity: 0.9;">
+                    Le service Paf-Streaming est temporairement indisponible.
+                </p>
+                <button onclick="this.parentElement.parentElement.remove()" style="
+                    background: rgba(255,255,255,0.2);
+                    border: 1px solid rgba(255,255,255,0.3);
+                    color: white;
+                    padding: 8px 15px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-size: 14px;
+                ">
+                    Fermer
+                </button>
+            </div>
+        `;
+        
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            if (notification.parentElement) {
+                notification.remove();
+            }
+        }, 7000);
+    }
+
+    // Fonction d'initialisation principale
+    function initApp() {
         populateSiteGrids();
         setupSearch();
         setupCategorySearch();
@@ -265,12 +351,15 @@ document.addEventListener('DOMContentLoaded', function () {
         setupScrollSpy();
         setupMobileMenu();
         handleMissingImages();
-        setupHeaderScroll(); // Appel de la nouvelle fonction
+        setupHeaderScroll();
+        setupPafStreamingLink();
     }
 
-        initApp();
+    // Initialiser l'application
+    initApp();
 });
 
+// Service Worker pour PWA
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('/service-worker.js')
