@@ -1,6 +1,6 @@
         // Sample movie data
         const movies = [
-            { id: 28, name: "Ici tout commence - Episode 1186 du jeudi 29 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://doply.net/e/mdi2rooelwrz" },
+            { id: 28, name: "Ici tout commence - Episode 1186 du jeudi 29 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://voe.sx/e/falnbij26jx2" },
             { id: 27, name: "Plus belle la vie, encore plus belle - Episode 343 du jeudi 29 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://jilliandescribecompany.com/e/grgv3l08eg27" }, //104
             { id: 26, name: "Ici tout commence - Episode 1185 du mercredi 28 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://voe.sx/e/4yzlq60wwemg" },
             { id: 25, name: "Plus belle la vie, encore plus belle - Episode 342 du mercredi 28 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://voe.sx/e/adr9dbchyslm" },
