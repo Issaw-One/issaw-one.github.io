@@ -146,6 +146,19 @@ const sitesData = {
                 category: 'series'
             },
             {
+                id: 'filmax',
+                name: 'Filmax',
+                logo: 'logoSites/filmax.svg',
+                headerBg: 'linear-gradient(135deg,rgb(255, 255, 255) 0%,rgb(165, 18, 18) 100%)',
+                description: 'filmax.to <i class="fa-solid fa-check" style="color: #63E6BE;"></i>',
+                tags: ['Update : 29/05/2025'],
+                url: 'https://filmax.to/',
+                searchUrl: 'https://filmax.to/search/{query}',
+                featured: true,
+                isNew: true,
+                category: 'series'
+            },
+            {
                 id: 'monstream',
                 name: 'MonStream',
                 logo: 'logoSites/MonStream.webp',
