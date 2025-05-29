@@ -78,32 +78,6 @@ const sitesData = {
             isNew: false,
             category: 'series'
         },
-        {
-            id: 'darkiworld',
-            name: 'Darkiworld',
-            logo: 'logoSites/darkiworld.webp',
-            headerBg: 'linear-gradient(135deg,rgb(28, 28, 31) 0%,rgb(255, 112, 51) 100%)',
-            description: 'darkiworld2025.com <i class="fa-solid fa-check" style="color: #63E6BE;"></i><br><s>darki-tometjerry.com</s> <i class="fa-solid fa-x" style="color: #ff0000;"></i>',
-            tags: ['Update : 25/05/2025'],
-            url: 'https://darkiworld2025.com/',
-            searchUrl: 'https://darkiworld2025.com/search/{query}',
-            featured: true,
-            isNew: false,
-            category: 'series'
-        },
-        {
-            id: 'wawacity',
-            name: 'Wawacity',
-            logo: 'logoSites/wawacity.png',
-            headerBg: 'linear-gradient(135deg,#77c255 0%,#f8bf42 100%)',
-            description: 'wawacity.pictures <i class="fa-solid fa-check" style="color: #63E6BE;"></i><br><s>wawacity.pet</s> <i class="fa-solid fa-x" style="color: #ff0000;"></i>',
-            tags: ['Update : 23/05/2025'],
-            url: 'https://www.wawacity.pictures/',
-            searchUrl: 'https://www.wawacity.pictures/?search={query}&p=films',
-            featured: true,
-            isNew: false,
-            category: 'series'
-        },
         ],
         series: [
             {
@@ -405,6 +379,73 @@ const sitesData = {
                 isNew: false,
                 category: 'series'
             },
+        ],
+        dll: [
+            {
+            id: 'darkiworld',
+            name: 'Darkiworld',
+            logo: 'logoSites/darkiworld.webp',
+            headerBg: 'linear-gradient(135deg,rgb(28, 28, 31) 0%,rgb(255, 112, 51) 100%)',
+            description: 'darkiworld2025.com <i class="fa-solid fa-check" style="color: #63E6BE;"></i><br><s>darki-tometjerry.com</s> <i class="fa-solid fa-x" style="color: #ff0000;"></i>',
+            tags: ['Update : 25/05/2025'],
+            url: 'https://darkiworld2025.com/',
+            searchUrl: 'https://darkiworld2025.com/search/{query}',
+            featured: true,
+            isNew: false,
+            category: 'series'
+        },
+        {
+            id: 'wawacity',
+            name: 'Wawacity',
+            logo: 'logoSites/wawacity.png',
+            headerBg: 'linear-gradient(135deg,#77c255 0%,#f8bf42 100%)',
+            description: 'wawacity.pictures <i class="fa-solid fa-check" style="color: #63E6BE;"></i><br><s>wawacity.pet</s> <i class="fa-solid fa-x" style="color: #ff0000;"></i>',
+            tags: ['Update : 23/05/2025'],
+            url: 'https://www.wawacity.pictures/',
+            searchUrl: 'https://www.wawacity.pictures/?search={query}&p=films',
+            featured: true,
+            isNew: false,
+            category: 'series'
+        },
+        {
+            id: 'zonetelechargement',
+            name: 'Zone Téléchargement',
+            logo: 'logoSites/zonetelechargement.png',
+            headerBg: 'linear-gradient(135deg,rgb(0, 0, 0) 0%,rgb(59, 59, 59) 100%)',
+            description: 'zone-telechargement.picture <i class="fa-solid fa-check" style="color: #63E6BE;"></i>',
+            tags: ['Update : 29/05/2025'],
+            url: 'https://www.zone-telechargement.pictures/',
+            searchUrl: 'https://www.zone-telechargement.pictures/?p=films&search={query}',
+            featured: true,
+            isNew: true,
+            category: 'series'
+        },
+        {
+            id: 'extremedownload',
+            name: 'Extreme Downlaod',
+            logo: 'logoSites/extremedownload.png',
+            headerBg: 'linear-gradient(135deg,rgb(0, 0, 0) 0%,rgb(59, 59, 59) 100%)',
+            description: 'extreme-down.pictures <i class="fa-solid fa-check" style="color: #63E6BE;"></i>',
+            tags: ['Update : 29/05/2025'],
+            url: 'https://www.extreme-down.pictures/',
+            searchUrl: 'https://www.extreme-down.pictures/?p=films&search={query}',
+            featured: true,
+            isNew: true,
+            category: 'series'
+        },
+        {
+            id: 'tirexo',
+            name: 'Tirexo',
+            logo: 'logoSites/tirexo.png',
+            headerBg: 'linear-gradient(135deg,rgb(0, 0, 0) 0%,rgb(59, 59, 59) 100%)',
+            description: 'tirexo.pictures <i class="fa-solid fa-check" style="color: #63E6BE;"></i>',
+            tags: ['Update : 29/05/2025'],
+            url: 'https://www.tirexo.pictures/',
+            searchUrl: 'https://www.tirexo.pictures/?search={query}&p=films',
+            featured: true,
+            isNew: true,
+            category: 'series'
+        },
         ],
         animes: [
             {
