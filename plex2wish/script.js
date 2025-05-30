@@ -1,6 +1,3 @@
-        // Sample movie data
-        
-        
         // Variable en mémoire pour stocker les épisodes vus pendant la session
         // Utilisé à la place de localStorage pour éviter les problèmes de sandbox
         const watchedEpisodes = new Set();
