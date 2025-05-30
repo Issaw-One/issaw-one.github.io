@@ -405,6 +405,19 @@ const sitesData = {
                 isNew: false,
                 category: 'series'
             },
+            {
+                id: '24drama',
+                name: '24DRAMA (vostfr)',
+                logo: 'logoSites/24drama.webp',
+                headerBg: 'linear-gradient(135deg,rgb(113, 63, 204) 0%,rgb(173, 147, 250) 100%)',
+                description: '24drama.to <i class="fa-solid fa-check" style="color: #63E6BE;"></i>',
+                tags: ['Update : 30/05/2025'],
+                url: 'https://24drama.to/',
+                searchUrl: 'https://24drama.to/search?q={query}',
+                featured: true,
+                isNew: true,
+                category: 'series'
+            },
         ],
         dll: [
             {
@@ -550,6 +563,19 @@ const sitesData = {
                 searchUrl: 'https://v6.voiranime.com/?s={query}',
                 featured: true,
                 isNew: false,
+                category: 'animes'
+            },
+            {
+                id: '24drama',
+                name: '24DRAMA',
+                logo: 'logoSites/24drama.webp',
+                headerBg: 'linear-gradient(135deg,rgb(113, 63, 204) 0%,rgb(173, 147, 250) 100%)',
+                description: '24drama.to <i class="fa-solid fa-check" style="color: #63E6BE;"></i>',
+                tags: ['Update : 30/05/2025'],
+                url: 'https://24drama.to/',
+                searchUrl: 'https://24drama.to/search?q={query}',
+                featured: true,
+                isNew: true,
                 category: 'animes'
             },
             {
