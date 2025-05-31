@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
             switch (category) {
                 case 'films': return '<i class="fas fa-film"></i>';
                 case 'series': return '<i class="fas fa-tv"></i>';
-                case 'dll': return '<i class="fas fa-tv"></i>';
+                case 'dll': return '<i class="fa-solid fa-download"></i>';
                 case 'animes': return '<i class="fas fa-dragon"></i>';
                 case 'drama': return '<i class="fas fa-theater-masks"></i>';
                 case 'torrent': return '<i class="fas fa-magnet"></i>';
