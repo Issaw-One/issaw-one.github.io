@@ -566,6 +566,19 @@ const sitesData = {
             category: 'animes'
         },
         {
+            id: 'vostfree',
+            name: 'Vostfree',
+            logo: 'logoSites/vostfree.png',
+            headerBg: 'linear-gradient(135deg,rgb(113, 63, 204) 0%,rgb(173, 147, 250) 100%)',
+            description: 'vostfree.ws <i class="fa-solid fa-check" style="color: #63E6BE;"></i>',
+            tags: ['Update : 31/05/2025'],
+            url: 'https://vostfree.ws/',
+            searchUrl: 'https://vostfree.ws/index.php?do={query}',
+            featured: true,
+            isNew: true,
+            category: 'animes'
+        },
+        {
             id: '24drama',
             name: '24DRAMA',
             logo: 'logoSites/24drama.webp',
