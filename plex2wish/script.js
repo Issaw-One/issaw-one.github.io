@@ -1,3 +1,4 @@
+
 const watchedEpisodes = new Set();
 
 function getWatchedEpisodes() {
@@ -88,7 +89,7 @@ function closeVideoPlayer() {
 
 function renderMovies(filterText = '') {
     const movieListElement = document.getElementById('movieList');
-    movieListElement.innerHTML = '';
+    movieListElement.innerHTML = ''; 
 
     const filteredMovies = filterText
         ? movies
