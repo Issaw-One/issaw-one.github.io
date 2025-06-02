@@ -518,6 +518,7 @@
             filteredMovies.forEach(movie => {
                 const card = document.createElement('div');
                 card.className = `movie-card ${isWatched(movie.url) ? 'watched' : ''}`;
+                card.onclick = () => openVideoPlayer(movie.url, movie.name);
 
                 // Determine the image URL based on the movie name
                 let imageUrl = movie.imageUrl;
@@ -539,13 +540,13 @@
                         <div class="movie-size">${movie.size || 'N/A'}</div>
                     </div>
                     <div class="movie-actions">
-                        <button class="action-btn watch-btn" onclick="openVideoPlayer('${movie.url}', '${movie.name.replace(/'/g, "\\'")}')">
+                        <button class="action-btn watch-btn" onclick="event.stopPropagation(); openVideoPlayer('${movie.url}', '${movie.name.replace(/'/g, "\\'")}')">
                             ▶️ Regarder
                         </button>
-                        <button class="action-btn copy-btn" onclick="copyToClipboard('${movie.url}')">
+                        <button class="action-btn copy-btn" onclick="event.stopPropagation(); copyToClipboard('${movie.url}')">
                             📋 Copier
                         </button>
-                        <a href="${movie.url}" target="_blank" class="action-btn link-btn" onclick="saveWatchedEpisode('${movie.url}'); this.closest('.movie-card').classList.add('watched')">
+                        <a href="${movie.url}" target="_blank" class="action-btn link-btn" onclick="event.stopPropagation(); saveWatchedEpisode('${movie.url}'); this.closest('.movie-card').classList.add('watched')">
                             🔗 Lien
                         </a>
                     </div>
