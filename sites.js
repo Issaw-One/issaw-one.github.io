@@ -498,6 +498,19 @@ const sitesData = {
             isNew: true,
             category: 'dll'
         },
+        {
+            id: 'freetelecharger',
+            name: 'Free Télécharger',
+            logo: 'logoSites/freetelecharger.png',
+            headerBg: 'linear-gradient(135deg,rgb(113, 63, 204) 0%,rgb(173, 147, 250) 100%)',
+            description: 'free-telecharger.life <i class="fa-solid fa-check" style="color: #63E6BE;"></i>',
+            tags: ['Update : 02/06/2025'],
+            url: 'https://www.free-telecharger.life/',
+            searchUrl: 'https://www.free-telecharger.life/1/recherche1/1.html?rech_fiche={query}&connexion.x=0&connexion.y=0',
+            featured: true,
+            isNew: true,
+            category: 'dll'
+        },
     ],
     animes: [
         {
