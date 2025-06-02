@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plex2Wish</title>
+    <link rel="stylesheet" href="/plex2wish/style-streaming.css">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="theme-color" content="#e50914">
+</head>
+
+<body>
+    <header>
+        <!--<a href="#" class="sign-in">Sign in</a>-->
+        <div class="logo">Plex 2 Wish</div>
+        <div class="tagline"></div>
+        <div class="search-container">
+            <form onsubmit="return false;">
+                <input type="text" class="search-input" placeholder="Search for movies or shows...">
+            </form>
+        </div>
+        <div class="tags">
+            <div class="tag active">Plus belle la vie, encore plus belle</div>
+            <div class="tag active">Ici tout commence</div>
+        </div>
+    </header>
+
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th class="index-col">#</th>
+                    <th>Name</th>
+                    <th class="size-col">Size</th>
+                    <th class="action-col">Link</th>
+                    <th class="action-col">Clickable Link</th>
+                </tr>
+            </thead>
+            <tbody id="movieList">
+            </tbody>
+        </table>
+    </main>
+
+    <div class="video-player-container" id="videoPlayerContainer">
+        <div class="video-player-title" id="videoPlayerTitle">Titre de l'épisode</div>
+        <div class="video-player-wrapper">
+            <iframe id="videoPlayerIframe" class="video-player-iframe" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="video-player-close" id="videoPlayerClose">Fermer</div>
+    </div>
+    <button id="install-button" style="display: none;">📲 Installer l'application</button>
+
+    <script src="/plex2wish/script.js"></script>
+    <script src="movies.js"></script>
+</body>
+
+</html>
