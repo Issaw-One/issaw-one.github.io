@@ -420,7 +420,7 @@ const sitesData = {
         },
         {
             id: '24drama',
-            name: '24DRAMA (vostfr)',
+            name: '24DRAMA (vost)',
             logo: 'logoSites/24drama.png',
             headerBg: 'linear-gradient(135deg,rgb(113, 63, 204) 0%,rgb(173, 147, 250) 100%)',
             description: '24drama.to <i class="fa-solid fa-check" style="color: #63E6BE;"></i>',
