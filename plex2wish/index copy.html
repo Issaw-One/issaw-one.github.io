@@ -52,7 +52,7 @@
             font-size: 42px;
             font-weight: 700;
             margin-bottom: 20px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(45deg, #FFD700, #FF69B4);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -406,40 +406,42 @@
 
     <script>
         const movies = [
-            { id: 34, name: "Ici tout commence - Episode 1189 du mardi 03 juin 2025", size: "280.47 Mo", seeders: 3265, leechers: 397, url: "https://goofy-banana.com/e/cstgmhhcytyr", imageUrl: "https://photos.tf1.fr/330/186/avant-premiere-plus-belle-la-vie-encore-plus-belle-du-mardi-3-juin-2025-episode-346-92066129-1748850566-38f061-e09f7a-0@1x.avif" },
-            { id: 33, name: "Plus belle la vie, encore plus belle - Episode 346 du mardi 03 juin 2025", size: "188.76 Mo", seeders: 3265, leechers: 397, url: "https://goofy-banana.com/e/ood48givwpwe", imageUrl: "https://github.com/Issaw-One/issaw-one.github.io/blob/main/plex2wish/images/pblv/346.png?raw=true" },
-            { id: 32, name: "Ici tout commence - Episode 1188 du lundi 02 juin 2025", size: "295.43 Mo", seeders: 3265, leechers: 397, url: "https://goofy-banana.com/e/wgjjqgor6hpd", imageUrl: "https://placehold.co/400x200/4facfe/ffffff?text=Image+ITC" },
-            { id: 31, name: "Plus belle la vie, encore plus belle - Episode 345 du lundi 02 juin 2025", size: "", seeders: 3265, leechers: 397, url: "https://goofy-banana.com/e/4sabgybnrywu", imageUrl: "https://placehold.co/400x200/43e97b/ffffff?text=Image+PBLV" }, //106
-            { id: 30, name: "Ici tout commence - Episode 1187 du vendredi 30 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://voe.sx/e/qtzj8tu48kip", imageUrl: "https://placehold.co/400x200/fa709a/ffffff?text=Image+ITC" },
-            { id: 29, name: "Plus belle la vie, encore plus belle - Episode 344 du vendredi 30 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://voe.sx/e/zdsvttdbjghx", imageUrl: "https://placehold.co/400x200/a8edea/ffffff?text=Image+PBLV" },
-            { id: 28, name: "Ici tout commence - Episode 1186 du jeudi 29 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://voe.sx/e/falnbij26jx2", imageUrl: "https://placehold.co/400x200/667eea/ffffff?text=Image+ITC" },
-            { id: 27, name: "Plus belle la vie, encore plus belle - Episode 343 du jeudi 29 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://jilliandescribecompany.com/e/grgv3l08eg27", imageUrl: "https://placehold.co/400x200/f093fb/ffffff?text=Image+PBLV" },
-            { id: 26, name: "Ici tout commence - Episode 1185 du mercredi 28 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://voe.sx/e/4yzlq60wwemg", imageUrl: "https://placehold.co/400x200/4facfe/ffffff?text=Image+ITC" },
-            { id: 25, name: "Plus belle la vie, encore plus belle - Episode 342 du mercredi 28 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://voe.sx/e/adr9dbchyslm", imageUrl: "https://placehold.co/400x200/43e97b/ffffff?text=Image+PBLV" },
-            { id: 24, name: "Ici tout commence - Episode 1184 du mardi 27 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://oneupload.net/embed-xtziiejv3nzk.html", imageUrl: "https://placehold.co/400x200/fa709a/ffffff?text=Image+ITC" },
-            { id: 23, name: "Plus belle la vie, encore plus belle - Episode 341 du mardi 27 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://oneupload.net/embed-vvtun26k7k7n.html", imageUrl: "https://placehold.co/400x200/a8edea/ffffff?text=Image+PBLV" },
-            { id: 22, name: "Plus belle la vie, encore plus belle - Episode 340 du lundi 26 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-akf0qnjysrs2.html", imageUrl: "https://placehold.co/400x200/667eea/ffffff?text=Image+PBLV" },
-            { id: 21, name: "Plus belle la vie, encore plus belle - Episode 339 du vendredi 23 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-5bbrej64lbj5.html", imageUrl: "https://placehold.co/400x200/f093fb/ffffff?text=Image+PBLV" },
-            { id: 20, name: "Ici tout commence - Episode 1183 du lundi 26 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://oneupload.net/embed-j8ydv0pi7kj0.html", imageUrl: "https://placehold.co/400x200/4facfe/ffffff?text=Image+ITC" },
-            { id: 19, name: "Ici tout commence - Episode 1182 du vendredi 23 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://oneupload.net/embed-4bjqthsvo8k4.html", imageUrl: "https://placehold.co/400x200/43e97b/ffffff?text=Image+ITC" },
-            { id: 18, name: "Ici tout commence - Episode 1181 du jeudi 22 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-se6lb0t1nfa6.html", imageUrl: "https://placehold.co/400x200/fa709a/ffffff?text=Image+ITC" },
-            { id: 17, name: "Plus belle la vie, encore plus belle - Episode 338 du jeudi 22 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-hza3dbxuslp2.html", imageUrl: "https://placehold.co/400x200/a8edea/ffffff?text=Image+PBLV" },
-            { id: 16, name: "Ici tout commence - Episode 1180 du mercredi 21 mai 2025", size: "769,8 Mo", seeders: 3265, leechers: 397, url: "https://oneupload.to/embed-46cbw960wp0h.html", imageUrl: "https://placehold.co/400x200/667eea/ffffff?text=Image+ITC" },
-            { id: 15, name: "Plus belle la vie, encore plus belle - Episode 337 du mercredi 21 mai 2025", size: "325 Mo", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-sjfzxv01y1tn.html", imageUrl: "https://placehold.co/400x200/f093fb/ffffff?text=Image+PBLV" },
-            { id: 14, name: "Plus belle la vie, encore plus belle - Episode 336 du mardi 20 mai 2025", size: "198 Mo", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-t752rsb7cp1o.html", imageUrl: "https://placehold.co/400x200/4facfe/ffffff?text=Image+PBLV" },
-            { id: 13, name: "Ici tout commence - Episode 1179 du mardi 20 mai 2025", size: "299 Mo", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-lpj9kfyc66sb.html", imageUrl: "https://placehold.co/400x200/43e97b/ffffff?text=Image+ITC" },
-            { id: 12, name: "Plus belle la vie, encore plus belle - Episode 335 du lundi 19 mai 2025", size: "324,6 Mo", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-f01yt31h74ah.html", imageUrl: "https://placehold.co/400x200/fa709a/ffffff?text=Image+PBLV" },
-            { id: 11, name: "Plus belle la vie, encore plus belle - Episode 334 du vendredi 16 mai 2025", size: "315,1 Mo", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-i02544pnrrpy.html", imageUrl: "https://placehold.co/400x200/a8edea/ffffff?text=Image+PBLV" },
-            { id: 10, name: "Ici tout commence - Episode 1178 du lundi 19 mai 2025", size: "489,8 Mo", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-nhlbpvi9upmh.html", imageUrl: "https://placehold.co/400x200/667eea/ffffff?text=Image+ITC" },
-            { id: 9, name: "Ici tout commence - Episode 1177 du vendredi 16 mai 2025", size: "115,123 Mo", seeders: 3265, leechers: 397, url: "https://uqload.net/embed-akmsieeo14w1.html", imageUrl: "https://placehold.co/400x200/f093fb/ffffff?text=Image+ITC" },
-            { id: 8, name: "Ici tout commence - Episode 1176 du jeudi 15 mai 2025", size: "116,886 Mo", seeders: 3265, leechers: 397, url: "https://uqload.net/embed-l7y8ao9twia9.html", imageUrl: "https://placehold.co/400x200/4facfe/ffffff?text=Image+ITC" },
-            { id: 7, name: "Ici tout commence - Episode 1175 du mercredi 14 mai 2025", size: "121,447 Mo", seeders: 3265, leechers: 397, url: "https://uqload.net/embed-13cx8leayy78.html", imageUrl: "https://placehold.co/400x200/43e97b/ffffff?text=Image+ITC" },
-            { id: 6, name: "Ici tout commence - Episode 1174 du mardi 13 mai 2025", size: "114.224 Mo", seeders: 3265, leechers: 397, url: "https://uqload.net/embed-0a2rt3gwjfh2.html", imageUrl: "https://placehold.co/400x200/fa709a/ffffff?text=Image+ITC" },
-            { id: 5, name: "Ici tout commence - Episode 1173 du lundi 12 mai 2025", size: "110,399 Mo", seeders: 3265, leechers: 397, url: "https://uqload.net/embed-i2k66gnvpv4m.html", imageUrl: "https://placehold.co/400x200/a8edea/ffffff?text=Image+ITC" },
-            { id: 4, name: "Plus belle la vie, encore plus belle - Episode 333 du jeudi 15 mai 2025", size: "61,16 Mo", seeders: 3265, leechers: 397, url: "https://uqload.net/embed-qowlqnjg63m7.html", imageUrl: "https://placehold.co/400x200/667eea/ffffff?text=Image+PBLV" },
-            { id: 3, name: "Plus belle la vie, encore plus belle - Episode 332 du mercredi 14 mai 2025", size: "68,74 Mo", seeders: 3265, leechers: 397, url: "https://uqload.net/embed-ne447jclrj4i.html", imageUrl: "https://placehold.co/400x200/f093fb/ffffff?text=Image+PBLV" },
-            { id: 2, name: "Plus belle la vie, encore plus belle - Episode 331 du mardi 13 mai 2025", size: "69,11 Mo", seeders: 4341, leechers: 205, url: "https://uqload.net/embed-kqb28l8f2jdv.html", imageUrl: "https://placehold.co/400x200/4facfe/ffffff?text=Image+PBLV" },
-            { id: 1, name: "Plus belle la vie, encore plus belle - Episode 330 du lundi 12 mai 2025", size: "73,18 Mo", seeders: 4341, leechers: 205, url: "https://uqload.net/embed-6fart5y07838.html", imageUrl: "https://placehold.co/400x200/43e97b/ffffff?text=Image+PBLV" },
+            { id: 36, name: "Plus belle la vie, encore plus belle - Episode 347 du mercredi 04 juin 2025", size: "", seeders: 3265, leechers: 397, url: "https://goofy-banana.com/e/", imageUrl: "" }, //108
+            { id: 35, name: "Ici tout commence - Episode 1190 du mercredi 04 juin 2025", size: "273.37 Mo", seeders: 3265, leechers: 397, url: "https://goofy-banana.com/e/nytkbt273vnh", imageUrl: "" },
+            { id: 34, name: "Ici tout commence - Episode 1189 du mardi 03 juin 2025", size: "280.47 Mo", seeders: 3265, leechers: 397, url: "https://goofy-banana.com/e/cstgmhhcytyr", imageUrl: "" },
+            { id: 33, name: "Plus belle la vie, encore plus belle - Episode 346 du mardi 03 juin 2025", size: "188.76 Mo", seeders: 3265, leechers: 397, url: "https://goofy-banana.com/e/ood48givwpwe", imageUrl: "" }, //107
+            { id: 32, name: "Ici tout commence - Episode 1188 du lundi 02 juin 2025", size: "295.43 Mo", seeders: 3265, leechers: 397, url: "https://goofy-banana.com/e/wgjjqgor6hpd", imageUrl: "" },
+            { id: 31, name: "Plus belle la vie, encore plus belle - Episode 345 du lundi 02 juin 2025", size: "", seeders: 3265, leechers: 397, url: "https://goofy-banana.com/e/4sabgybnrywu", imageUrl: "" }, //106
+            { id: 30, name: "Ici tout commence - Episode 1187 du vendredi 30 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://voe.sx/e/qtzj8tu48kip", imageUrl: "" },
+            { id: 29, name: "Plus belle la vie, encore plus belle - Episode 344 du vendredi 30 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://voe.sx/e/zdsvttdbjghx", imageUrl: "" },
+            { id: 28, name: "Ici tout commence - Episode 1186 du jeudi 29 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://voe.sx/e/falnbij26jx2", imageUrl: "" },
+            { id: 27, name: "Plus belle la vie, encore plus belle - Episode 343 du jeudi 29 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://jilliandescribecompany.com/e/grgv3l08eg27", imageUrl: "" },
+            { id: 26, name: "Ici tout commence - Episode 1185 du mercredi 28 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://voe.sx/e/4yzlq60wwemg", imageUrl: "" },
+            { id: 25, name: "Plus belle la vie, encore plus belle - Episode 342 du mercredi 28 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://voe.sx/e/adr9dbchyslm", imageUrl: "" },
+            { id: 24, name: "Ici tout commence - Episode 1184 du mardi 27 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://oneupload.net/embed-xtziiejv3nzk.html", imageUrl: "" },
+            { id: 23, name: "Plus belle la vie, encore plus belle - Episode 341 du mardi 27 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://oneupload.net/embed-vvtun26k7k7n.html", imageUrl: "" },
+            { id: 22, name: "Plus belle la vie, encore plus belle - Episode 340 du lundi 26 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-akf0qnjysrs2.html", imageUrl: "" },
+            { id: 21, name: "Plus belle la vie, encore plus belle - Episode 339 du vendredi 23 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-5bbrej64lbj5.html", imageUrl: "" },
+            { id: 20, name: "Ici tout commence - Episode 1183 du lundi 26 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://oneupload.net/embed-j8ydv0pi7kj0.html", imageUrl: "" },
+            { id: 19, name: "Ici tout commence - Episode 1182 du vendredi 23 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://oneupload.net/embed-4bjqthsvo8k4.html", imageUrl: "" },
+            { id: 18, name: "Ici tout commence - Episode 1181 du jeudi 22 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-se6lb0t1nfa6.html", imageUrl: "" },
+            { id: 17, name: "Plus belle la vie, encore plus belle - Episode 338 du jeudi 22 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-hza3dbxuslp2.html", imageUrl: "" },
+            { id: 16, name: "Ici tout commence - Episode 1180 du mercredi 21 mai 2025", size: "769,8 Mo", seeders: 3265, leechers: 397, url: "https://oneupload.to/embed-46cbw960wp0h.html", imageUrl: "" },
+            { id: 15, name: "Plus belle la vie, encore plus belle - Episode 337 du mercredi 21 mai 2025", size: "325 Mo", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-sjfzxv01y1tn.html", imageUrl: "" },
+            { id: 14, name: "Plus belle la vie, encore plus belle - Episode 336 du mardi 20 mai 2025", size: "198 Mo", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-t752rsb7cp1o.html", imageUrl: "" },
+            { id: 13, name: "Ici tout commence - Episode 1179 du mardi 20 mai 2025", size: "299 Mo", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-lpj9kfyc66sb.html", imageUrl: "" },
+            { id: 12, name: "Plus belle la vie, encore plus belle - Episode 335 du lundi 19 mai 2025", size: "324,6 Mo", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-f01yt31h74ah.html", imageUrl: "" },
+            { id: 11, name: "Plus belle la vie, encore plus belle - Episode 334 du vendredi 16 mai 2025", size: "315,1 Mo", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-i02544pnrrpy.html", imageUrl: "" },
+            { id: 10, name: "Ici tout commence - Episode 1178 du lundi 19 mai 2025", size: "489,8 Mo", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-nhlbpvi9upmh.html", imageUrl: "" },
+            { id: 9, name: "Ici tout commence - Episode 1177 du vendredi 16 mai 2025", size: "115,123 Mo", seeders: 3265, leechers: 397, url: "https://uqload.net/embed-akmsieeo14w1.html", imageUrl: "" },
+            { id: 8, name: "Ici tout commence - Episode 1176 du jeudi 15 mai 2025", size: "116,886 Mo", seeders: 3265, leechers: 397, url: "https://uqload.net/embed-l7y8ao9twia9.html", imageUrl: "" },
+            { id: 7, name: "Ici tout commence - Episode 1175 du mercredi 14 mai 2025", size: "121,447 Mo", seeders: 3265, leechers: 397, url: "https://uqload.net/embed-13cx8leayy78.html", imageUrl: "" },
+            { id: 6, name: "Ici tout commence - Episode 1174 du mardi 13 mai 2025", size: "114.224 Mo", seeders: 3265, leechers: 397, url: "https://uqload.net/embed-0a2rt3gwjfh2.html", imageUrl: "" },
+            { id: 5, name: "Ici tout commence - Episode 1173 du lundi 12 mai 2025", size: "110,399 Mo", seeders: 3265, leechers: 397, url: "https://uqload.net/embed-i2k66gnvpv4m.html", imageUrl: "" },
+            { id: 4, name: "Plus belle la vie, encore plus belle - Episode 333 du jeudi 15 mai 2025", size: "61,16 Mo", seeders: 3265, leechers: 397, url: "https://uqload.net/embed-qowlqnjg63m7.html", imageUrl: "" },
+            { id: 3, name: "Plus belle la vie, encore plus belle - Episode 332 du mercredi 14 mai 2025", size: "68,74 Mo", seeders: 3265, leechers: 397, url: "https://uqload.net/embed-ne447jclrj4i.html", imageUrl: "" },
+            { id: 2, name: "Plus belle la vie, encore plus belle - Episode 331 du mardi 13 mai 2025", size: "69,11 Mo", seeders: 4341, leechers: 205, url: "https://uqload.net/embed-kqb28l8f2jdv.html", imageUrl: "" },
+            { id: 1, name: "Plus belle la vie, encore plus belle - Episode 330 du lundi 12 mai 2025", size: "73,18 Mo", seeders: 4341, leechers: 205, url: "https://uqload.net/embed-6fart5y07838.html", imageUrl: "" },
         ];
 
         const watchedEpisodes = new Set();
@@ -518,15 +520,85 @@
             filteredMovies.forEach(movie => {
                 const card = document.createElement('div');
                 card.className = `movie-card ${isWatched(movie.url) ? 'watched' : ''}`;
+                card.onclick = () => openVideoPlayer(movie.url, movie.name);
 
                 // Determine the image URL based on the movie name
                 let imageUrl = movie.imageUrl;
-                if (movie.name.toLowerCase().includes('ici tout commence')) {
-                    imageUrl = "https://photos.tf1.fr/1920/1080/background-ott-f08e19-82e898-0@3x.jpg";
-                } else if (movie.name.toLowerCase().includes('plus belle la vie')) {
-                    imageUrl = "https://photos.tf1.fr/1920/1080/background-ott-8bd6d4-538129-0@3x.jpg";
-                } else {
-                    imageUrl = "https://placehold.co/400x200/cccccc/000000?text=Film"; // Default placeholder
+                if (movie.name.toLowerCase().includes('330')) {
+                    imageUrl = "https://photos.tf1.fr/330/186/plus-belle-la-vie-encore-plus-belle-du-lundi-12-mai-2025-episode-330-21087582-1747734586-46c755-b633a1-0@1x.avif";
+                } else if (movie.name.toLowerCase().includes('331')) {
+                    imageUrl = "https://photos.tf1.fr/330/186/plus-belle-la-vie-encore-plus-belle-du-mardi-13-mai-2025-episode-331-04974498-1747734571-f2d192-c55e45-0@1x.avif";
+                } else if (movie.name.toLowerCase().includes('332')) {
+                    imageUrl = "https://photos.tf1.fr/330/186/plus-belle-la-vie-encore-plus-belle-du-mercredi-14-mai-2025-episode-332-60344595-1747734556-420ee8-a0f137-0@2x.avif";
+                } else if (movie.name.toLowerCase().includes('333')) {
+                    imageUrl = "https://photos.tf1.fr/330/186/plus-belle-la-vie-encore-plus-belle-du-jeudi-15-mai-2025-episode-333-24806127-1747734520-20e9b1-2d9701-0@1x.avif";
+                } else if (movie.name.toLowerCase().includes('1173')) {
+                    imageUrl = "https://photos.tf1.fr/330/186/ici-tout-commence-du-lundi-12-mai-2025-episode-1173-29413241-1747743783-7a2376-7aa873-0@1x.avif";
+                } else if (movie.name.toLowerCase().includes('1174')) {
+                    imageUrl = "https://photos.tf1.fr/330/186/ici-tout-commence-du-mardi-13-mai-2025-episode-1174-15106520-1747743763-4b7b01-37bdea-0@1x.avif";
+                } else if (movie.name.toLowerCase().includes('1175')) {
+                    imageUrl = "https://photos.tf1.fr/330/186/ici-tout-commence-du-mercredi-14-mai-2025-episode-1175-32447093-1747743725-41edf0-40d250-0@1x.avif";
+                } else if (movie.name.toLowerCase().includes('1176')) {
+                    imageUrl = "https://photos.tf1.fr/330/186/ici-tout-commence-du-jeudi-15-mai-2025-episode-1176-74146203-1747743710-ff79df-229fb3-0@1x.avif";
+                } else if (movie.name.toLowerCase().includes('1177')) {
+                    imageUrl = "https://photos.tf1.fr/330/186/ici-tout-commence-du-vendredi-16-mai-2025-episode-1177-39937028-1747743684-e1f8ce-dde057-0@1x.avif";
+                } else if (movie.name.toLowerCase().includes('1178')) {
+                    imageUrl = "https://photos.tf1.fr/330/186/ici-tout-commence-du-lundi-19-mai-2025-episode-1178-26668638-1747743652-63f31d-fe71f9-0@1x.avif";
+                } else if (movie.name.toLowerCase().includes('334')) {
+                    imageUrl = "https://photos.tf1.fr/330/186/plus-belle-la-vie-encore-plus-belle-du-vendredi-16-mai-2025-episode-334-92460036-1747734494-34ab14-63b1c4-0@1x.avif";
+                } else if (movie.name.toLowerCase().includes('335')) {
+                    imageUrl = "https://photos.tf1.fr/330/186/plus-belle-la-vie-encore-plus-belle-du-lundi-19-mai-2025-episode-335-56971750-1747734479-96df03-b017f4-0@1x.avif";
+                } else if (movie.name.toLowerCase().includes('1179')) {
+                    imageUrl = "https://photos.tf1.fr/330/186/ici-tout-commence-du-mardi-20-mai-2025-episode-1179-37561952-1747899136-f4220a-cf5fbd-0@1x.avif";
+                } else if (movie.name.toLowerCase().includes('336')) {
+                    imageUrl = "https://photos.tf1.fr/330/186/plus-belle-la-vie-encore-plus-belle-du-mardi-20-mai-2025-episode-336-16456416-1747734469-2e12ad-e8385c-0@1x.avif";
+                } else if (movie.name.toLowerCase().includes('337')) {
+                    imageUrl = "https://photos.tf1.fr/330/186/plus-belle-la-vie-encore-plus-belle-du-mercredi-21-mai-2025-episode-337-32172028-1747898977-9b2b25-e0fa50-0@1x.avif";
+                } else if (movie.name.toLowerCase().includes('1180')) {
+                    imageUrl = "https://photos.tf1.fr/330/186/ici-tout-commence-du-mercredi-21-mai-2025-episode-1180-82261424-1747899204-e48249-d0ed49-0@1x.avif";
+                } else if (movie.name.toLowerCase().includes('338')) {
+                    imageUrl = "https://photos.tf1.fr/330/186/plus-belle-la-vie-encore-plus-belle-du-jeudi-22-mai-2025-episode-338-86971950-1747898999-bc17ea-f2b1de-0@2x.avif";
+                } else if (movie.name.toLowerCase().includes('1181')) {
+                    imageUrl = "https://photos.tf1.fr/330/186/ici-tout-commence-du-jeudi-22-mai-2025-episode-1181-66600768-1747892227-a41102-ba5f8d-0@1x.avif";
+                } else if (movie.name.toLowerCase().includes('1182')) {
+                    imageUrl = "https://photos.tf1.fr/330/186/ici-tout-commence-du-vendredi-23-mai-2025-episode-1182-99708265-1748849786-b0de66-787867-0@1x.avif";
+                } else if (movie.name.toLowerCase().includes('1183')) {
+                    imageUrl = "https://photos.tf1.fr/330/186/ici-tout-commence-du-lundi-26-mai-2025-episode-1183-65693657-1748849818-ad6e31-8ca6e9-0@1x.avif";
+                } else if (movie.name.toLowerCase().includes('339')) {
+                    imageUrl = "https://photos.tf1.fr/330/186/plus-belle-la-vie-encore-plus-belle-du-vendredi-23-mai-2025-episode-339-90842566-1748355165-d79ff0-43f7fa-0@1x.avif";
+                } else if (movie.name.toLowerCase().includes('340')) {
+                    imageUrl = "https://photos.tf1.fr/330/186/plus-belle-la-vie-encore-plus-belle-du-lundi-26-mai-2025-episode-340-09060244-1748355188-d785df-f707d9-0@1x.avif";
+                } else if (movie.name.toLowerCase().includes('341')) {
+                    imageUrl = "https://photos.tf1.fr/330/186/plus-belle-la-vie-encore-plus-belle-du-mardi-27-mai-2025-episode-341-09690360-1748355209-0c5221-6d8599-0@1x.avif";
+                } else if (movie.name.toLowerCase().includes('1184')) {
+                    imageUrl = "https://photos.tf1.fr/330/186/ici-tout-commence-du-mardi-27-mai-2025-episode-1184-35592145-1748849881-43dc67-f65225-0@1x.avif";
+                } else if (movie.name.toLowerCase().includes('342')) {
+                    imageUrl = "https://photos.tf1.fr/330/186/plus-belle-la-vie-encore-plus-belle-du-mercredi-28-mai-2025-episode-342-71278938-1748602423-39719c-bbb0e8-0@1x.avif";
+                } else if (movie.name.toLowerCase().includes('1185')) {
+                    imageUrl = "https://photos.tf1.fr/330/186/ici-tout-commence-du-mercredi-28-mai-2025-episode-1185-49863312-1748849920-22b5e2-36b103-0@1x.avif";
+                } else if (movie.name.toLowerCase().includes('343')) {
+                    imageUrl = "https://photos.tf1.fr/330/186/plus-belle-la-vie-encore-plus-belle-du-jeudi-29-mai-2025-episode-343-74918713-1748602367-6ab410-faf6ab-0@1x.avif";
+                } else if (movie.name.toLowerCase().includes('1186')) {
+                    imageUrl = "https://photos.tf1.fr/330/186/ici-tout-commence-du-jeudi-29-mai-2025-episode-1186-33362153-1748849982-4eef8e-59532a-0@1x.avif";
+                } else if (movie.name.toLowerCase().includes('344')) {
+                    imageUrl = "https://photos.tf1.fr/330/186/plus-belle-la-vie-encore-plus-belle-du-vendredi-30-mai-2025-episode-344-09328719-1748602348-2ae469-b2d42c-0@1x.avif";
+                } else if (movie.name.toLowerCase().includes('1187')) {
+                    imageUrl = "https://photos.tf1.fr/330/186/ici-tout-commence-du-vendredi-30-mai-2025-episode-1187-93640607-1748850021-7232ac-1855d3-0@1x.avif";
+                } else if (movie.name.toLowerCase().includes('345')) {
+                    imageUrl = "https://photos.tf1.fr/330/186/plus-belle-la-vie-encore-plus-belle-du-lundi-2-juin-2025-episode-345-00640281-1748850532-f8b074-7d6737-0@1x.avif";
+                } else if (movie.name.toLowerCase().includes('1188')) {
+                    imageUrl = "https://photos.tf1.fr/330/186/ici-tout-commence-du-lundi-2-juin-2025-episode-1188-07499619-1748850080-22b800-94b55c-0@1x.avif";
+                } else if (movie.name.toLowerCase().includes('346')) {
+                    imageUrl = "https://photos.tf1.fr/330/186/avant-premiere-plus-belle-la-vie-encore-plus-belle-du-mardi-3-juin-2025-episode-346-92066129-1748850566-38f061-e09f7a-0@1x.avif";
+                } else if (movie.name.toLowerCase().includes('1189')) {
+                    imageUrl = "https://photos.tf1.fr/330/186/avant-premiere-ici-tout-commence-du-3-juin-2025-episode-1189-45798795-1748850165-d5f78f-9cfb25-0@1x.avif";
+                } else if (movie.name.toLowerCase().includes('1190')) {
+                    imageUrl = "https://photos.tf1.fr/330/186/avant-premiere-ici-tout-commence-du-4-juin-2025-episode-1190-66656953-1748378121-27fddf-ebe7a7-0@1x.avif";
+                } else if (movie.name.toLowerCase().includes('347')) {
+                    imageUrl = "https://photos.tf1.fr/330/186/avant-premiere-plus-belle-la-vie-encore-plus-belle-du-mercredi-4-juin-2025-episode-347-38486091-1748935484-f17b30-0c799a-0@1x.avif";
+                }
+                 else {
+                    imageUrl = "https://placehold.co/400x200/cccccc/000000?text=Non+dispo"; // Default placeholder
                 }
 
                 card.innerHTML = `
@@ -539,13 +611,13 @@
                         <div class="movie-size">${movie.size || 'N/A'}</div>
                     </div>
                     <div class="movie-actions">
-                        <button class="action-btn watch-btn" onclick="openVideoPlayer('${movie.url}', '${movie.name.replace(/'/g, "\\'")}')">
+                        <button class="action-btn watch-btn" onclick="event.stopPropagation(); openVideoPlayer('${movie.url}', '${movie.name.replace(/'/g, "\\'")}')">
                             ▶️ Regarder
                         </button>
-                        <button class="action-btn copy-btn" onclick="copyToClipboard('${movie.url}')">
+                        <button class="action-btn copy-btn" onclick="event.stopPropagation(); copyToClipboard('${movie.url}')">
                             📋 Copier
                         </button>
-                        <a href="${movie.url}" target="_blank" class="action-btn link-btn" onclick="saveWatchedEpisode('${movie.url}'); this.closest('.movie-card').classList.add('watched')">
+                        <a href="${movie.url}" target="_blank" class="action-btn link-btn" onclick="event.stopPropagation(); saveWatchedEpisode('${movie.url}'); this.closest('.movie-card').classList.add('watched')">
                             🔗 Lien
                         </a>
                     </div>

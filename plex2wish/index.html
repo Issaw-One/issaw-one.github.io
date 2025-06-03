@@ -183,8 +183,8 @@
 
         .movie-image {
             width: 100%;
-            height: 200px; /* Hauteur fixe pour les images */
-            object-fit: cover; /* Assure que l'image couvre la zone sans distorsion */
+            height: 200px;
+            object-fit: cover;
             border-radius: 8px;
             margin-top: 10px;
             margin-bottom: 15px;
@@ -308,6 +308,37 @@
             font-weight: 600;
         }
 
+        .player-selector {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .player-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            font-size: 14px;
+        }
+
+        .player-btn.active {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+            color: white;
+        }
+
+        .player-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
         .video-player-close {
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
@@ -371,6 +402,16 @@
             .logo {
                 font-size: 32px;
             }
+
+            .player-selector {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .player-btn {
+                min-width: 150px;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -396,6 +437,9 @@
 
     <div class="video-player-container" id="videoPlayerContainer">
         <div class="video-player-title" id="videoPlayerTitle">Titre de l'épisode</div>
+        <div class="player-selector" id="playerSelector">
+            <!-- Les boutons de sélection seront générés dynamiquement -->
+        </div>
         <div class="video-player-wrapper">
             <iframe id="videoPlayerIframe" class="video-player-iframe" src="" frameborder="0" allowfullscreen></iframe>
         </div>
@@ -406,45 +450,201 @@
 
     <script>
         const movies = [
-            { id: 36, name: "Plus belle la vie, encore plus belle - Episode 347 du mercredi 04 juin 2025", size: "", seeders: 3265, leechers: 397, url: "https://goofy-banana.com/e/", imageUrl: "" }, //108
-            { id: 35, name: "Ici tout commence - Episode 1190 du mercredi 04 juin 2025", size: "273.37 Mo", seeders: 3265, leechers: 397, url: "https://goofy-banana.com/e/nytkbt273vnh", imageUrl: "" },
-            { id: 34, name: "Ici tout commence - Episode 1189 du mardi 03 juin 2025", size: "280.47 Mo", seeders: 3265, leechers: 397, url: "https://goofy-banana.com/e/cstgmhhcytyr", imageUrl: "" },
-            { id: 33, name: "Plus belle la vie, encore plus belle - Episode 346 du mardi 03 juin 2025", size: "188.76 Mo", seeders: 3265, leechers: 397, url: "https://goofy-banana.com/e/ood48givwpwe", imageUrl: "" }, //107
-            { id: 32, name: "Ici tout commence - Episode 1188 du lundi 02 juin 2025", size: "295.43 Mo", seeders: 3265, leechers: 397, url: "https://goofy-banana.com/e/wgjjqgor6hpd", imageUrl: "" },
-            { id: 31, name: "Plus belle la vie, encore plus belle - Episode 345 du lundi 02 juin 2025", size: "", seeders: 3265, leechers: 397, url: "https://goofy-banana.com/e/4sabgybnrywu", imageUrl: "" }, //106
-            { id: 30, name: "Ici tout commence - Episode 1187 du vendredi 30 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://voe.sx/e/qtzj8tu48kip", imageUrl: "" },
-            { id: 29, name: "Plus belle la vie, encore plus belle - Episode 344 du vendredi 30 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://voe.sx/e/zdsvttdbjghx", imageUrl: "" },
-            { id: 28, name: "Ici tout commence - Episode 1186 du jeudi 29 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://voe.sx/e/falnbij26jx2", imageUrl: "" },
-            { id: 27, name: "Plus belle la vie, encore plus belle - Episode 343 du jeudi 29 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://jilliandescribecompany.com/e/grgv3l08eg27", imageUrl: "" },
-            { id: 26, name: "Ici tout commence - Episode 1185 du mercredi 28 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://voe.sx/e/4yzlq60wwemg", imageUrl: "" },
-            { id: 25, name: "Plus belle la vie, encore plus belle - Episode 342 du mercredi 28 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://voe.sx/e/adr9dbchyslm", imageUrl: "" },
-            { id: 24, name: "Ici tout commence - Episode 1184 du mardi 27 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://oneupload.net/embed-xtziiejv3nzk.html", imageUrl: "" },
-            { id: 23, name: "Plus belle la vie, encore plus belle - Episode 341 du mardi 27 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://oneupload.net/embed-vvtun26k7k7n.html", imageUrl: "" },
-            { id: 22, name: "Plus belle la vie, encore plus belle - Episode 340 du lundi 26 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-akf0qnjysrs2.html", imageUrl: "" },
-            { id: 21, name: "Plus belle la vie, encore plus belle - Episode 339 du vendredi 23 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-5bbrej64lbj5.html", imageUrl: "" },
-            { id: 20, name: "Ici tout commence - Episode 1183 du lundi 26 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://oneupload.net/embed-j8ydv0pi7kj0.html", imageUrl: "" },
-            { id: 19, name: "Ici tout commence - Episode 1182 du vendredi 23 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://oneupload.net/embed-4bjqthsvo8k4.html", imageUrl: "" },
-            { id: 18, name: "Ici tout commence - Episode 1181 du jeudi 22 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-se6lb0t1nfa6.html", imageUrl: "" },
-            { id: 17, name: "Plus belle la vie, encore plus belle - Episode 338 du jeudi 22 mai 2025", size: "", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-hza3dbxuslp2.html", imageUrl: "" },
-            { id: 16, name: "Ici tout commence - Episode 1180 du mercredi 21 mai 2025", size: "769,8 Mo", seeders: 3265, leechers: 397, url: "https://oneupload.to/embed-46cbw960wp0h.html", imageUrl: "" },
-            { id: 15, name: "Plus belle la vie, encore plus belle - Episode 337 du mercredi 21 mai 2025", size: "325 Mo", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-sjfzxv01y1tn.html", imageUrl: "" },
-            { id: 14, name: "Plus belle la vie, encore plus belle - Episode 336 du mardi 20 mai 2025", size: "198 Mo", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-t752rsb7cp1o.html", imageUrl: "" },
-            { id: 13, name: "Ici tout commence - Episode 1179 du mardi 20 mai 2025", size: "299 Mo", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-lpj9kfyc66sb.html", imageUrl: "" },
-            { id: 12, name: "Plus belle la vie, encore plus belle - Episode 335 du lundi 19 mai 2025", size: "324,6 Mo", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-f01yt31h74ah.html", imageUrl: "" },
-            { id: 11, name: "Plus belle la vie, encore plus belle - Episode 334 du vendredi 16 mai 2025", size: "315,1 Mo", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-i02544pnrrpy.html", imageUrl: "" },
-            { id: 10, name: "Ici tout commence - Episode 1178 du lundi 19 mai 2025", size: "489,8 Mo", seeders: 3265, leechers: 397, url: "https://vidmoly.to/embed-nhlbpvi9upmh.html", imageUrl: "" },
-            { id: 9, name: "Ici tout commence - Episode 1177 du vendredi 16 mai 2025", size: "115,123 Mo", seeders: 3265, leechers: 397, url: "https://uqload.net/embed-akmsieeo14w1.html", imageUrl: "" },
-            { id: 8, name: "Ici tout commence - Episode 1176 du jeudi 15 mai 2025", size: "116,886 Mo", seeders: 3265, leechers: 397, url: "https://uqload.net/embed-l7y8ao9twia9.html", imageUrl: "" },
-            { id: 7, name: "Ici tout commence - Episode 1175 du mercredi 14 mai 2025", size: "121,447 Mo", seeders: 3265, leechers: 397, url: "https://uqload.net/embed-13cx8leayy78.html", imageUrl: "" },
-            { id: 6, name: "Ici tout commence - Episode 1174 du mardi 13 mai 2025", size: "114.224 Mo", seeders: 3265, leechers: 397, url: "https://uqload.net/embed-0a2rt3gwjfh2.html", imageUrl: "" },
-            { id: 5, name: "Ici tout commence - Episode 1173 du lundi 12 mai 2025", size: "110,399 Mo", seeders: 3265, leechers: 397, url: "https://uqload.net/embed-i2k66gnvpv4m.html", imageUrl: "" },
-            { id: 4, name: "Plus belle la vie, encore plus belle - Episode 333 du jeudi 15 mai 2025", size: "61,16 Mo", seeders: 3265, leechers: 397, url: "https://uqload.net/embed-qowlqnjg63m7.html", imageUrl: "" },
-            { id: 3, name: "Plus belle la vie, encore plus belle - Episode 332 du mercredi 14 mai 2025", size: "68,74 Mo", seeders: 3265, leechers: 397, url: "https://uqload.net/embed-ne447jclrj4i.html", imageUrl: "" },
-            { id: 2, name: "Plus belle la vie, encore plus belle - Episode 331 du mardi 13 mai 2025", size: "69,11 Mo", seeders: 4341, leechers: 205, url: "https://uqload.net/embed-kqb28l8f2jdv.html", imageUrl: "" },
-            { id: 1, name: "Plus belle la vie, encore plus belle - Episode 330 du lundi 12 mai 2025", size: "73,18 Mo", seeders: 4341, leechers: 205, url: "https://uqload.net/embed-6fart5y07838.html", imageUrl: "" },
+            { 
+                id: 36, 
+                name: "Plus belle la vie, encore plus belle - Episode 347 du mercredi 04 juin 2025", 
+                size: "", 
+                seeders: 3265, 
+                leechers: 397, 
+                urls: [
+                    { name: "Lecteur 1", url: "https://goofy-banana.com/e/" },
+                    { name: "Lecteur 2", url: "" }
+                ],
+                imageUrl: "" 
+            },
+            { 
+                id: 35, 
+                name: "Ici tout commence - Episode 1190 du mercredi 04 juin 2025", 
+                size: "273.37 Mo", 
+                seeders: 3265, 
+                leechers: 397, 
+                urls: [
+                    { name: "Lecteur 1", url: "https://goofy-banana.com/e/nytkbt273vnh" },
+                    { name: "Lecteur 2", url: "https://oneupload.net/embed-th92rhc2hpgp.html" }
+                ],
+                imageUrl: "" 
+            },
+            { 
+                id: 34, 
+                name: "Ici tout commence - Episode 1189 du mardi 03 juin 2025", 
+                size: "280.47 Mo", 
+                seeders: 3265, 
+                leechers: 397, 
+                urls: [
+                    { name: "Lecteur 1", url: "https://goofy-banana.com/e/cstgmhhcytyr" },
+                    { name: "Lecteur 2", url: "https://oneupload.net/embed-5r54v303jms0.html" }
+                ],
+                imageUrl: "" 
+            },
+            { 
+                id: 33, 
+                name: "Plus belle la vie, encore plus belle - Episode 346 du mardi 03 juin 2025", //107
+                size: "188.76 Mo", 
+                seeders: 3265, 
+                leechers: 397, 
+                urls: [
+                    { name: "Lecteur 1", url: "https://goofy-banana.com/e/ood48givwpwe" },
+                ],
+                imageUrl: "" 
+            },
+            { 
+                id: 32, 
+                name: "Ici tout commence - Episode 1188 du lundi 02 juin 2025", 
+                size: "295.43 Mo", 
+                seeders: 3265, 
+                leechers: 397, 
+                urls: [
+                    { name: "Lecteur 1", url: "https://goofy-banana.com/e/wgjjqgor6hpd" },
+                ],
+                imageUrl: "" 
+            },
+            { 
+                id: 31, 
+                name: "Plus belle la vie, encore plus belle - Episode 345 du lundi 02 juin 2025", //106
+                size: "", 
+                seeders: 3265, 
+                leechers: 397, 
+                urls: [
+                    { name: "Lecteur 1", url: "https://goofy-banana.com/e/4sabgybnrywu" },
+                ],
+                imageUrl: "" 
+            },
+            { 
+                id: 30, 
+                name: "Ici tout commence - Episode 1187 du vendredi 30 mai 2025",
+                size: "", 
+                seeders: 3265, 
+                leechers: 397, 
+                urls: [
+                    { name: "Lecteur 1", url: "https://goofy-banana.com/e/qtzj8tu48kip" },
+                ],
+                imageUrl: "" 
+            },
+            { 
+                id: 29, 
+                name: "Plus belle la vie, encore plus belle - Episode 344 du vendredi 30 mai 2025",
+                size: "", 
+                seeders: 3265, 
+                leechers: 397, 
+                urls: [
+                    { name: "Lecteur 1", url: "https://goofy-banana.com/e/zdsvttdbjghx" },
+                ],
+                imageUrl: "" 
+            },
+            { 
+                id: 28, 
+                name: "Ici tout commence - Episode 1186 du jeudi 29 mai 2025",
+                size: "", 
+                seeders: 3265, 
+                leechers: 397, 
+                urls: [
+                    { name: "Lecteur 1", url: "https://goofy-banana.com/e/falnbij26jx2" },
+                ],
+                imageUrl: "" 
+            },
+            { 
+                id: 27, 
+                name: "Plus belle la vie, encore plus belle - Episode 343 du jeudi 29 mai 2025",
+                size: "", 
+                seeders: 3265, 
+                leechers: 397, 
+                urls: [
+                    { name: "Lecteur 1", url: "https://jilliandescribecompany.com/e/grgv3l08eg27" },
+                ],
+                imageUrl: "" 
+            },
+            { 
+                id: 26, 
+                name: "Ici tout commence - Episode 1185 du mercredi 28 mai 2025",
+                size: "", 
+                seeders: 3265, 
+                leechers: 397, 
+                urls: [
+                    { name: "Lecteur 1", url: "https://goofy-banana.com/e/4yzlq60wwemg" },
+                ],
+                imageUrl: "" 
+            },
+            { 
+                id: 25, 
+                name: "Plus belle la vie, encore plus belle - Episode 342 du mercredi 28 mai 2025",
+                size: "", 
+                seeders: 3265, 
+                leechers: 397, 
+                urls: [
+                    { name: "Lecteur 1", url: "https://goofy-banana.com/e/adr9dbchyslm" },
+                ],
+                imageUrl: "" 
+            },
+            { 
+                id: 24, 
+                name: "Ici tout commence - Episode 1184 du mardi 27 mai 2025",
+                size: "", 
+                seeders: 3265, 
+                leechers: 397, 
+                urls: [
+                    { name: "Lecteur 1", url: "https://oneupload.net/embed-xtziiejv3nzk.html" },
+                ],
+                imageUrl: "" 
+            },
+            { 
+                id: 23, 
+                name: "Plus belle la vie, encore plus belle - Episode 341 du mardi 27 mai 2025",
+                size: "", 
+                seeders: 3265, 
+                leechers: 397, 
+                urls: [
+                    { name: "Lecteur 1", url: "https://oneupload.net/embed-vvtun26k7k7n.html" },
+                ],
+                imageUrl: "" 
+            },
+            { 
+                id: 22, 
+                name: "Plus belle la vie, encore plus belle - Episode 340 du lundi 26 mai 2025",
+                size: "", 
+                seeders: 3265, 
+                leechers: 397, 
+                urls: [
+                    { name: "Lecteur 1", url: "https://vidmoly.to/embed-akf0qnjysrs2.html" },
+                ],
+                imageUrl: "" 
+            },
+            { 
+                id: 21, 
+                name: "Plus belle la vie, encore plus belle - Episode 339 du vendredi 23 mai 2025",
+                size: "", 
+                seeders: 3265, 
+                leechers: 397, 
+                urls: [
+                    { name: "Lecteur 1", url: "https://vidmoly.to/embed-5bbrej64lbj5.html" },
+                ],
+                imageUrl: "" 
+            },
+            { 
+                id: 20, 
+                name: "Ici tout commence - Episode 1183 du lundi 26 mai 2025",
+                size: "", 
+                seeders: 3265, 
+                leechers: 397, 
+                urls: [
+                    { name: "Lecteur 1", url: "https://oneupload.net/embed-j8ydv0pi7kj0.html" },
+                ],
+                imageUrl: "" 
+            },
         ];
 
         const watchedEpisodes = new Set();
+        let currentMovie = null;
+        let currentPlayerIndex = 0;
 
         function saveWatchedEpisode(url) {
             if (url) {
@@ -452,20 +652,53 @@
             }
         }
 
-        function isWatched(url) {
-            return watchedEpisodes.has(url);
+        function isWatched(urls) {
+            return urls.some(urlObj => watchedEpisodes.has(urlObj.url));
         }
 
-        function openVideoPlayer(url, title) {
+        function createPlayerSelector(movie) {
+            const selector = document.getElementById('playerSelector');
+            selector.innerHTML = '';
+            
+            movie.urls.forEach((urlObj, index) => {
+                const btn = document.createElement('div');
+                btn.className = `player-btn ${index === currentPlayerIndex ? 'active' : ''}`;
+                btn.textContent = urlObj.name;
+                btn.onclick = () => switchPlayer(index);
+                selector.appendChild(btn);
+            });
+        }
+
+        function switchPlayer(index) {
+            if (!currentMovie || index >= currentMovie.urls.length) return;
+            
+            currentPlayerIndex = index;
+            const iframe = document.getElementById('videoPlayerIframe');
+            iframe.src = currentMovie.urls[index].url;
+            
+            // Update active button
+            document.querySelectorAll('.player-btn').forEach((btn, i) => {
+                btn.classList.toggle('active', i === index);
+            });
+            
+            // Save as watched
+            saveWatchedEpisode(currentMovie.urls[index].url);
+        }
+
+        function openVideoPlayer(movie, title) {
+            currentMovie = movie;
+            currentPlayerIndex = 0;
+            
             const iframe = document.getElementById('videoPlayerIframe');
             const titleElement = document.getElementById('videoPlayerTitle');
             const container = document.getElementById('videoPlayerContainer');
 
-            iframe.src = url;
+            createPlayerSelector(movie);
+            iframe.src = movie.urls[0].url;
             titleElement.textContent = title;
             container.classList.add('active');
 
-            saveWatchedEpisode(url);
+            saveWatchedEpisode(movie.urls[0].url);
             renderMovies(document.querySelector('.search-input').value);
 
             document.body.style.overflow = 'hidden';
@@ -476,6 +709,8 @@
             const container = document.getElementById('videoPlayerContainer');
 
             container.classList.remove('active');
+            currentMovie = null;
+            currentPlayerIndex = 0;
 
             setTimeout(() => {
                 iframe.src = '';
@@ -486,18 +721,15 @@
 
         function copyToClipboard(text) {
             if (!text) return alert("Lien non disponible");
-            // Using document.execCommand('copy') for better compatibility in iframes
             const textarea = document.createElement('textarea');
             textarea.value = text;
             document.body.appendChild(textarea);
             textarea.select();
             try {
                 document.execCommand('copy');
-                // You can replace this with a custom modal or toast notification
                 console.log("Lien copié dans le presse-papiers !");
             } catch (err) {
                 console.error("Échec de la copie", err);
-                // You can replace this with a custom modal or toast notification
             }
             document.body.removeChild(textarea);
         }
@@ -519,8 +751,8 @@
 
             filteredMovies.forEach(movie => {
                 const card = document.createElement('div');
-                card.className = `movie-card ${isWatched(movie.url) ? 'watched' : ''}`;
-                card.onclick = () => openVideoPlayer(movie.url, movie.name);
+                card.className = `movie-card ${isWatched(movie.urls) ? 'watched' : ''}`;
+                card.onclick = () => openVideoPlayer(movie, movie.name);
 
                 // Determine the image URL based on the movie name
                 let imageUrl = movie.imageUrl;
@@ -611,13 +843,13 @@
                         <div class="movie-size">${movie.size || 'N/A'}</div>
                     </div>
                     <div class="movie-actions">
-                        <button class="action-btn watch-btn" onclick="event.stopPropagation(); openVideoPlayer('${movie.url}', '${movie.name.replace(/'/g, "\\'")}')">
+                        <button class="action-btn watch-btn" onclick="event.stopPropagation(); openVideoPlayer(movies.find(m => m.id === ${movie.id}), '${movie.name.replace(/'/g, "\\'")}')">
                             ▶️ Regarder
                         </button>
-                        <button class="action-btn copy-btn" onclick="event.stopPropagation(); copyToClipboard('${movie.url}')">
+                        <button class="action-btn copy-btn" onclick="event.stopPropagation(); copyToClipboard('${movie.urls[0].url}')">
                             📋 Copier
                         </button>
-                        <a href="${movie.url}" target="_blank" class="action-btn link-btn" onclick="event.stopPropagation(); saveWatchedEpisode('${movie.url}'); this.closest('.movie-card').classList.add('watched')">
+                        <a href="${movie.urls[0].url}" target="_blank" class="action-btn link-btn" onclick="event.stopPropagation(); saveWatchedEpisode('${movie.urls[0].url}'); this.closest('.movie-card').classList.add('watched')">
                             🔗 Lien
                         </a>
                     </div>
