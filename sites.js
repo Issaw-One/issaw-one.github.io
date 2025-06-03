@@ -420,13 +420,26 @@ const sitesData = {
         },
         {
             id: '24drama',
-            name: '24DRAMA (vost)',
+            name: '24DRAMA (vostfr)',
             logo: 'logoSites/24drama.png',
             headerBg: 'linear-gradient(135deg,rgb(113, 63, 204) 0%,rgb(173, 147, 250) 100%)',
             description: '24drama.to <i class="fa-solid fa-check" style="color: #63E6BE;"></i>',
             tags: ['Update : 01/06/2025'],
             url: 'https://24drama.to/',
             searchUrl: 'https://24drama.to/search?q={query}',
+            featured: true,
+            isNew: true,
+            category: 'series'
+        },
+        {
+            id: 'bflix',
+            name: 'BFlix (vo)',
+            logo: 'logoSites/bflix.png',
+            headerBg: 'linear-gradient(135deg,rgb(113, 63, 204) 0%,rgb(173, 147, 250) 100%)',
+            description: 'bflix.sh <i class="fa-solid fa-check" style="color: #63E6BE;"></i>',
+            tags: ['Update : 03/06/2025'],
+            url: 'https://bflix.sh/home/',
+            searchUrl: 'https://bflix.sh/search?keyword={query}',
             featured: true,
             isNew: true,
             category: 'series'
