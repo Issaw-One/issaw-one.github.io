@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compte à rebours - Ban Paladium</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: #1a1a1a;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 165, 0, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 255, 255, 0.05) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        .main-container {
+            background: #2d2d2d;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.8),
+                0 0 50px rgba(255, 165, 0, 0.1);
+            border: 2px solid #444;
+            max-width: 700px;
+            width: 90%;
+            position: relative;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            gap: 30px;
+        }
+
+        /* Styles pour le cadre du personnage */
+        .minecraft-character-frame {
+            width: 120px;
+            height: 150px;
+            border-radius: 8px;
+            position: relative;
+            box-shadow: 
+                0 8px 16px rgba(0, 0, 0, 0.5),
+                inset 0 2px 4px rgba(255, 255, 255, 0.1);
+            flex-shrink: 0;
+            border: 2px solid #CD853F;
+            overflow: hidden; /* Pour s'assurer que l'image ne dépasse pas */
+        }
+
+        /* Styles pour l'image du personnage */
+        .minecraft-character-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Assure que l'image remplit le cadre sans être déformée */
+            display: block;
+        }
+
+        .player-info {
+            flex-grow: 1;
+        }
+
+        .player-name {
+            font-size: 2.2em;
+            font-weight: bold;
+            color: #FFA500;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .status-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .info-line {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.1em;
+        }
+
+        .info-icon {
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+
+        .time-remaining {
+            color: #FFA500;
+            font-weight: bold;
+        }
+
+        .ban-end {
+            color: #FFA500;
+            font-weight: bold;
+        }
+
+        .countdown-section {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .countdown-title {
+            font-size: 1.5em;
+            margin-bottom: 25px;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .time-block {
+            background: linear-gradient(145deg, #3a3a3a, #2a2a2a);
+            border-radius: 15px;
+            padding: 20px;
+            min-width: 100px;
+            border: 2px solid #555;
+            box-shadow: 
+                0 8px 20px rgba(0, 0, 0, 0.4),
+                0 0 20px rgba(255, 165, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .time-block:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 
+                0 15px 30px rgba(0, 0, 0, 0.6),
+                0 0 30px rgba(255, 165, 0, 0.2);
+            border-color: #FFA500;
+        }
+
+        .time-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            display: block;
+            color: #FFA500;
+            text-shadow: 
+                0 0 10px rgba(255, 165, 0, 0.5),
+                2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .time-label {
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 5px;
+            color: #cccccc;
+        }
+
+        .progress-section {
+            margin: 30px 0;
+        }
+
+        .progress-label {
+            text-align: center;
+            margin-bottom: 15px;
+            color: #cccccc;
+            font-size: 1.1em;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 25px;
+            background: #1a1a1a;
+            border-radius: 12px;
+            margin: 20px 0;
+            overflow: hidden;
+            border: 2px solid #444;
+            box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #FFA500, #FFD700, #FF8C00);
+            background-size: 200% 100%;
+            border-radius: 10px;
+            transition: width 1s ease;
+            animation: gradientShift 3s ease-in-out infinite;
+            box-shadow: 0 0 15px rgba(255, 165, 0, 0.4);
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .liberation-message {
+            display: none;
+            font-size: 2.5em;
+            color: white; /* Changement de couleur pour une ambiance plus solennelle */
+            margin: 30px 0;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            text-align: center;
+        }
+
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: #FFA500;
+            border-radius: 50%;
+            animation: float 8s infinite linear;
+            box-shadow: 0 0 8px rgba(255, 165, 0, 0.6);
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .server-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(45deg, #FF6B6B, #FF8E53);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        @keyframes explode {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(3);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(0);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                padding: 20px;
+                margin: 10px;
+            }
+            
+            .header {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .minecraft-character-frame {
+                width: 100px;
+                height: 125px;
+            }
+            
+            .player-name {
+                font-size: 1.8em;
+            }
+            
+            .countdown {
+                gap: 10px;
+            }
+            
+            .time-block {
+                padding: 15px;
+                min-width: 80px;
+            }
+            
+            .time-number {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    
+    <div class="main-container">
+        <div class="server-badge">PALADIUM</div>
+        
+        <div class="header">
+            <!-- Remplacement du div par une image pour le skin -->
+            <div class="minecraft-character-frame">
+                <img src="téléchargement.png" alt="Skin Herobrine" class="minecraft-character-image">
+            </div>
+            
+            <div class="player-info">
+                <div class="player-name">Issaw_Two</div>
+                
+                <div class="status-info">
+                    <div class="info-line">
+                        <div class="info-icon"></div>
+                        <span>Temps restant</span>
+                        <span class="time-remaining" id="timeRemainingText">Chargement...</span>
+                    </div>
+                    
+                    <div class="info-line">
+                        <div class="info-icon"></div>
+                        <span>Fin du ban</span>
+                        <span class="ban-end">12/08/2025 22:40</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="countdown-section">
+            <div class="countdown-title">Compte à rebours</div>
+            
+            <div class="countdown" id="countdown">
+                <div class="time-block">
+                    <span class="time-number" id="days">0</span>
+                    <span class="time-label">Jours</span>
+                </div>
+                <div class="time-block">
+                    <span class="time-number" id="hours">0</span>
+                    <span class="time-label">Heures</span>
+                </div>
+                <div class="time-block">
+                    <span class="time-number" id="minutes">0</span>
+                    <span class="time-label">Minutes</span>
+                </div>
+                <div class="time-block">
+                    <span class="time-number" id="seconds">0</span>
+                    <span class="time-label">Secondes</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-section">
+            <div class="progress-label">Progression du bannissement</div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+        
+        <div class="liberation-message" id="liberationMessage">
+            En souvenir d'AChoKwer,
+            <br>
+            un ami fidèle et un coéquipier formidable.
+            <br>
+            Les parties ne seront plus jamais les mêmes sans toi.
+            <br>
+            Repose en paix.
+        </div>
+    </div>
+
+    <script>
+        // Date de fin du ban (12/08/2025 à 22h40)
+        const endDate = new Date('2025-08-12T22:40:00').getTime();
+        const startDate = new Date('2025-08-12T00:00:00').getTime(); // Date approximative de début pour la barre de progression
+        
+        // Créer les particules
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            for (let i = 0; i < 25; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 8 + 's';
+                particle.style.animationDuration = (Math.random() * 4 + 6) + 's';
+                
+                // Couleurs style Minecraft
+                const colors = ['#FFA500', '#FFD700', '#FF8C00', '#DAA520'];
+                particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Fonction de mise à jour du compte à rebours
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = endDate - now;
+
+            if (distance > 0) {
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = String(days).padStart(2, '0');
+                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+
+                // Calcul de la progression
+                const totalDuration = endDate - startDate;
+                const elapsed = now - startDate;
+                const progress = Math.max(0, Math.min(100, (elapsed / totalDuration) * 100));
+                document.getElementById('progressFill').style.width = progress + '%';
+
+                // Mise à jour du texte de temps restant
+                const timeRemainingText = document.getElementById('timeRemainingText');
+                if (days > 0) {
+                    timeRemainingText.textContent = `${days}j ${hours}h ${minutes}m ${seconds}s`;
+                } else if (hours > 0) {
+                    timeRemainingText.textContent = `${hours}h ${minutes}m ${seconds}s`;
+                } else if (minutes > 0) {
+                    timeRemainingText.textContent = `${minutes}m ${seconds}s`;
+                } else {
+                    timeRemainingText.textContent = `${seconds}s`;
+                }
+            } else {
+                // Le ban est terminé !
+                document.getElementById('countdown').style.display = 'none';
+                document.getElementById('liberationMessage').style.display = 'block';
+                document.getElementById('progressFill').style.width = '100%';
+                document.getElementById('timeRemainingText').textContent = '0s - LIBRE !';
+                document.getElementById('timeRemainingText').style.color = 'white';
+                
+                // Rendre l'arrière-plan plus sobre à la fin
+                document.body.style.background = '#1a1a1a';
+            }
+        }
+
+        // Initialiser
+        createParticles();
+        updateCountdown();
+        
+        // Mettre à jour chaque seconde
+        setInterval(updateCountdown, 1000);
+
+        // Ajouter quelques effets visuels
+        document.addEventListener('mousemove', function(e) {
+            if (Math.random() > 0.95) { // Réduire la fréquence
+                const cursor = document.createElement('div');
+                cursor.style.position = 'fixed';
+                cursor.style.left = e.pageX + 'px';
+                cursor.style.top = e.pageY + 'px';
+                cursor.style.width = '6px';
+                cursor.style.height = '6px';
+                cursor.style.background = '#FFA500';
+                cursor.style.borderRadius = '50%';
+                cursor.style.pointerEvents = 'none';
+                cursor.style.zIndex = '9999';
+                cursor.style.boxShadow = '0 0 10px rgba(255, 165, 0, 0.6)';
+                cursor.style.animation = 'float 4s ease-out forwards';
+                document.body.appendChild(cursor);
+                
+                setTimeout(() => {
+                    cursor.remove();
+                }, 4000);
+            }
+        });
+    </script>
+</body>
+</html>
